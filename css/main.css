@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --exo-font: 'Exo 2', sans-serif;
+  --roboto-font: 'Roboto Slab', serif;
+  --primary-color: #8A8AFF;
+  --secondary-color: #FF5900;
+  --accent-color: #1C590D;
+  --black: #000;
+  --white: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+aside,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 25px 0;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 0 10px 0;
+}
+
+#menu::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-brand a {
+  text-decoration: none;
+  display: grid;
+  grid-auto-columns: auto auto;
+  grid-template-rows: auto 1fr;
+  grid-column-gap: 5px;
+  justify-items: center;
+  align-items: end;
+}
+
+.nav-logo {
+  grid-column: 1 / 2; 
+  grid-row: 1 / span 2;
+}
+
+.nav-text {
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2;
+}
+
+.nav-name {  
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.hamburger {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  padding: 3px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.line {
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--black);
+  border-radius: 2px;
+  box-shadow: 0 0 2px var(--black);
+}
+
+.line-1 {
+  margin-top: auto;
+}
+
+.line-2 {
+  margin: 5px 0 5px;
+}
+
+.line-3 {
+  margin-bottom: auto;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.profile-pic {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+}
+
+#header {
+  background-image: url("../assets/img/city.jpg");
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
