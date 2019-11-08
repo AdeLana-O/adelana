@@ -9,18 +9,19 @@
 :root {
   --exo-font: 'Exo 2', sans-serif;
   --roboto-font: 'Roboto Slab', serif;
-  --primary-color: #8A8AFF;
-  --secondary-color: #FF5900;
-  --accent-color: #1C590D;
-  --black: #000;
-  --white: #fff;
+  --primary-color: #18254E;
+  --secondary-color: #693830;
+  --accent-color: #14D220;
+  --black: #1A1A1A;
+  --white: #E6E6E6;
 }
 
 html {
   box-sizing: border-box;
-  font-size: 10px;
   display: flex;
   flex-direction: column;
+  font-family: var(--exo-font);
+  font-size: 10px;
 }
 
 body {
@@ -41,7 +42,7 @@ section {
 #navbar {
   position: fixed;
   width: 100%;
-  padding: 20px 25px 0;
+  padding: 2rem 2.5rem 0;
 }
 
 #menu {
@@ -70,27 +71,6 @@ section {
 
 .nav-brand a {
   text-decoration: none;
-  display: grid;
-  grid-auto-columns: auto auto;
-  grid-template-rows: auto 1fr;
-  grid-column-gap: 5px;
-  justify-items: center;
-  align-items: end;
-}
-
-.nav-logo {
-  grid-column: 1 / 2; 
-  grid-row: 1 / span 2;
-}
-
-.nav-text {
-  grid-column: 2 / 3; 
-  grid-row: 1 / 2;
-}
-
-.nav-name {  
-  grid-column: 2 / 3; 
-  grid-row: 2 / 3;
 }
 
 .logo {
@@ -99,12 +79,17 @@ section {
   display: block;
 }
 
+.nav-text,
+.nav-name {
+  display: none;
+}
+
 .hamburger {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 45px;
-  height: 45px;
+  width: 33px;
+  height: 33px;
   padding: 3px 0;
   cursor: pointer;
   border-radius: 50%;
@@ -112,10 +97,10 @@ section {
 }
 
 .line {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border: 1px solid var(--black);
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 0 0 2px var(--black);
 }
 
@@ -124,7 +109,7 @@ section {
 }
 
 .line-2 {
-  margin: 5px 0 5px;
+  margin: 3px 0;
 }
 
 .line-3 {
