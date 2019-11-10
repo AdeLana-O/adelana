@@ -1,3 +1,4 @@
+/* General Styles */
 *,
 *::before,
 *::after {
@@ -21,7 +22,7 @@ html {
   display: flex;
   flex-direction: column;
   font-family: var(--exo-font);
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
@@ -39,17 +40,22 @@ section {
   display: block;
 }
 
+
+
+/* Navigation Bar */
+
 #navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 2rem 2.5rem 0;
+  padding: 20px 5vw 0;
 }
 
 #menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   padding: 0 0 10px 0;
 }
 
@@ -67,6 +73,7 @@ section {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -1;
 }
 
 .nav-brand a {
@@ -99,7 +106,7 @@ section {
 .line {
   width: 4px;
   height: 4px;
-  border: 1px solid var(--black);
+  border: 1px solid var(--primary-color);
   border-radius: 1px;
   box-shadow: 0 0 2px var(--black);
 }
@@ -117,20 +124,83 @@ section {
 }
 
 .nav-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100vh;
+  width: 80%;
+  max-width: 300px;
+  padding-top: 50px;
+  list-style: none;
+  background-color: #945d55;
+  transform: translateX(-100%);
+  transition: 0.3s ease-in-out; 
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--white);
 }
 
 .profile-pic {
-  width: 120px;
+  width: 130px;
   height: auto;
   border-radius: 50%;
+  border: 5px solid var(--white);
 }
 
+.nav-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2rem;
+  display: inline-block;
+  transform: scale(0);
+}
+
+#overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@keyframes slideIn {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+/* Page Header */
 #header {
   background-image: url("../assets/img/city.jpg");
   height: 100vh;
 }
 
+
+
+/* Main Page Content */
 main {
   flex-grow: 1;
 }
