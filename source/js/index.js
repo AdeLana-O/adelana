@@ -1,11 +1,13 @@
-
+// Toggle mobile nav in and out of display
 const toggleNav = () => {
 
+  // Select HTML elements
   let hamburger = document.querySelector(".hamburger");
   let navMenu = document.querySelector(".nav-menu");
   let overlay = document.getElementById("overlay");
   const navLinks = document.querySelectorAll(".nav-link");
 
+  // Open mobile nav and add animations
   hamburger.addEventListener("click", () => {
     hamburger.classList.add("rotate");
     navMenu.classList.add("open");
@@ -16,6 +18,8 @@ const toggleNav = () => {
     });
   });
 
+  // Close mobile nav and remove animations
+  // when the nav menu is clicked
   navMenu.addEventListener("click", () => {
     hamburger.classList.remove("rotate");
     navMenu.classList.remove("open");
@@ -26,6 +30,9 @@ const toggleNav = () => {
     });
   });
 
+
+  // Close mobile nav and remove animations
+  // when the overlay is clicked
   overlay.addEventListener("click", () => {
     hamburger.classList.remove("rotate");
     navMenu.classList.remove("open");
@@ -38,7 +45,9 @@ const toggleNav = () => {
 
 }
 
+
+// Invoke program functions
 (function () {
-  toggleNav();
+  return toggleNav();
 })();
 
