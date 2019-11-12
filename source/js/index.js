@@ -19,35 +19,28 @@ const toggleNav = () => {
   });
 
   // Close mobile nav and remove animations
-  // when the nav menu is clicked
-  navMenu.addEventListener("click", () => {
+  const closeNav = () => {
     hamburger.classList.remove("rotate");
     navMenu.classList.remove("open");
     overlay.style.display = "none";
 
-    navLinks.forEach( (item, index) => {
+    navLinks.forEach( (item) => {
       item.style.animation = "";
     });
-  });
+  };
+
+  // Close mobile nav when the nav menu is clicked
+  navMenu.addEventListener("click", closeNav);
 
 
-  // Close mobile nav and remove animations
-  // when the overlay is clicked
-  overlay.addEventListener("click", () => {
-    hamburger.classList.remove("rotate");
-    navMenu.classList.remove("open");
-    overlay.style.display = "none";
+  // Close mobile nav when the overlay is clicked
+  overlay.addEventListener("click", closeNav);
 
-    navLinks.forEach( (item, index) => {
-      item.style.animation = "";
-    });
-  });
-
-}
+};
 
 
 // Invoke program functions
 (function () {
-  return toggleNav();
+  toggleNav();
 })();
 
