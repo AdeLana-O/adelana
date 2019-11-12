@@ -11,7 +11,9 @@
   --exo-font: 'Exo 2', sans-serif;
   --roboto-font: 'Roboto Slab', serif;
   --primary-color: #18254E;
+  --primary-color-light: rgb(157, 173, 225);
   --secondary-color: #693830;
+  --secondary-color-light: rgb(223, 189, 185);
   --accent-color: #14D220;
   --black: #1A1A1A;
   --white: #E6E6E6;
@@ -57,7 +59,6 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 10px 0;
 }
 
 .nav-brand a {
@@ -65,7 +66,7 @@ section {
 }
 
 .logo {
-  width: 60px;
+  width: 65px;
   height: auto;
   display: block;
 }
@@ -79,37 +80,37 @@ section {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 33px;
-  height: 33px;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
   padding: 3px 0;
   cursor: pointer;
   border-radius: 50%;
-  background-color: var(--white);
   transition: transform 0.2s ease-in;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+}
+
+.hamburger::before,
+.hamburger::after,
+.line {
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 2px;
+  box-shadow: 0 0 5px var(--black);
+}
+
+.line {
+  margin: 3px 0;
 }
 
 .rotate {
   transform: rotate(90deg);
-}
-
-.line {
-  width: 4px;
-  height: 4px;
-  border: 1px solid var(--primary-color);
-  border-radius: 1px;
-  box-shadow: 0 0 2px var(--black);
-}
-
-.line-1 {
-  margin-top: auto;
-}
-
-.line-2 {
-  margin: 3px 0;
-}
-
-.line-3 {
-  margin-bottom: auto;
+  background-color: rgb(223, 189, 185);
 }
 
 .nav-menu {
@@ -126,7 +127,7 @@ section {
   max-width: 300px;
   padding-top: 50px;
   list-style: none;
-  background-color: #945d55;
+  background-color: rgba(105, 56, 48, 0.876);
   transform: translateX(-250%);
   transition: 0.2s ease-in-out; 
 }
@@ -140,27 +141,24 @@ section {
   top: 15px;
   right: 20px;
   font-size: 3.5rem;
+  color: var(--primary-color-light);
   cursor: pointer;
-}
-
-.close:hover {
-  color: var(--white);
 }
 
 .profile-pic {
   width: 130px;
   height: auto;
-  padding: 4px;
   border-radius: 50%;
-  border: 3px solid var(--white);
+  border: 6px solid var(--white);
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--primary-color-light);
   font-size: 2rem;
   display: inline-block;
   transform: translateX(-500%);
+  cursor: pointer;
 }
 
 #navbar #overlay {
@@ -187,16 +185,23 @@ section {
   background: var(--black) url("../../assets/img/lines.jpg") no-repeat fixed;
   background-size: 150% 110%;
   height: 100vh;
+  position: relative;
 }
 
-#header .overlay {
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(69, 19, 206, 0.417);
+#header::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(24, 37, 78, 0.4);
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 20;
+}
+
+.header-content {
+  padding: 0 10vw;
+  margin-top: 200px;
 }
 
 
