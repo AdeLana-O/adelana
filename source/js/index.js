@@ -39,8 +39,25 @@ const toggleNav = () => {
 };
 
 
+// Animate navbar when the window is scrolled
+const animateNavbar = () => {
+  // Select navbar
+  let navbar = document.getElementById("navbar");
+
+  // Add class to navbar when window is scrolled
+  window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop >= 20 || document.body.scrollTop >= 20) {
+      navbar.className = "shrink";
+    } else {
+      navbar.className = "";
+    }
+  });
+};
+
+
 // Invoke program functions
 (function () {
   toggleNav();
+  animateNavbar();
 })();
 
