@@ -4,8 +4,9 @@ const toggleNav = () => {
   // Select HTML elements
   let hamburger = document.querySelector(".hamburger");
   let navMenu = document.querySelector(".nav-menu");
+  let closeMenu = document.querySelector(".close");
   let overlay = document.getElementById("overlay");
-  const navLinks = document.querySelectorAll(".nav-link");
+  let navLinks = document.querySelectorAll(".nav-link");
 
   // Open mobile nav and add animations
   hamburger.addEventListener("click", () => {
@@ -24,14 +25,16 @@ const toggleNav = () => {
     navMenu.classList.remove("open");
     overlay.style.display = "none";
 
-    navLinks.forEach( (item) => {
+    navLinks.forEach( item => {
       item.style.animation = "";
     });
   };
 
-  // Close mobile nav when the nav menu is clicked
-  navMenu.addEventListener("click", closeNav);
+  // Close mobile nav when any of the nav links is clicked
+  navLinks.forEach( item => item.addEventListener("click", closeNav));
 
+  // Close mobile nav when the close button is clicked
+  closeMenu.addEventListener("click", closeNav);
 
   // Close mobile nav when the overlay is clicked
   overlay.addEventListener("click", closeNav);
@@ -46,7 +49,7 @@ const animateNavbar = () => {
 
   // Add class to navbar when window is scrolled
   window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop >= 20 || document.body.scrollTop >= 20) {
+    if (window.pageYOffset >= 20) {
       navbar.className = "shrink";
     } else {
       navbar.className = "";
