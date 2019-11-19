@@ -58,8 +58,8 @@ section {
 }
 
 #navbar.shrink {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   background: var(--white) linear-gradient(
     0deg,
     rgba(157, 173, 225, 0.7),
@@ -79,7 +79,7 @@ section {
 }
 
 #navbar.shrink .nav-brand {
-  transform: scale(0.8);
+  transform: scale(0.7);
 }
 
 .nav-brand a {
@@ -111,7 +111,7 @@ section {
 }
 
 #navbar.shrink .hamburger {
-  transform: scale(0.8);
+  transform: scale(0.75);
 }
 
 .hamburger.rotate {
@@ -382,6 +382,10 @@ section {
   font-family: var(--roboto-font);
 }
 
+.row {
+  padding: 50px 10vw 0;
+}
+
 #main h2 {
   color: var(--primary-color);
   font-size: 3rem;
@@ -398,35 +402,68 @@ section {
   font-family: var(--exo-font);
 }
 
-.stack-header {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+.stack-content h3 {
+  padding: 0 10vw;
 }
 
 .stack-header-img {
-  height: auto;
+  height: 400px;
   width: 100%;
-  max-width: 350px;
-}
-
-#main .stack-header h3 {
-  writing-mode: vertical-lr;
-  margin: 0 0 0 15px;
-  font-size: 5vw;
+  background: linear-gradient(135deg,
+    rgba(105, 56, 48, 0.3),
+    rgba(223, 189, 185, 0.2)
+  ) no-repeat, var(--black) url("../../assets/img/keyboard.jpg") no-repeat fixed;
+  background-size: 100% 100%, 140% 130%;
 }
 
 #main p {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
 }
 
-#main p:last-child {
+#main p:last-of-type {
   margin-bottom: 0;
 }
 
-.about-me {
-  margin-bottom: 40px;
+.contact-btn {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  display: block;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-btn::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 290px;
+  background-color: var(--primary-color-light);
+  opacity: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: -95px;
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.contact-btn:active::before {
+  transform: scale(0);
+  opacity: 1;
+  transition: 0s;
+}
+
+.about-me,
+.stack {
+  margin-bottom: 30px;
 }
 
 .stack-list {
@@ -434,7 +471,7 @@ section {
 }
 
 .db-list {
-  margin: 0 auto 25px;
+  margin: 0 auto;
 }
 
 .stack-list,
@@ -442,16 +479,16 @@ section {
   list-style: none;
   width: 85%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(65px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   grid-auto-rows: 100px;
-  grid-column-gap: 30px;
+  grid-gap: 30px 50px;
   justify-items: center;
   align-items: center;
 }
 
 .stack-img {
   height: auto;
-  width: 60px;
+  width: 45px;
 }
 
 #main .stack p:last-of-type {
@@ -460,9 +497,50 @@ section {
 
 .db-img {
   height: auto;
-  width: 80px;
+  width: 70px;
 }
 
-.about-content {  
-  padding: 50px 10vw 0;
+.stack-item,
+.db-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.stack-info,
+.db-info {
+  width: 90px;
+  margin: -45px;
+  padding: 7px 0;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  background-color: var(--primary-color);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s linear;
+}
+
+.stack-info::before,
+.db-info::before {
+  content: "";
+  border-style: solid;
+  border-width: 7px;
+  border-color: transparent transparent var(--primary-color) transparent;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.stack-item:hover .stack-info,
+.db-item:hover .db-info {
+  opacity: 1;
+  pointer-events: none;
 }
