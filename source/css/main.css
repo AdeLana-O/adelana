@@ -1,4 +1,6 @@
-/* General Styles */
+/*===================
+General Styles
+=====================*/
 *,
 *::before,
 *::after {
@@ -45,7 +47,10 @@ section {
 
 
 
-/* Navigation Bar */
+
+/*===================
+Navigation Bar
+=====================*/
 
 #navbar {
   position: fixed;
@@ -155,7 +160,7 @@ section {
   top: 0;
   left: 0;
   z-index: 100;
-  height: 100vh;
+  min-height: 100vh;
   width: 80%;
   max-width: 300px;
   padding-top: 50px;
@@ -189,13 +194,21 @@ section {
   border: 6px solid var(--white);
 }
 
+.nav-item {
+  transform: translateX(-500%);
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 2.2rem;
+  color: var(--secondary-color-light);
+}
+
 .nav-link {
   text-decoration: none;
   color: var(--primary-color-light);
   font-size: 2rem;
-  display: inline-block;
-  transform: translateX(-500%);
-  cursor: pointer;
+  transition: 0.2s linear;
 }
 
 .nav-link:hover {
@@ -221,7 +234,10 @@ section {
 
 
 
-/* Page Header */
+
+/*===================
+Page Header
+=====================*/
 #header {
   background: var(--white) url("../../assets/img/lines.jpg") no-repeat;
   background-size: 150% 110%;
@@ -302,7 +318,7 @@ section {
 .more::after {
   content: "";
   display: block;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-light);
   height: 100%;
   width: 2px;
   position: absolute;
@@ -322,7 +338,7 @@ section {
 
 .more a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: rgb(18, 27, 59);
   font-size: 2rem;
   font-variant: small-caps;
   padding: 13px 15px;
@@ -340,7 +356,7 @@ section {
 .more a::after {
   content: "";
   display: block;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-light);
   height: 2px;
   width: 100%;
   position: absolute;
@@ -376,14 +392,31 @@ section {
 
 
 
-/* Main Page Content */
+
+/*===================
+Main Page Content
+=====================*/
 #main {
   flex-grow: 1;
   font-family: var(--roboto-font);
 }
 
-.row {
-  padding: 50px 10vw 0;
+#main .row {
+  padding: 100px 10vw 0;
+}
+
+#main hr {
+  display: block;
+  height: 2px;
+  border: none;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    #693830,
+    rgba(255, 255, 255, 0)
+  );
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
 
 #main h2 {
@@ -398,38 +431,56 @@ section {
 
 #main h2,
 #main h3 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-family: var(--exo-font);
-}
-
-.stack-content h3 {
-  padding: 0 10vw;
-}
-
-.stack-header-img {
-  height: 400px;
-  width: 100%;
-  background: linear-gradient(135deg,
-    rgba(105, 56, 48, 0.3),
-    rgba(223, 189, 185, 0.2)
-  ) no-repeat, var(--black) url("../../assets/img/keyboard.jpg") no-repeat fixed;
-  background-size: 100% 100%, 140% 130%;
 }
 
 #main p {
   font-size: 1.6rem;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 #main p:last-of-type {
   margin-bottom: 0;
 }
 
+
+/*-------------------
+About Scetion
+---------------------*/
+.about-link {
+  text-decoration: none;
+  color: rgb(42, 64, 137);
+  font-weight: bold;
+  position: relative;
+}
+
+.about-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: 0.2s ease-in-out;
+}
+
+.about-link:hover {
+  color: rgb(60, 91, 195);
+}
+
+.about-link:hover::after {
+  transform: scaleX(1);
+}
+
 .contact-btn {
   text-decoration: none;
   background-color: var(--primary-color);
   display: block;
-  margin-top: 20px;
+  margin-top: 80px;
   padding: 10px 0;
   border-radius: 5px;
   color: var(--white);
@@ -461,13 +512,31 @@ section {
   transition: 0s;
 }
 
-.about-me,
-.stack {
-  margin-bottom: 30px;
+
+/*---------------------
+Technology Stacks
+-----------------------*/
+.stack-content h3 {
+  padding: 0 10vw;
+}
+
+#main .stack-content > .row {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.stack-header-img {
+  height: 400px;
+  width: 100%;
+  background: linear-gradient(135deg,
+    rgba(105, 56, 48, 0.3),
+    rgba(223, 189, 185, 0.2)
+  ) no-repeat, var(--black) url("../../assets/img/keyboard.jpg") no-repeat fixed;
+  background-size: 100% 100%, 140% 130%;
 }
 
 .stack-list {
-  margin: 15px auto 25px;
+  margin: 40px auto;
 }
 
 .db-list {
@@ -489,6 +558,12 @@ section {
 .stack-img {
   height: auto;
   width: 45px;
+  transition: 0.15s linear;
+}
+
+.stack-img:hover,
+.db-img:hover {
+  transform: scale(1.2);
 }
 
 #main .stack p:last-of-type {
@@ -498,6 +573,7 @@ section {
 .db-img {
   height: auto;
   width: 70px;
+  transition: 0.15s linear;
 }
 
 .stack-item,
@@ -508,17 +584,18 @@ section {
 
 .stack-info,
 .db-info {
-  width: 90px;
-  margin: -45px;
-  padding: 7px 0;
-  border-radius: 5px;
+  width: 120px;
+  margin: -60px;
+  padding: 7px;
+  border-radius: 50px;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
   z-index: 1;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
   letter-spacing: 1px;
   text-align: center;
   background-color: var(--primary-color);
