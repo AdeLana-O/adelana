@@ -13,9 +13,9 @@ General Styles
   --exo-font: 'Exo 2', sans-serif;
   --roboto-font: 'Roboto Slab', serif;
   --primary-color: #18254E;
-  --primary-color-light: rgb(157, 173, 225);
+  --primary-color-light: #9DADE1;
   --secondary-color: #693830;
-  --secondary-color-light: rgb(223, 189, 185);
+  --secondary-color-light: #DFBDB9;
   --accent-color: #14D220;
   --black: #1A1A1A;
   --white: #E6E6E6;
@@ -43,6 +43,10 @@ main,
 nav,
 section {
   display: block;
+}
+
+.row {
+  padding: 120px 10vw 0;
 }
 
 
@@ -281,7 +285,7 @@ Page Header
 
 .title h1 {
   color: var(--white);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: var(--exo-font);
 }
 
@@ -401,10 +405,6 @@ Main Page Content
   font-family: var(--roboto-font);
 }
 
-#main .row {
-  padding: 100px 10vw 0;
-}
-
 #main hr {
   display: block;
   height: 2px;
@@ -421,7 +421,7 @@ Main Page Content
 
 #main h2 {
   color: var(--primary-color);
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 #main h3 {
@@ -433,6 +433,7 @@ Main Page Content
 #main h3 {
   margin-bottom: 15px;
   font-family: var(--exo-font);
+  text-align: center;
 }
 
 #main p {
@@ -455,25 +456,9 @@ About Scetion
   position: relative;
 }
 
-.about-link::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: var(--secondary-color);
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transition: 0.2s ease-in-out;
-}
-
 .about-link:hover {
   color: rgb(60, 91, 195);
-}
-
-.about-link:hover::after {
-  transform: scaleX(1);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 .contact-btn {
@@ -489,21 +474,21 @@ About Scetion
   text-align: center;
   overflow: hidden;
   position: relative;
-  transition: 0.3s ease-in-out;
 }
 
 .contact-btn::before {
   content: "";
   display: block;
-  width: 100%;
+  width: 120%;
   height: 290px;
   background-color: var(--primary-color-light);
   opacity: 0;
   border-radius: 50%;
   position: absolute;
-  top: -95px;
-  left: 0;
-  transition: 0.5s ease-in-out;
+  top: -105px;
+  left: -10%;
+  right: -10%;
+  transition: 0.3s ease-in-out;
 }
 
 .contact-btn:active::before {
@@ -522,7 +507,6 @@ Technology Stacks
 
 #main .stack-content > .row {
   padding-top: 50px;
-  margin-bottom: 50px;
 }
 
 .stack-header-img {
@@ -540,7 +524,7 @@ Technology Stacks
 }
 
 .db-list {
-  margin: 0 auto;
+  margin: 0 auto 80px;
 }
 
 .stack-list,
@@ -563,7 +547,7 @@ Technology Stacks
 
 .stack-img:hover,
 .db-img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 #main .stack p:last-of-type {
@@ -585,11 +569,11 @@ Technology Stacks
 .stack-info,
 .db-info {
   width: 120px;
-  margin: -60px;
+  margin-left: -60px;
   padding: 7px;
   border-radius: 50px;
   position: absolute;
-  bottom: 10px;
+  bottom: -45px;
   left: 50%;
   z-index: 1;
   color: var(--white);
@@ -620,4 +604,306 @@ Technology Stacks
 .db-item:hover .db-info {
   opacity: 1;
   pointer-events: none;
+}
+
+
+/*---------------------
+Services
+-----------------------*/
+.services-content {
+  padding-bottom: 80px;
+}
+.services-content {
+  background: var(--primary-color-light) linear-gradient(
+    197deg,
+    var(--primary-color-light) 10%,
+    var(--white) 11%,
+    var(--white) 89%,
+    var(--secondary-color-light) 90%
+  );
+}
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.services-item {
+  min-width: 200px;
+  max-width: 325px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border: 1px solid rgb(195, 189, 189);
+  box-shadow: 0 0 3px 2px rgb(195, 189, 189);
+}
+
+.services-img-wrapper {
+  overflow: hidden;
+}
+
+.services-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.services-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.services-info h5 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+
+/*---------------------
+Contact
+-----------------------*/
+.contact-details {
+  list-style: none;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.detail {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.detail:first-child {
+  margin-bottom: 7px;
+}
+
+.contact-logo {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  padding-right: 20px;
+}
+
+.contact-detail {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  padding-bottom: 2px;
+}
+
+.contact-detail:hover {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.input-group {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 70px;
+}
+
+.input-group:nth-of-type(4) {
+  height: 350px;
+  margin-bottom: 40px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.form-input,
+.form-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.6rem;
+  font-family: var(--roboto-font);
+}
+
+.form-input {
+  height: 45px;
+  padding: 15px 5px 0;
+}
+
+.form-text {
+  height: 325px;
+  padding: 10px 5px 5px;
+  resize: none;
+}
+
+.form-input:focus,
+.form-text:focus {
+  border-top: 1px solid rgb(195, 189, 189);
+  border-right: 1px solid rgb(195, 189, 189);
+  border-left: 1px solid rgb(195, 189, 189);
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid var(--black);
+  pointer-events: none;
+  display: block;
+}
+
+.label::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  z-index: 3;
+  background-color: var(--primary-color-light);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right center;
+}
+
+.form-input:focus + .label::after,
+.form-text:focus + .label::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.label-tag {
+  pointer-events: auto;
+  font-size: 1.6rem;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+.required {
+  color: rgb(255, 0, 0);
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 2px 0 0 5px;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  text-align: inherit;
+  display: block;
+  padding: 15px 20px;
+  margin: 0 auto;
+  width: 135px;
+  cursor: pointer;
+}
+
+.submit-btn span {
+  display: inline-block;
+  transform: translateX(16px);
+  color: var(--secondary-color-light);
+  transition: 0.35s linear;
+}
+
+.submit-icon {
+  margin-left: 10px;
+  color: var(--secondary-color-light);
+  opacity: 0;
+  transition: 0.15s linear 0.2s;
+}
+
+.submit-btn:hover span {
+  transform: translateX(0);
+  color: var(--white);
+}
+
+.submit-btn:hover .submit-icon {
+  opacity: 1;
+  color: var(--white);
+}
+
+.contact-menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0;
+}
+
+.contact-link {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+
+
+/*===================
+Page Footer
+=====================*/
+.footer-content {
+  background: var(--black) repeating-linear-gradient(
+    -45deg,
+    rgb(38, 38, 38) 30%,
+    rgb(26, 26, 26) 50%,
+    rgb(38, 38, 38) 70%
+  );
+}
+
+#footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 0 0 100%;
+}
+
+.footer-logo a {
+  display: inline-block;
+}
+
+.quick-links,
+.footer-contact-links {
+  margin-top: 30px;
+  flex: 0 0 50%;
+}
+
+.footer-menu,
+.footer-contact-menu {
+  list-style-type: none;
+}
+
+.footer-item,
+.footer-contact-item {
+  margin-bottom: 20px;
+}
+
+.footer-item:last-of-type,
+.footer-contact-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer-link,
+.footer-contact-link {
+  text-decoration: none;
+  color: var(--secondary-color-light);
+  font-size: 1.5rem;
+  transition: 0.4s linear;
+}
+
+.footer-link:hover,
+.footer-contact-link:hover {
+  color: rgb(207, 156, 150);
 }
