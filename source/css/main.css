@@ -49,13 +49,48 @@ section {
   padding: 120px 10vw 100px;
 }
 
+.about .row,
+#footer .row {
+  padding-bottom: 0;
+}
+
+.stack-content > .row,
+#footer .row {
+  padding-top: 50px;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+h3 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+h2,
+h3 {
+  margin-bottom: 15px;
+  font-family: var(--exo-font);
+  text-align: center;
+}
+
+p {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+p:last-of-type,
+.footer-item:last-of-type {
+  margin-bottom: 0;
+}
 
 
 
 /*===================
 Navigation Bar
 =====================*/
-
 #navbar {
   position: fixed;
   top: 0;
@@ -63,7 +98,8 @@ Navigation Bar
   z-index: 50;
   width: 100%;
   padding: 20px 5vw;
-  transition: 200ms linear;
+  transition: 0.2s linear;
+  font-family: var(--exo-font);
 }
 
 #navbar.shrink {
@@ -83,7 +119,10 @@ Navigation Bar
   align-items: center;
 }
 
-.nav-brand {
+.nav-brand,
+.hamburger,
+.nav-menu,
+.nav-link {
   transition: 0.2s ease-in;
 }
 
@@ -116,7 +155,6 @@ Navigation Bar
   padding: 3px 0;
   cursor: pointer;
   border-radius: 50%;
-  transition: 0.2s ease-in;
 }
 
 #navbar.shrink .hamburger {
@@ -171,7 +209,6 @@ Navigation Bar
   list-style: none;
   background-color: rgba(105, 56, 48, 0.876);
   transform: translateX(-250%);
-  transition: transform 0.2s ease-in-out;
 }
 
 .nav-menu.open {
@@ -216,7 +253,6 @@ Navigation Bar
   text-decoration: none;
   color: var(--primary-color-light);
   font-size: 2rem;
-  transition: 0.2s linear;
 }
 
 .nav-link:hover {
@@ -239,7 +275,6 @@ Navigation Bar
     transform: translateX(0);
   }
 }
-
 
 
 
@@ -278,7 +313,7 @@ Page Header
   margin-left: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-end;
 }
 
@@ -328,8 +363,8 @@ Page Header
   content: "";
   display: block;
   background-color: var(--secondary-color-light);
-  height: 100%;
   width: 2px;
+  height: 100%;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -401,13 +436,11 @@ Page Header
 
 
 
-
 /*===================
 Main Page Content
 =====================*/
 #main {
   flex-grow: 1;
-  font-family: var(--roboto-font);
 }
 
 #main hr {
@@ -425,39 +458,10 @@ Main Page Content
   margin-bottom: 55px;
 }
 
-#main h2 {
-  color: var(--primary-color);
-  font-size: 2.5rem;
-}
-
-#main h3 {
-  color: var(--secondary-color);
-  font-size: 2rem;
-}
-
-#main h2,
-#main h3 {
-  margin-bottom: 15px;
-  font-family: var(--exo-font);
-  text-align: center;
-}
-
-#main p {
-  font-size: 1.6rem;
-  margin-bottom: 30px;
-}
-
-#main p:last-of-type {
-  margin-bottom: 0;
-}
-
 
 /*-------------------
 About Scetion
 ---------------------*/
-#about .row {
-  padding-bottom: 0;
-}
 .about-link {
   text-decoration: none;
   color: rgb(42, 64, 137);
@@ -481,7 +485,7 @@ About Scetion
   font-size: 1.8rem;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  transition: background-color 0.2s linear;
+  transition: background-color 0.2s ease;
 }
 
 .contact-btn:hover{
@@ -501,10 +505,6 @@ Technology Stacks
     rgba(223, 189, 185, 0.2)
   ) no-repeat, var(--black) url("../../assets/img/keyboard.jpg") no-repeat fixed;
   background-size: 100% 100%, 140% 130%;
-}
-
-.stack-content > .row {
-  padding-top: 50px;
 }
 
 .stack-list {
@@ -530,7 +530,13 @@ Technology Stacks
 .stack-img {
   height: auto;
   width: 45px;
-  transition: 0.15s linear;
+  transition: 0.15s ease-out;
+}
+
+.db-img {
+  height: auto;
+  width: 70px;
+  transition: 0.15s ease-out;
 }
 
 .stack-img:hover,
@@ -542,18 +548,12 @@ Technology Stacks
   margin-bottom: -15px;
 }
 
-.db-img {
-  height: auto;
-  width: 70px;
-  transition: 0.15s linear;
-}
-
 .stack-item,
 .db-item {
   position: relative;
   cursor: pointer;
   opacity: 0.5;
-  transition: 0.15s linear;
+  transition: 0.15s ease-out;
 }
 
 .stack-item:hover,
@@ -580,7 +580,7 @@ Technology Stacks
   background-color: var(--primary-color);
   pointer-events: none;
   opacity: 0;
-  transition: 0.15s linear;
+  transition: 0.15s ease-out;
 }
 
 .stack-info::before,
@@ -708,6 +708,7 @@ Contact
 .form-text:focus {
   border: 1px solid rgb(191, 191, 191);
   border-bottom: none;
+  background-color: #FFF;
 }
 
 ::placeholder {
@@ -732,7 +733,7 @@ Contact
 
 .label::after {
   content: "";
-  width: 100%;
+  width: 100.05%;
   height: 3px;
   position: absolute;
   bottom: -3px;
@@ -740,7 +741,7 @@ Contact
   z-index: 3;
   background-color: var(--primary-color);
   transform: scaleX(0);
-  transition: transform 0.7s ease;
+  transition: transform 0.7s ease-in;
   transform-origin: right center;
 }
 
@@ -817,11 +818,7 @@ Page Footer
     rgb(26, 26, 26) 50%,
     rgb(38, 38, 38) 70%
   );
-}
-
-#footer .row {
-  padding-top: 50px;
-  padding-bottom: 0;
+  font-size: 1.5rem;
 }
 
 #footer hr {
@@ -845,7 +842,7 @@ Page Footer
 
 .footer-menu,
 .footer-contact-menu {
-  list-style-type: none;
+  list-style: none;
 }
 
 .footer-contact-menu {
@@ -857,22 +854,16 @@ Page Footer
   margin-bottom: 15px;
 }
 
-.footer-item:last-of-type {
-  margin-bottom: 0;
-}
-
 .footer-link,
 .footer-contact-link {
   text-decoration: none;
   color: var(--secondary-color-light);
-  font-size: 1.5rem;
 }
 
 .footer {
   margin-top: 60px;
   padding: 35px 0 10px;
   text-align: center;
-  font-size: 1.5rem;
   color: var(--primary-color-light);
   border-top: 2px solid var(--secondary-color-light);
 }
