@@ -16,7 +16,7 @@ const toggleNav = () => {
     overlay.style.display = "block";
 
     // Animate nav links and slide into view
-    navItems.forEach( (item, index) => {
+    navItems.forEach((item, index) => {
       item.style.animation = `slideIn 0.3s linear ${index / 11}s forwards`;
     });
   });
@@ -29,7 +29,7 @@ const toggleNav = () => {
     overlay.style.display = "none";
 
     // Remove nav links animation
-    navItems.forEach( item => {
+    navItems.forEach(item => {
       item.style.animation = "";
     });
   };
@@ -54,6 +54,7 @@ const animateNavbar = () => {
 
   // Add class to navbar when window is scrolled
   window.addEventListener("scroll", () => {
+
     if (window.pageYOffset >= 20) {
       navbar.className = "shrink";
     } else {
@@ -63,9 +64,38 @@ const animateNavbar = () => {
 };
 
 
+// Animate page sections into view on scroll
+const animateSection = () => {
+
+  // Select page sections
+  let sections = document.querySelectorAll("#main > section");
+
+  // Add animation effects to page sections
+  window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+
+      if (window.pageYOffset >= section.offsetTop - 400) {
+        section.style.transform = "scaleX(1)";
+        section.style.opacity = "1";
+        section.style.transition = "0.4s ease-in";
+      }
+    });
+  });
+};
+
+// Get Date and Year
+const getDate = () => {
+
+  // Get Year
+  let d = new Date();
+  document.getElementById("year").innerHTML = d.getFullYear();
+}
+
+
 // Invoke program functions
 (function () {
   toggleNav();
   animateNavbar();
+  animateSection();
+  getDate();
 })();
-
