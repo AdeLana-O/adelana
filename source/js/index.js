@@ -8,6 +8,7 @@ const toggleNav = () => {
   let overlay = document.getElementById("overlay");
   let navItems = document.querySelectorAll(".nav-item");
   let navLinks = document.querySelectorAll(".nav-link");
+  let delay;
 
   // Open mobile nav and add animations
   hamburger.addEventListener("click", () => {
@@ -17,7 +18,9 @@ const toggleNav = () => {
 
     // Animate nav links and slide into view
     navItems.forEach((item, index) => {
-      item.style.animation = `slideIn 0.3s linear ${index / 11}s forwards`;
+      delay = index / 11;
+
+      item.style.animation = `slideIn 0.3s linear ${delay}s forwards`;
     });
   });
 
@@ -35,7 +38,7 @@ const toggleNav = () => {
   };
 
   // Close mobile nav when any of the nav links is clicked
-  navLinks.forEach( link => link.addEventListener("click", closeNav));
+  navLinks.forEach(link => link.addEventListener("click", closeNav));
 
   // Close mobile nav when the close button is clicked
   closeMenu.addEventListener("click", closeNav);
@@ -61,6 +64,7 @@ const animateNavbar = () => {
       navbar.className = "";
     }
   });
+
 };
 
 
@@ -69,18 +73,21 @@ const animateSection = () => {
 
   // Select page sections
   let sections = document.querySelectorAll("#main > section");
+  let sectionPosition;
 
   // Add animation effects to page sections
   window.addEventListener("scroll", () => {
     sections.forEach(section => {
+      sectionPosition = section.offsetTop - 400;
 
-      if (window.pageYOffset >= section.offsetTop - 400) {
+      if (window.pageYOffset >= sectionPosition) {
         section.style.transform = "scaleX(1)";
         section.style.opacity = "1";
         section.style.transition = "0.4s ease-in";
       }
     });
   });
+
 };
 
 // Get Date and Year
@@ -89,6 +96,7 @@ const getDate = () => {
   // Get Year
   let d = new Date();
   document.getElementById("year").innerHTML = d.getFullYear();
+
 }
 
 
