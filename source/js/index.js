@@ -78,7 +78,7 @@ const animateSection = () => {
   // Add animation effects to page sections
   window.addEventListener("scroll", () => {
     sections.forEach(section => {
-      sectionPosition = section.offsetTop - 400;
+      sectionPosition = section.offsetTop - 450;
 
       if (window.pageYOffset >= sectionPosition) {
         section.style.transform = "scaleX(1)";
