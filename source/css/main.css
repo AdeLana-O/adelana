@@ -204,7 +204,7 @@ Nav Bar
 }
 
 .profile-pic {
-  width: 160px;
+  width: 200px;
   height: auto;
   border-radius: 50%;
   border: 6px solid var(--white);
@@ -453,7 +453,7 @@ Main Page Content
 
 #main p {
   font-size: 1.6rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #main p:last-of-type {
@@ -465,7 +465,7 @@ About Scetion
 ---------------------*/
 
 .about-intro-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .about-intro-wrapper .profile-pic {
@@ -480,7 +480,7 @@ About Scetion
 
 .about-link:hover {
   color: rgb(60, 91, 195);
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 1px dotted var(--secondary-color);
 }
 
 .contact-btn {
@@ -508,8 +508,7 @@ Technology Stacks
 -----------------------*/
 .stack-header-img {
   background: var(--black) url("../../assets/img/code.jpg") no-repeat fixed;
-  background-size: 140% 130%;
-  display: block;
+  background-size: cover;
   height: 50vh;
   width: 100%;
   margin-bottom: 40px;
@@ -555,8 +554,8 @@ Technology Stacks
   transition: 0.15s ease-out;
 }
 
-.stack-img:hover,
-.db-img:hover {
+.stack-item:hover .stack-img,
+.db-item:hover .db-img {
   transform: scale(1.2);
 }
 
@@ -638,7 +637,7 @@ Services
 
 .services-item {
   min-width: 200px;
-  max-width: 325px;
+  max-width: 300px;
   margin: 0 auto;
   background-color: var(--white);
   border: 1px solid rgb(195, 189, 189);
@@ -659,6 +658,10 @@ Services
 /*---------------------
 Contact
 -----------------------*/
+.contact-content p {
+  text-align: center;
+}
+
 .contact-menu-wrapper {  
   margin: 35px 0 70px;
 }
@@ -1073,7 +1076,7 @@ Large PCs
   .about-intro-wrapper .profile-pic {
     display: block;
     float: left;
-    margin: 0 15px 10px 0;
+    margin-right: 15px;
     border-color: var(--secondary-color);
   }
 

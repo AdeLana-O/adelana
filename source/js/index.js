@@ -70,6 +70,5 @@ const getDate = () => {
 (function () {
   toggleNav();
   animateNavbar();
-  // animateSection();
   getDate();
 })();
