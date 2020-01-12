@@ -27,6 +27,7 @@ html {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -418,11 +419,6 @@ Main Page Content
   flex-grow: 1;
 }
 
-#main > section {
-  transform: scaleX(0);
-  opacity: 0;
-}
-
 #main hr {
   display: block;
   height: 2px;
@@ -511,12 +507,12 @@ About Scetion
 Technology Stacks
 -----------------------*/
 .stack-header-img {
-  display: block;
-  margin-bottom: 40px;
-  height: 50vh;
-  width: 100%;
   background: var(--black) url("../../assets/img/code.jpg") no-repeat fixed;
   background-size: 140% 130%;
+  display: block;
+  height: 50vh;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .stack-wrapper {
@@ -808,14 +804,14 @@ Contact
   display: block;
   transform: translateX(1.6rem);
   color: var(--secondary-color-light);
-  transition: 0.15s linear;
+  transition: 0.3s linear;
 }
 
 .submit-icon {
   margin-left: 10px;
   color: var(--secondary-color-light);
   opacity: 0;
-  transition: 0.15s linear 0.1s;
+  transition: 0.2s linear 0.1s;
 }
 
 .submit-btn:hover span {
@@ -1053,7 +1049,7 @@ Large PCs
       "image intro"
       "image rule"
       "image stacks";
-    grid-template-columns: 50vw 1fr;
+    grid-template-columns: repeat(2, 50vw);
     grid-auto-rows: auto;
     row-gap: 55px;
   }
@@ -1077,7 +1073,7 @@ Large PCs
   .about-intro-wrapper .profile-pic {
     display: block;
     float: left;
-    margin: 0 15px 15px 0;
+    margin: 0 15px 10px 0;
     border-color: var(--secondary-color);
   }
 
@@ -1092,7 +1088,7 @@ Large PCs
   .stack-header-img {
     grid-area: image;
     height: 100%;
-    background-size: 100% 100%;
+    background-size: 70% 100%;
   }
 
   .tech-stack-wrapper {
