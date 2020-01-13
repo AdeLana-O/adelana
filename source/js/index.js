@@ -63,7 +63,45 @@ const getDate = () => {
   const d = new Date();
   document.getElementById("year").innerHTML = d.getFullYear();
 
-}
+};
+
+
+// Randomly change page link colors
+const changeColor = () => {
+
+  const links = document.querySelectorAll("#main a");
+  const colors = ["#74B570", "#88CC2E", "#EC9B61", "#EC9B12", "#F80725"];
+
+  const randomColor = () => {
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
+  setInterval(() => {
+    links.forEach(link => link.style.color = randomColor());
+  }, 5000);
+
+};
+
+// Set active nav links
+const activeLink = () => {
+
+  const sections = document.querySelectorAll("#main section");
+  const navLinks = document.querySelectorAll(".nav-item");
+
+  window.addEventListener("scroll", () => {
+    let index = sections.length;
+
+    if (window.pageYOffset + 100 < sections[0].offsetTop) {
+      navLinks[0].classList.add("active");
+      navLinks[1].classList.remove("active");
+    } else {
+      while(--index && window.pageYOffset + 50 < sections[index].offsetTop) {}
+      navLinks.forEach(link => link.classList.remove('active'));
+      navLinks[index + 1].classList.add('active');
+    }
+  });
+
+};
 
 
 // Invoke program functions
@@ -71,4 +109,6 @@ const getDate = () => {
   toggleNav();
   animateNavbar();
   getDate();
+  changeColor();
+  activeLink();
 })();

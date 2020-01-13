@@ -16,6 +16,7 @@ General Styles
   --primary-color-light: #9DADE1;
   --secondary-color: #693830;
   --secondary-color-light: #DFBDB9;
+  --accent-color: #74BA56;
   --black: #1A1A1A;
   --white: #E6E6E6;
 }
@@ -224,14 +225,47 @@ Nav Bar
   margin-right: 5px;
 }
 
+.active .nav-link{
+  color: var(--accent-color);
+  display: inline-block;
+  position: relative;
+}
+
+.active .nav-link:hover {
+  color: var(--accent-color);
+}
+
+.active .nav-link::after,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: transform 0.3s linear;
+}
+
+.active .nav-link::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
 .nav-link {
   text-decoration: none;
   color: var(--primary-color-light);
   font-size: 2rem;
+  position: relative;
 }
 
 .nav-link:hover {
   color: var(--primary-color);
+}
+
+.nav-link::after {
+  transform: scaleX(0);
+  transform-origin: right center;
 }
 
 #navbar #overlay {
@@ -479,8 +513,7 @@ About Scetion
 }
 
 .about-link:hover {
-  color: rgb(60, 91, 195);
-  border-bottom: 1px dotted var(--secondary-color);
+  border-bottom: 1px dotted var(--black);
 }
 
 .contact-btn {
@@ -1015,24 +1048,9 @@ Laptops/Desktop PCs
     position: relative;
   }
 
-  .nav-link::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.3s linear;
-    transform-origin: right center;
+  .nav-link:hover {
+    color: var(--primary-color-light)
   }
-
-  .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left center;
-  }
-
 
   /*-----Page Header-----*/
   #header {
