@@ -295,30 +295,30 @@ Dark Mode
   position: absolute;
   bottom: -45px;
   right: -5px;
-  width: 55px;
+  width: 50px;
   padding: 5px 0 5px 8px;
   background-color: var(--secondary-color);
   border-radius: 10px 0 0 10px;
   line-height: 0;
-  opacity: 0.75;
+  opacity: 0.6;
   cursor: pointer;
   overflow: hidden;
 }
 
-#dark-mode-img {
-  font-size: 2rem;
+#dark-mode-icon {
+  font-size: 2.2rem;
   color: rgb(230, 230, 42);
 }
 
 .moon {
-  animation: slide-one 0.6s linear;
+  animation: slide-one 0.6s ease;
 }
 
 .sun {
-  animation: slide-two 0.6s linear;
+  animation: slide-two 0.6s ease;
 }
 
-#dark-mode-img .fa-moon {
+#dark-mode-icon .fa-moon {
   color: var(--light);
 }
 
@@ -353,6 +353,11 @@ Page Header
   top: 0;
   left: 0;
   z-index: 1;
+  transition: background-color 0.2s ease-in 0.3s;
+}
+
+.dark-mode #header::before {
+  background-color: rgba(24, 37, 78, 0.75);
 }
 
 .header-content {
@@ -384,10 +389,7 @@ Page Header
   color: var(--light);
   font-size: 3rem;
   font-family: var(--exo-font);
-}
-
-.title h1::first-letter {
-  font-size: 5rem;
+  font-variant: small-caps;
 }
 
 .title h3 {
@@ -660,7 +662,6 @@ Technology Stacks
 .db-item {
   position: relative;
   cursor: pointer;
-  opacity: 0.5;
   transition: 0.15s ease-out;
 }
 
@@ -953,15 +954,6 @@ Page Footer
 #footer .row {
   padding-top: 50px;
 }
-.footer-content {
-  background: var(--dark) repeating-linear-gradient(
-    -45deg,
-    rgb(38, 38, 38) 30%,
-    rgb(26, 26, 26) 50%,
-    rgb(38, 38, 38) 70%
-  );
-  font-size: 1.5rem;
-}
 
 .footer-logo-wrapper {
   text-align: center;
@@ -1003,8 +995,15 @@ Page Footer
   margin-top: 30px;
   padding: 35px 0 10px;
   text-align: center;
-  color: var(--primary-color-light);
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.3rem;
   border-top: 2px solid var(--secondary-color-light);
+  transition: color 0.2s ease-in 0.3s;
+}
+
+.dark-mode .footer {
+  color: var(--primary-color-light);
 }
 
 
@@ -1110,6 +1109,10 @@ Laptops/Desktop PCs
   /*-----Page Header-----*/
   #header {
     background-size: 113% 115%;
+  }
+
+  .title h1 {
+    font-size: 4rem;
   }
 }
 

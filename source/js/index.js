@@ -78,20 +78,20 @@ const activeNavLink = () => {
 
 const darkMode = () => {
   const darkModeBtn = document.getElementById("dark-mode-container");
-  const darkModeImg = document.getElementById("dark-mode-img");
-  const img = darkModeImg.firstChild;
+  const darkModeIcon = document.getElementById("dark-mode-icon");
+  const icon = darkModeIcon.firstChild;
 
   darkModeBtn.addEventListener("click", () => {
-    switch (darkModeImg.className){
+    switch (darkModeIcon.className){
       case "":
       case "sun":
-        darkModeImg.className = "moon";
-        setTimeout(() => img.className = "fas fa-moon", 300);
+        darkModeIcon.className = "moon";
+        setTimeout(() => icon.className = "fas fa-moon", 300);
         document.documentElement.className = "dark-mode";
         break;
       case "moon":
-        darkModeImg.className = "sun";
-        setTimeout(() => img.className = "fas fa-sun", 300);
+        darkModeIcon.className = "sun";
+        setTimeout(() => icon.className = "fas fa-sun", 300);
         document.documentElement.className = "";
     }
   });
