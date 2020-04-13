@@ -1,4 +1,5 @@
 "use-strict";
+import { darkMode, setCookie, getCookie } from "./functions.js";
 
 const toggleMobileNav = () => {
   const navBtn = document.querySelector(".hamburger");
@@ -76,25 +77,27 @@ const activeNavLink = () => {
   });
 }
 
-const darkMode = () => {
+const setDarkMode = () => {
   const darkModeBtn = document.getElementById("dark-mode-container");
   const darkModeIcon = document.getElementById("dark-mode-icon");
-  const icon = darkModeIcon.firstChild;
 
   darkModeBtn.addEventListener("click", () => {
     switch (darkModeIcon.className){
       case "":
-      case "sun":
-        darkModeIcon.className = "moon";
-        setTimeout(() => icon.className = "fas fa-moon", 300);
-        document.documentElement.className = "dark-mode";
+      case "light":
+        darkMode("dark", "fas fa-moon", "dark-mode");
+        setCookie("dark");
         break;
-      case "moon":
-        darkModeIcon.className = "sun";
-        setTimeout(() => icon.className = "fas fa-sun", 300);
-        document.documentElement.className = "";
+      case "dark":
+        darkMode("light", "fas fa-sun", "");
+        setCookie("light");
     }
   });
+}
+
+/* Set dark mode on page load */
+const setTheme = () => {
+  setTimeout(() => document.documentElement.onload = getCookie("theme"), 800);
 }
 
 (function () {
@@ -103,5 +106,6 @@ const darkMode = () => {
   getDate();
   changeLinkColor();
   activeNavLink();
-  darkMode();
+  setDarkMode();
+  setTheme();
 })();

@@ -310,11 +310,11 @@ Dark Mode
   color: rgb(230, 230, 42);
 }
 
-.moon {
+.dark {
   animation: slide-one 0.6s ease;
 }
 
-.sun {
+.light {
   animation: slide-two 0.6s ease;
 }
 
@@ -592,6 +592,7 @@ About Section
   border-radius: 5px;
   color: var(--light);
   font-size: 1.8rem;
+  font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   transition: background-color 0.2s ease;
@@ -926,6 +927,7 @@ Contact
   display: block;
   transform: translateX(1.6rem);
   color: var(--secondary-color-light);
+  font-weight: bold;
   transition: 0.3s linear;
 }
 
@@ -978,6 +980,11 @@ Page Footer
   align-self: end;
   justify-self: start;
   font-size: 1.8rem;
+  color: var(--secondary-color);
+  transition: color 0.2s ease-in 0.3s;
+}
+
+.dark-mode .footer-text {
   color: var(--secondary-color-light);
 }
 
