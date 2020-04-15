@@ -308,37 +308,40 @@
             </ul>
           </div>
           <div class="contact-form">
-            <form action="https://formspree.io/xgevkvvy" class="form" method="POST" autocomplete="off">
+            <form action="https://formspree.io/xgevkvvy" method="POST" autocomplete="off" novalidate>
               <div class="input-group">
                 <div class="input-container">
                   <input type="text" name="name" id="name" class="form-input" placeholder="Enter Name" required>
                   <label for="name" class="label"><span class="label-tag">Name</span></label>
                 </div>
-                <span class="required">*Required Field</span>
+                <span class="name-error error-msg"></span>
               </div>
               <div class="input-group">
                 <div class="input-container">
                   <input type="email" name="email" id="email" class="form-input" placeholder="Enter E-mail" required>
                   <label for="email" class="label"><span class="label-tag">E-mail</span></label>
                 </div>
-                <span class="required">*Required Field</span>
+                <span class="email-error error-msg"></span>
               </div>
               <div class="input-group">
                 <div class="input-container">
                   <input type="tel" name="number" id="number" class="form-input" placeholder="Enter Phone Number">
                   <label for="number" class="label"><span class="label-tag">Phone Number</span></label>
                 </div>
+                <span class="number-error error-msg"></span>
               </div>
               <div class="input-group">
                 <div class="input-container">
                   <textarea name="message" id="message" class="form-text" placeholder="Enter Message" required></textarea>
                   <label for="message" class="label"><span class="label-tag">Message</span></label>
                 </div>
-                <span class="required">*Required Field</span>
+                <span class="message-error error-msg"></span>
               </div>
               <div class="submit">
                 <button type="submit" class="submit-btn">
-                  <span>Send <i class="fas fa-paper-plane submit-icon"></i></span>
+                  <span>
+                    Send <i class="fas fa-paper-plane submit-icon"></i>
+                  </span>
                 </button>
               </div>
             </form>

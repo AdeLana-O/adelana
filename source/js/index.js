@@ -1,5 +1,16 @@
-"use-strict";
-import { darkMode, setCookie, getCookie } from "./functions.js";
+"use strict";
+import { nameErr, emailErr, numErr, msgErr } from "./functions.js";
+
+import {
+  darkMode,
+  setCookie,
+  getCookie,
+  inputHasFocus,
+  validateName,
+  validateEmail,
+  validatePhoneNumber,
+  validateMessage
+} from "./functions.js";
 
 const toggleMobileNav = () => {
   const navBtn = document.querySelector(".hamburger");
@@ -97,7 +108,35 @@ const setDarkMode = () => {
 
 /* Set dark mode on page load */
 const setTheme = () => {
-  setTimeout(() => document.documentElement.onload = getCookie("theme"), 800);
+  setTimeout(() => window.onload = getCookie("theme"), 800);
+}
+
+const validateForm = () => {
+  const form = document.querySelector("form");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const num = document.getElementById("number");
+  const msg = document.getElementById("message");
+
+  name.addEventListener("blur", validateName);
+  name.addEventListener("focus", inputHasFocus);
+  email.addEventListener("blur", validateEmail);
+  email.addEventListener("focus", inputHasFocus);
+  num.addEventListener("blur", validatePhoneNumber);
+  num.addEventListener("focus", inputHasFocus);
+  msg.addEventListener("blur", validateMessage);
+  msg.addEventListener("focus", inputHasFocus);
+
+  form.addEventListener("submit", (e) => {
+    validateName();
+    validateEmail();
+    validatePhoneNumber();
+    validateMessage();
+
+    if ((nameErr || emailErr || numErr || msgErr) === true) {
+      e.preventDefault();
+    }
+  });
 }
 
 (function () {
@@ -108,4 +147,5 @@ const setTheme = () => {
   activeNavLink();
   setDarkMode();
   setTheme();
+  validateForm();
 })();
