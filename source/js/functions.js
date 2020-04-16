@@ -5,16 +5,16 @@ export const darkMode = (theme, iconName, elemClass) => {
   const icon = darkModeIcon.firstChild;
 
   darkModeIcon.className = theme;
-  setTimeout(() => icon.className = iconName, 300);
+  setTimeout(() => (icon.className = iconName), 300);
   document.documentElement.className = elemClass;
-}
+};
 
 export const setCookie = (str) => {
-  const expireDate = Date.now() + (365 * 24 * 60 * 60 * 1000);
+  const expireDate = Date.now() + 365 * 24 * 60 * 60 * 1000;
   const d = new Date(expireDate);
 
   document.cookie = `theme=${str};expires=${d};path=/`;
-}
+};
 
 export const getCookie = (str) => {
   const theme = document.cookie;
@@ -23,23 +23,23 @@ export const getCookie = (str) => {
   if (arr[0] === str && arr[1] === "dark") {
     darkMode("dark", "fas fa-moon", "dark-mode");
   }
-}
+};
 
 const setInputError = (elem, msg) => {
-  const errorElement = document.querySelector(elem);
-  errorElement.parentElement.classList.add("input-error");
-  errorElement.style.display = "inline-block";
-  errorElement.innerHTML = msg;
-}
+  const errorMsgBox = document.querySelector(elem);
+  errorMsgBox.previousElementSibling.classList.add("input-error");
+  errorMsgBox.style.display = "inline-block";
+  errorMsgBox.innerHTML = msg;
+};
 
-const removeInputError = elem => {
-  const errorElement = document.querySelector(elem);
-  errorElement.parentElement.classList.remove("input-error");
-  errorElement.style.display = "none";
-  errorElement.innerHTML = "";
-}
+const removeInputError = (elem) => {
+  const errorMsgBox = document.querySelector(elem);
+  errorMsgBox.previousElementSibling.classList.remove("input-error");
+  errorMsgBox.style.display = "none";
+  errorMsgBox.innerHTML = "";
+};
 
-export const inputHasFocus = e => {
+export const inputHasFocus = (e) => {
   const { target } = e;
   let elem;
 
@@ -58,7 +58,7 @@ export const inputHasFocus = e => {
   }
 
   removeInputError(elem);
-}
+};
 
 export let nameErr, emailErr, numErr, msgErr;
 
@@ -77,7 +77,7 @@ export const validateName = () => {
   } catch (err) {
     setInputError(".name-error", err);
   }
-}
+};
 
 export const validateEmail = () => {
   const email = document.getElementById("email");
@@ -98,7 +98,7 @@ export const validateEmail = () => {
   } catch (err) {
     setInputError(".email-error", err);
   }
-}
+};
 
 export const validatePhoneNumber = () => {
   const num = document.getElementById("number");
@@ -122,7 +122,7 @@ export const validatePhoneNumber = () => {
   } catch (err) {
     setInputError(".number-error", err);
   }
-}
+};
 
 export const validateMessage = () => {
   const msg = document.getElementById("message");
@@ -138,4 +138,4 @@ export const validateMessage = () => {
   } catch (err) {
     setInputError(".message-error", err);
   }
-}
+};

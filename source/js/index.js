@@ -9,7 +9,7 @@ import {
   validateName,
   validateEmail,
   validatePhoneNumber,
-  validateMessage
+  validateMessage,
 } from "./functions.js";
 
 const toggleMobileNav = () => {
@@ -36,28 +36,28 @@ const toggleMobileNav = () => {
     navMenu.classList.remove("open");
     overlay.style.display = "none";
 
-    navItems.forEach(item => {
+    navItems.forEach((item) => {
       item.style.animation = "";
     });
   };
 
-  navLinks.forEach(link => link.addEventListener("click", closeNav));
+  navLinks.forEach((link) => link.addEventListener("click", closeNav));
   closeMenu.addEventListener("click", closeNav);
   overlay.addEventListener("click", closeNav);
-}
+};
 
 const shrinkNavbar = () => {
   const navbar = document.getElementById("navbar");
 
   window.addEventListener("scroll", () => {
-    navbar.className = (window.pageYOffset >= 20) ? "shrink" : "";
+    navbar.className = window.pageYOffset >= 20 ? "shrink" : "";
   });
-}
+};
 
 const getDate = () => {
   const d = new Date();
   document.getElementById("year").innerHTML = d.getFullYear();
-}
+};
 
 /* Randomly change page link colors */
 const changeLinkColor = () => {
@@ -66,9 +66,9 @@ const changeLinkColor = () => {
   const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
   setInterval(() => {
-    links.forEach(link => (link.style.color = randomColor()));
+    links.forEach((link) => (link.style.color = randomColor()));
   }, 5000);
-}
+};
 
 const activeNavLink = () => {
   const sections = document.querySelectorAll("#main section");
@@ -82,18 +82,18 @@ const activeNavLink = () => {
       navLinks[1].classList.remove("active");
     } else {
       while (--index && window.pageYOffset + 50 < sections[index].offsetTop) {}
-      navLinks.forEach(link => link.classList.remove("active"));
+      navLinks.forEach((link) => link.classList.remove("active"));
       navLinks[index + 1].classList.add("active");
     }
   });
-}
+};
 
 const setDarkMode = () => {
   const darkModeBtn = document.getElementById("dark-mode-container");
   const darkModeIcon = document.getElementById("dark-mode-icon");
 
   darkModeBtn.addEventListener("click", () => {
-    switch (darkModeIcon.className){
+    switch (darkModeIcon.className) {
       case "":
       case "light":
         darkMode("dark", "fas fa-moon", "dark-mode");
@@ -104,12 +104,12 @@ const setDarkMode = () => {
         setCookie("light");
     }
   });
-}
+};
 
 /* Set dark mode on page load */
 const setTheme = () => {
-  setTimeout(() => window.onload = getCookie("theme"), 800);
-}
+  setTimeout(() => (window.onload = getCookie("theme")), 800);
+};
 
 const validateForm = () => {
   const form = document.querySelector("form");
@@ -137,7 +137,7 @@ const validateForm = () => {
       e.preventDefault();
     }
   });
-}
+};
 
 (function () {
   toggleMobileNav();
