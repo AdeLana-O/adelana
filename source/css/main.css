@@ -10,15 +10,15 @@ General Styles
 }
 
 :root {
-  --exo-font: 'Exo 2', sans-serif;
-  --roboto-font: 'Roboto Slab', serif;
-  --primary-color: #18254E;
-  --primary-color-light: #9DADE1;
+  --exo-font: "Exo 2", sans-serif;
+  --roboto-font: "Roboto Slab", serif;
+  --primary-color: #18254e;
+  --primary-color-light: #9dade1;
   --secondary-color: #693830;
-  --secondary-color-light: #DFBDB9;
-  --accent-color: #74BA56;
-  --dark: #00030E;
-  --light: #F2F2F2;
+  --secondary-color-light: #dfbdb9;
+  --accent-color: #74ba56;
+  --dark: #00030e;
+  --light: #f2f2f2;
 }
 
 html {
@@ -72,8 +72,6 @@ section {
   padding: 0 5px;
 }
 
-
-
 /*===================
 Nav Bar
 =====================*/
@@ -91,11 +89,12 @@ Nav Bar
 #navbar.shrink {
   padding-top: 3px;
   padding-bottom: 3px;
-  background: var(--light) linear-gradient(
-    0deg,
-    rgba(157, 173, 225, 0.7),
-    rgba(223, 189, 185, 0.7) 50%
-  );
+  background: var(--light)
+    linear-gradient(
+      0deg,
+      rgba(157, 173, 225, 0.7),
+      rgba(223, 189, 185, 0.7) 50%
+    );
   box-shadow: 0 1px 3px var(--dark);
 }
 
@@ -230,7 +229,7 @@ Nav Bar
   margin-right: 5px;
 }
 
-.active .nav-link{
+.active .nav-link {
   color: var(--accent-color);
   display: inline-block;
   position: relative;
@@ -285,7 +284,9 @@ Nav Bar
 }
 
 @keyframes slide-in {
-  100% { transform: translateX(0); }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /*===================
@@ -323,16 +324,22 @@ Dark Mode
 }
 
 @keyframes slide-one {
-  50% { transform: translateY(30px); }
-  100% { transform: translateY(0); }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slide-two {
-  50% { transform: translateY(30px); }
-  100% { transform: translateY(0); }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
-
 
 /*===================
 Page Header
@@ -412,7 +419,7 @@ Page Header
   color: var(--light);
 }
 
-.more{
+.more {
   position: relative;
   overflow: hidden;
 }
@@ -493,8 +500,6 @@ Page Header
   transform-origin: center bottom;
 }
 
-
-
 /*===================
 Main Page Content
 =====================*/
@@ -559,7 +564,6 @@ Main Page Content
   color: var(--light);
 }
 
-
 /*-------------------
 About Section
 ---------------------*/
@@ -593,15 +597,14 @@ About Section
   color: var(--light);
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
   transition: background-color 0.2s ease;
 }
 
-.contact-btn:hover{
+.contact-btn:hover {
   background-color: rgb(42, 64, 137);
 }
-
 
 /*---------------------
 Technology Stacks
@@ -684,7 +687,7 @@ Technology Stacks
   color: var(--light);
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   letter-spacing: 1px;
   background-color: var(--primary-color);
   pointer-events: none;
@@ -709,7 +712,6 @@ Technology Stacks
   opacity: 1;
   pointer-events: none;
 }
-
 
 /*---------------------
 Services
@@ -768,7 +770,6 @@ Services
   text-align: center;
 }
 
-
 /*---------------------
 Contact
 -----------------------*/
@@ -776,7 +777,7 @@ Contact
   text-align: center;
 }
 
-.contact-menu-wrapper {  
+.contact-menu-wrapper {
   margin: 35px 0 70px;
 }
 .contact-menu {
@@ -830,6 +831,11 @@ Contact
   font-family: var(--roboto-font);
 }
 
+.dark-mode .form-input,
+.dark-mode .form-text {
+  color: #fff;
+}
+
 .form-input {
   height: 3.7rem;
   padding: 0.8rem 5px 0;
@@ -845,7 +851,12 @@ Contact
 .form-text:focus {
   border: 1px solid rgb(191, 191, 191);
   border-bottom: none;
-  background-color: #FFF;
+  background-color: #fff;
+}
+
+.dark-mode .form-input:focus,
+.dark-mode .form-text:focus {
+  color: #000;
 }
 
 ::placeholder {
@@ -866,6 +877,10 @@ Contact
   border-bottom: 3px solid rgb(191, 191, 191);
   pointer-events: none;
   display: block;
+}
+
+.input-error .label {
+  border-bottom: 3px solid rgb(245, 63, 63);
 }
 
 .label::after {
@@ -902,13 +917,13 @@ Contact
   color: var(--primary-color-light);
 }
 
-.required {
-  color: rgb(255, 0, 0);
-  font-size: 0.9rem;
+.error-msg {
+  color: rgb(245, 63, 63);
+  font-size: 1.3rem;
   font-weight: bold;
   letter-spacing: 1px;
-  display: inline-block;
   margin: 2px 0 0 5px;
+  display: none;
 }
 
 .submit-btn {
@@ -947,8 +962,6 @@ Contact
   opacity: 1;
   color: var(--light);
 }
-
-
 
 /*===================
 Page Footer
@@ -1013,8 +1026,6 @@ Page Footer
   color: var(--primary-color-light);
 }
 
-
-
 /*===================
 Media Queries
 =====================*/
@@ -1034,12 +1045,11 @@ Landscape Tabs
 Laptops/Desktop PCs
 ---------------------*/
 @media screen and (min-width: 992px) {
-
   /*-----General Styles-----*/
   html {
     font-size: 69%;
   }
-  
+
   .row {
     padding-left: 90px;
     padding-right: 90px;
@@ -1110,7 +1120,7 @@ Laptops/Desktop PCs
   }
 
   .nav-link:hover {
-    color: var(--primary-color-light)
+    color: var(--primary-color-light);
   }
 
   /*-----Page Header-----*/
@@ -1127,7 +1137,6 @@ Laptops/Desktop PCs
 Large PCs
 ---------------------*/
 @media screen and (min-width: 1200px) {
-
   /*-----About-----*/
   .about-me {
     display: grid;
@@ -1180,7 +1189,6 @@ Large PCs
   .tech-stack-wrapper {
     grid-area: stacks;
   }
-
 
   /*-----Contact-----*/
   .contact-wrapper {
