@@ -31,7 +31,7 @@
       <div class="hamburger">
         <div class="hamburger--line"></div>
       </div>
-      <div class="navbar__menu__container">
+      <div id="navbar__menu-container">
         <span class="navbar__menu--close">&times;</span>
         <div class="profile">
           <img src="assets/img/profile.jpg" alt="Onafuwa Adelana" class="profile-pic">
@@ -49,10 +49,12 @@
             <span class="navbar__menu--icon"><i class="fas fa-poll"></i></span>
             <a href="#services" class="navbar__menu--link">Services</a>
           </li>
-          <!-- <li class="navbar__menu--item">
+          <!--
+          <li class="navbar__menu--item">
             <span class="navbar__menu--icon"><i class="fas fa-laptop-code"></i></span>
-            <a href="#work" class="navbar__menu--link">Work</a>
-          </li> -->
+            <a href="#projects" class="navbar__menu--link">Work</a>
+          </li>
+          -->
           <li class="navbar__menu--item">
             <span class="navbar__menu--icon"><i class="fas fa-mobile-alt"></i></span>
             <a href="#contact" class="navbar__menu--link">Contact</a>
@@ -63,7 +65,7 @@
     <div id="overlay"></div>
   </div>
   <div id="dark-mode-container">
-    <div class="dark-mode-icon"><i class="fas fa-sun"></i></div>
+    <div id="dark-mode--icon"><i class="fas fa-sun"></i></div>
   </div>
 </nav>
 <!-- Page Header -->
@@ -113,13 +115,13 @@
 <!-- Main Section -->
 <main id="main">
 <!-- About -->
-<section id="about__section">
+<section id="about">
   <div class="about-content">
     <div class="about">
       <div class="about__intro row">
         <h2>About</h2>
         <p>Hi! I am Adelana. A software developer.</p>
-        <div class="about__intro--wrapper">
+        <div class="about__intro-wrapper">
           <img src="assets/img/profile.jpg" alt="Profile picture" class="profile-pic">
           <p>
             Right from time, I've always been fascinated by computers and the logic that made them tick. This was the major factor that resulted in me picking an interest in programming and deciding to follow the software development career path.
@@ -137,7 +139,7 @@
         <a href="#contact" class="contact-btn">Get In Touch</a>
       </div>
       <hr>
-      <div class="about__header-img"></div>
+      <div class="about__header--img"></div>
       <div class="about__tech-stack">
         <h3>Technology Stack</h3>
         <div class="about__tech-stack--wrapper row">
@@ -201,7 +203,7 @@
   </div>
 </section>
 <!-- Services -->
-<section id="services__section">
+<section id="services">
   <div class="services-content">
     <div class="container">
       <div class="row">
@@ -254,7 +256,7 @@
 <!-- Projects -->
 <!-- This section is currently under construction -->
 <!--
-<section id="projects_section">
+<section id="projects">
   <div class="container">
     <div class="projects-content">
       <div class="row">
@@ -265,7 +267,7 @@
 </section>
 -->
 <!-- Contact -->
-<section id="contact__section">
+<section id="contact">
   <div class="contact-content">
     <div class="container">
       <div class="row">
@@ -274,7 +276,7 @@
           <p>Just want to say Hi? Or do you require a professional touch for a project?</p>
           <p>Feel free to hit me up and  we'll get started right away...</p>
           <div class="contact__icons-wrapper">
-            <ul class="contact__icons">
+            <ul id="contact__icons">
               <li class="contact__icons--item">
                 <a href="https://www.linkedin.com/in/adelana-onafuwa" class="contact__icons-link" title="LinkedIn" target="_blank">
                   <i class="fab fa-linkedin"></i>
