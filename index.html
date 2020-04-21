@@ -88,11 +88,6 @@
           </a>
         </li>
         <li class="header__icons--item">
-          <a href="https://www.freecodecamp.org/ade_lana" class="header__icons--link" title="freeCodeCamp" target="_blank">
-            <i class="fab fa-free-code-camp"></i>
-          </a>
-        </li>
-        <li class="header__icons--item">
           <a href="https://codepen.io/Ade_Lana" class="header__icons--link" title="Codepen" target="_blank">
             <i class="fab fa-codepen"></i>
           </a>
@@ -108,7 +103,7 @@
           </a>
         </li>
       </ul>
-      <a href="#about" class="header__link"><div></div></a>
+      <a href="#about" class="header__link"></a>
     </div>
   </div>
 </header>
@@ -136,9 +131,7 @@
           <a href="https://glitch.com/@Ade_LaNa" class="about__intro--link" target="_blank">Glitch</a>
           for details on some of the projects I've worked on.
         </p>
-        <a href="#contact" class="contact-btn">Get In Touch</a>
       </div>
-      <hr>
       <div class="about__header--img"></div>
       <div class="about__tech-stack">
         <h3>Technology Stack</h3>
@@ -185,16 +178,13 @@
               <img src="assets/img/sass.png" alt="Sass" class="about__tech-stack--img">
               <h5 class="about__tech-stack--info">Sass</h5>
             </li>
-          </ul>
-          <p>Databases</p>
-          <ul id="about__tech-stack--db-list">
-            <li class="about__tech-stack--db-item">
-              <img src="assets/img/mysql.png" alt="MySQL" class="about__tech-stack--db-img">
-              <h5 class="about__tech-stack--db-info">MySQL</h5>
+            <li class="about__tech-stack--item">
+              <img src="assets/img/mysql.png" alt="MySQL" class="about__tech-stack--img">
+              <h5 class="about__tech-stack--info">MySQL</h5>
             </li>
-            <li class="about__tech-stack--db-item">
-              <img src="assets/img/mongodb.png" alt="mongoDB" class="about__tech-stack--db-img">
-              <h5 class="about__tech-stack--db-info">mongoDB</h5>
+            <li class="about__tech-stack--item">
+              <img src="assets/img/mongodb.png" alt="mongoDB" class="about__tech-stack--img">
+              <h5 class="about__tech-stack--info">mongoDB</h5>
             </li>
           </ul>
         </div>
@@ -273,77 +263,82 @@
       <div class="row">
         <h2>Contact</h2>
         <div class="contact-wrapper">
-          <p>Just want to say Hi? Or do you require a professional touch for a project?</p>
-          <p>Feel free to hit me up and  we'll get started right away...</p>
-          <div class="contact__icons-wrapper">
-            <ul id="contact__icons">
-              <li class="contact__icons--item">
-                <a href="https://www.linkedin.com/in/adelana-onafuwa" class="contact__icons-link" title="LinkedIn" target="_blank">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </li>
-              <li class="contact__icons--item">
-                <a href="https://github.com/devLana" class="contact__icons-link" title="Github" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="contact__icons--item">
-                <a href="https://www.freecodecamp.org/ade_lana" class="contact__icons-link" title="freeCodeCamp" target="_blank">
-                  <i class="fab fa-free-code-camp"></i>
-                </a>
-              </li>
-              <li class="contact__icons--item">
-                <a href="https://codepen.io/Ade_Lana" class="contact__icons-link" title="Codepen" target="_blank">
-                  <i class="fab fa-codepen"></i>
-                </a>
-              </li>
-              <li class="contact__icons--item">
-                <a href="https://twitter.com/Ade_LaNa" class="contact__icons-link" title="Twitter" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="contact__icons--item">
-                <a href="mailto:contact@adelana.dev" class="contact__icons-link" title="Mail">
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </li>
-            </ul>
+          <div class="contact__info-wrapper">
+            <p>Just want to say Hi? Or do you require a professional touch for a project?</p>
+            <p>Feel free to hit me up and  we'll get started right away...</p>
+            <div class="contact__icons-wrapper">
+              <ul id="contact__icons">
+                <li class="contact__icons--item">
+                  <a href="https://www.linkedin.com/in/adelana-onafuwa" class="contact__icons-link" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="contact__icons--item">
+                  <a href="https://github.com/devLana" class="contact__icons-link" title="Github" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </li>
+                <li class="contact__icons--item">
+                  <a href="https://codepen.io/Ade_Lana" class="contact__icons-link" title="Codepen" target="_blank">
+                    <i class="fab fa-codepen"></i>
+                  </a>
+                </li>
+                <li class="contact__icons--item">
+                  <a href="https://twitter.com/Ade_LaNa" class="contact__icons-link" title="Twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="contact__icons--item">
+                  <a href="mailto:contact@adelana.dev" class="contact__icons-link" title="Mail">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="contact__form--container">
-          <form action="https://formspree.io/xgevkvvy" method="POST" autocomplete="off">
-            <div class="input-group">
-              <div class="input-container">
-                <input type="text" name="name" placeholder="Enter Name" id="name" class="form-input">
-                <label for="name" class="label"><span class="label-tag">Name</span></label>
+          <div class="contact__form-container">
+            <form action="https://formspree.io/xgevkvvy" method="POST" autocomplete="off">
+                <div class="input-group">
+                <div class="input-container">
+                  <input type="text" name="name" placeholder="Enter Name" id="name" class="form-input">
+                  <label for="name" class="label">
+                    <span class="label-tag">Name *</span>
+                  </label>
+                </div>
+                <span class="name-error error-msg"></span>
+                </div>
+                <div class="input-group">
+                <div class="input-container">
+                  <input type="email" name="email" placeholder="Enter E-mail" id="email" class="form-input">
+                  <label for="email" class="label">
+                    <span class="label-tag">E-mail *</span>
+                  </label>
+                </div>
+                <span class="email-error error-msg"></span>
               </div>
-              <span class="name-error error-msg"></span>
-            </div>
-            <div class="input-group">
-              <div class="input-container">
-                <input type="email" name="email" placeholder="Enter E-mail" id="email" class="form-input">
-                <label for="email" class="label"><span class="label-tag">E-mail</span></label>
+              <div class="input-group">
+                <div class="input-container">
+                  <input type="tel" name="number" placeholder="Enter Phone Number" id="number" class="form-input">
+                  <label for="number" class="label">
+                    <span class="label-tag">Phone Number</span>
+                  </label>
+                </div>
+                <span class="number-error error-msg"></span>
               </div>
-              <span class="email-error error-msg"></span>
-            </div>
-            <div class="input-group">
-              <div class="input-container">
-                <input type="tel" name="number" placeholder="Enter Phone Number" id="number" class="form-input">
-                <label for="number" class="label"><span class="label-tag">Phone Number</span></label>
+              <div class="input-group">
+                <div class="input-container">
+                  <textarea name="message" placeholder="Enter Message" id="message" class="form-text"></textarea>
+                  <label for="message" class="label">
+                    <span class="label-tag">Message *</span>
+                  </label>
+                </div>
+                <span class="message-error error-msg"></span>
               </div>
-              <span class="number-error error-msg"></span>
-            </div>
-            <div class="input-group">
-              <div class="input-container">
-                <textarea name="message" placeholder="Enter Message" id="message" class="form-text"></textarea>
-                <label for="message" class="label"><span class="label-tag">Message</span></label>
+              <div class="input-group">
+                <input type="submit" value="Send" class="submit-btn">
               </div>
-              <span class="message-error error-msg"></span>
-            </div>
-            <div class="input-group">
-              <input type="submit" value="Send" class="submit-btn">
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

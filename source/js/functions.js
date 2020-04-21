@@ -99,7 +99,7 @@ export const validateEmail = () => {
 
 export const validatePhoneNumber = () => {
   const num = document.getElementById("number").value.trim();
-  const regex = /[^\d\s\-]/;
+  const regex = /[^\d]/;
 
   try {
     if (num === "") {
@@ -108,7 +108,12 @@ export const validatePhoneNumber = () => {
     } else {
       if (regex.test(num)) {
         numErr = true;
-        throw "Phone number can only contain numbers, space and hyphen";
+        throw "Phone number can only contain digits";
+      }
+
+      if (num.length < 9) {
+        numErr = true;
+        throw "Invalid phone number";
       }
     }
 
