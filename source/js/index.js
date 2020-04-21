@@ -14,11 +14,11 @@ import {
 
 const toggleMobileNav = () => {
   const navBtn = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-  const closeMenu = document.querySelector(".close");
+  const navMenu = document.getElementById("navbar__menu-container");
+  const closeMenu = document.querySelector(".navbar__menu--close");
   const overlay = document.getElementById("overlay");
-  const navItems = document.querySelectorAll(".nav-item");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navItems = document.querySelectorAll(".navbar__menu--item");
+  const navLinks = document.querySelectorAll(".navbar__menu--link");
 
   navBtn.addEventListener("click", () => {
     navBtn.classList.add("rotate");
@@ -72,7 +72,7 @@ const changeLinkColor = () => {
 
 const activeNavLink = () => {
   const sections = document.querySelectorAll("#main section");
-  const navLinks = document.querySelectorAll(".nav-item");
+  const navLinks = document.querySelectorAll(".navbar__menu--item");
 
   window.addEventListener("scroll", () => {
     let index = sections.length;
@@ -90,7 +90,7 @@ const activeNavLink = () => {
 
 const setDarkMode = () => {
   const darkModeBtn = document.getElementById("dark-mode-container");
-  const darkModeIcon = document.getElementById("dark-mode-icon");
+  const darkModeIcon = document.getElementById("dark-mode--icon");
 
   darkModeBtn.addEventListener("click", () => {
     switch (darkModeIcon.className) {
