@@ -1,2 +1,2 @@
 # adelana
-My personal website running on Full Stack JavaScript
+My personal website

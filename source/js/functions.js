@@ -87,7 +87,7 @@ export const validateEmail = () => {
       throw "Enter your e-mail";
     } else if (!regex.test(email)) {
       emailErr = true;
-      throw "Enter a valid e-mail address";
+      throw "Invalid e-mail address";
     }
 
     emailErr = false;
