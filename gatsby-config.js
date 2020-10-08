@@ -1,34 +1,60 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "Adelana Onafuwa",
+    description: "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
+    author: "Adelana Onafuwa",
+    siteUrl: "https://adelana.dev",
+    imageUrl: "https://adelana.dev/logo/logo.png",
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "Work",
+        link: "/work",
+      },
+      {
+        name: "Contact",
+        link: "/contact",
+      },
+    ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: "logos",
+        path: `${__dirname}/static/logo/`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "adelana.dev",
+        short_name: "adelana",
+        start_url: "/",
+        description: "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
+        lang: "en",
+        orientation: "portrait",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "standalone",
+        icon: "static/logo/logo.png",
+        icon_purpose: "any maskable"
+      },
+    },
+    "gatsby-plugin-offline",
   ],
-}
+};
