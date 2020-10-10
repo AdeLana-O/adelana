@@ -2,9 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "Adelana Onafuwa",
     description: "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
-    author: "Adelana Onafuwa",
     siteUrl: "https://adelana.dev",
-    imageUrl: "https://adelana.dev/logo/logo.png",
+    imageUrl: "https://adelana.dev/logo.svg",
+    twitter: "@Ade_LaNa",
     menuLinks: [
       {
         name: "Home",
@@ -34,7 +34,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "logos",
-        path: `${__dirname}/static/logo/`,
+        path: `${__dirname}/static/`,
       },
     },
     "gatsby-transformer-sharp",
@@ -48,10 +48,10 @@ module.exports = {
         description: "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
         lang: "en",
         orientation: "portrait",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#fff",
+        theme_color: "#0b25a8",
         display: "standalone",
-        icon: "static/logo/logo.png",
+        icon: "static/logo.svg",
         icon_purpose: "any maskable"
       },
     },
