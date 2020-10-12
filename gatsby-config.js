@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: "https://adelana.dev",
     imageUrl: "https://adelana.dev/logo.svg",
     twitter: "@Ade_LaNa",
-    navLinks: [
+    menuLinks: [
       {
         name: "Home",
         link: "/",

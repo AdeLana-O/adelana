@@ -1,4 +1,13 @@
-#footer {
-  padding: 30px;
-  text-align: center;
+.footer__container {
+  padding: 30px $mobilePadding;
+}
+
+.footer__menu {
+  @include flexDisplay;
+  flex-direction: column;
+}
+
+.footer__links {
+  @include flexDisplay(space-between, flex-start);
+  width: 100%;
 }
