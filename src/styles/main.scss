@@ -1,1 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Oswald&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $white;
+  font-family: $ComfortaaFont;
+  font-size: $mobileFontSize;
+}
+
+#site__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#main {
+  flex-grow: 1;
+}
+
+@include mediaQuery($desktop) {
+  body {
+    font-size: $desktopFontSize;
+  }
+}

@@ -1,13 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import siteMetaData from "../config/siteData";
-
 function SEO({ canonical, pageDescription, pageTitle }) {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(query);
   const { pathname } = useLocation();
-  const { title, description, siteUrl, imageUrl, twitter, } = siteMetaData();
+  const { title, description, siteUrl, imageUrl, twitter } = siteMetadata;
 
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
@@ -36,6 +38,20 @@ function SEO({ canonical, pageDescription, pageTitle }) {
     </Helmet>
   );
 }
+
+const query = graphql`
+  query siteMetaData {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+        imageUrl
+        twitter
+      }
+    }
+  }
+`;
 
 SEO.propTypes = {
   canonical: PropTypes.bool,

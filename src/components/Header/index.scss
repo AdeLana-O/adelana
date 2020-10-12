@@ -1,0 +1,21 @@
+.header__container {
+  @include flexDisplay(space-between, center);
+  padding: 30px $mobilePadding;
+  height: 125px;
+
+  .site-logo a {
+    display: block;
+  }
+
+  .site-logo__image {
+    display: block;
+    width: 65px;
+    height: auto;
+  }
+}
+
+@include mediaQuery($desktop) {
+  .header__container {
+    padding: 30px $desktopPadding;
+  }
+}

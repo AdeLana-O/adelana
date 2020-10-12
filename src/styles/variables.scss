@@ -1,20 +1,28 @@
-// $primaryColor: #0f35f0;
-// $primaryColorLight: #9faef9;
-// $primaryColorDark: #030b30;
-// $secondaryColor: #fba904;
-// $secondaryColorLight: #fddc9b;
-// $secondaryColorDark: #4b3301;
-
 $primaryColor: #0b25a8;
 $primaryColorLight: #6f86f6;
 $primaryColorDark: #030b30;
 $secondaryColor: #b07603;
 $secondaryColorLight: #fdcb68;
 $secondaryColorDark: #4b3301;
-
 $black: #000;
 $dark: #333;
 $white: #fff;
 $light: #e6e6e6;
+
 $OswaldFont: "Oswald", sans-serif;
 $ComfortaaFont: "Comfortaa", cursive;
+$mobileFontSize: 1.3rem;
+$desktopFontSize: 1.6rem;
+
+$h1: 2.5rem;
+$h2: 2rem;
+$h3: 1.8rem;
+
+$mobilePadding: 6.5vw;
+$desktopPadding: 8rem;
+$mobilePagePadding: 100px $mobilePadding;
+$desktopPagePadding: 100px $desktopPadding;
+
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
