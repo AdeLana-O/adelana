@@ -1,7 +1,9 @@
-@mixin flexDisplay($justify: center, $align: center) {
+@mixin flexDisplay($justify: center, $setAlign: false, $align: center) {
   display: flex;
   justify-content: $justify;
-  align-items: $align;
+  @if ($setAlign == true) {
+    align-items: $align;
+  }
 }
 
 @mixin mediaQuery($breakPoint) {

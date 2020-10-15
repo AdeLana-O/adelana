@@ -3,8 +3,7 @@
 }
 
 .footer__menu {
-  @include flexDisplay(center, flex-start);
-  flex-direction: column;
+  @extend %footer-links-display;
 
   .footer__links {
     padding-top: 5rem;
@@ -53,7 +52,7 @@
     margin-bottom: 10rem;
 
     .footer__links {
-      @include flexDisplay(space-between, flex-start);
+      @include flexDisplay(space-between, true, flex-start);
       flex: 0 0 53%;
       padding-top: 0;
 

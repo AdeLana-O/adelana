@@ -9,10 +9,10 @@
 }
 
 %footer-links-display {
-  @include flexDisplay(flex-start, flex-start);
+  @include flexDisplay(center, true, flex-start);
   flex-direction: column;
 }
 
 %mobile-layout-padding {
-  padding: 30px $mobilePadding;
+  padding: 3rem $mobilePadding;
 }

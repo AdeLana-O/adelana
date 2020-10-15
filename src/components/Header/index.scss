@@ -1,5 +1,5 @@
 .header__container {
-  @include flexDisplay(space-between);
+  @include flexDisplay(space-between, true);
   @extend %mobile-layout-padding;
 }
 

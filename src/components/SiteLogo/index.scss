@@ -7,3 +7,9 @@
   width: 65px;
   height: auto;
 }
+
+@include mediaQuery($desktop) {
+  .site-logo__image {
+    width: 6.5rem;
+  }
+}
