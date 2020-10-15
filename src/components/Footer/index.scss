@@ -3,11 +3,45 @@
 }
 
 .footer__menu {
-  @include flexDisplay;
+  @include flexDisplay(center, flex-start);
   flex-direction: column;
+
+  .footer__links {
+    padding-top: 5rem;
+
+    .footer__quick-links,
+    .footer__contact-links {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .footer__quick-links-menu {
+    @extend %list-display;
+    @extend %footer-links-display;
+
+    .footer__quick-link-item {
+      padding: 5px 0;
+
+      .footer__quick-link {
+        color: $secondaryColor;
+      }
+    }
+  }
+
+  .footer__contact-menu {
+    @extend %list-display;
+    @extend %footer-links-display;
+
+    .footer__contact-item {
+      padding: 5px 0;
+
+      .footer__contact-link {
+        color: $secondaryColor;
+      }
+    }
+  }
 }
 
-.footer__links {
-  @include flexDisplay(space-between, flex-start);
-  width: 100%;
+.footer__copyright {
+  text-align: center;
 }

@@ -30,9 +30,9 @@ const NavLinks = ({ className }) => {
           ))}
         </ol>
       ) : (
-        <ul className={`${className}__quick-links__menu`}>
+        <ul className={`${className}__quick-links-menu`}>
           {navLinks.map(navLink => (
-            <li key={navLink.name} className={`${className}__quick-link__item`}>
+            <li key={navLink.name} className={`${className}__quick-link-item`}>
               <Link to={navLink.link} className={`${className}__quick-link`}>
                 {navLink.name}
               </Link>

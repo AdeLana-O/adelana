@@ -1,3 +1,17 @@
 %flex-justify {
   @include flexDisplay(space-between);
 }
+
+%headings {
+  font-family: $OswaldFont;
+  margin-bottom: 1.1rem;
+}
+
+%list-display {
+  list-style: none;
+}
+
+%footer-links-display {
+  @include flexDisplay(flex-start, flex-start);
+  flex-direction: column;
+}

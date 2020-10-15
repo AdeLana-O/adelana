@@ -25,6 +25,6 @@ const ContactMenu = ({ className }) => {
 
 ContactMenu.propTypes = {
   className: PropTypes.string.isRequired,
-}
+};
 
 export default ContactMenu;

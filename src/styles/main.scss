@@ -17,6 +17,8 @@ body {
   background-color: $white;
   font-family: $ComfortaaFont;
   font-size: $mobileFontSize;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #site__wrapper {
@@ -31,6 +33,21 @@ body {
 
   a {
     text-decoration: none;
+  }
+
+  h1 {
+    font-size: $h1;
+    @extend %headings;
+  }
+
+  h2 {
+    font-size: $h2;
+    @extend %headings;
+  }
+
+  h3 {
+    font-size: $h3;
+    @extend %headings;
   }
 }
 

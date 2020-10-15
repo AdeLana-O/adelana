@@ -5,7 +5,7 @@
 }
 
 .navbar__menu {
-  list-style: none;
+  @extend %list-display;
   @extend %flex-justify;
 
   .navbar__link {
