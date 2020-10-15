@@ -1,24 +1,46 @@
 #navbar {
-  width: 60%;
-  min-width: 160px;
-  max-width: 250px;
+  overflow: auto;
+  margin-left: 0.8rem;
 }
 
 .navbar__menu {
   @extend %list-display;
-  @extend %flex-justify;
+  @include flexDisplay(flex-start);
 
-  .navbar__link {
-    color: $primaryColor;
-    &:hover {
-      color: $primaryColorDark;
+  .navbar__item {
+    padding: 0 0.8rem;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    .navbar__link {
+      color: $primaryColor;
+      &:hover {
+        color: $primaryColorDark;
+      }
+    }
+
+    .navbar__link--active {
+      color: $primaryColorLight;
+      &:hover {
+        color: $primaryColorLight;
+      }
     }
   }
+}
 
-  .navbar__link--active {
-    color: $primaryColorLight;
-    &:hover {
-      color: $primaryColorLight;
+@include mediaQuery($desktop) {
+  #navbar {
+    overflow: visible;
+  }
+  .navbar__menu {
+    .navbar__item {
+      padding: 0 2rem;
     }
   }
 }

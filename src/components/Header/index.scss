@@ -1,11 +1,10 @@
 .header__container {
-  @extend %flex-justify;
-  padding: 30px $mobilePadding;
-  height: 125px;
+  @include flexDisplay(space-between);
+  @extend %mobile-layout-padding;
 }
 
 @include mediaQuery($desktop) {
   .header__container {
-    padding: 30px $desktopPadding;
+    padding: $desktopLayoutPadding;
   }
 }
