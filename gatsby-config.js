@@ -5,20 +5,6 @@ module.exports = {
     siteUrl: "https://adelana.dev",
     imageUrl: "https://adelana.dev/logo.svg",
     twitter: "@Ade_LaNa",
-    menuLinks: [
-      {
-        name: "Home",
-        link: "/",
-      },
-      {
-        name: "Work",
-        link: "/work",
-      },
-      {
-        name: "Contact",
-        link: "/contact",
-      },
-    ],
   },
   plugins: [
     "gatsby-plugin-react-helmet",

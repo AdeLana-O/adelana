@@ -1,7 +1,7 @@
 import React from "react";
 
 import SiteLogo from "../SiteLogo";
-import MenuLinks from "../MenuLinks";
+import NavLinks from "../NavLinks";
 import ContactMenu from "../ContactMenu";
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="footer__links">
               <div className="footer__quick-links">
                 <h3>Quick Links</h3>
-                <MenuLinks className="footer" />
+                <NavLinks className="footer" />
               </div>
               <div className="footer__contact-links">
                 <h3>Contact</h3>

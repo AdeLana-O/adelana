@@ -1,10 +1,10 @@
 import React from "react";
-import MenuLinks from "../MenuLinks";
+import NavLinks from "../NavLinks";
 
 const Navbar = () => {
   return (
     <nav id="navbar">
-      <MenuLinks className="navbar" />
+      <NavLinks className="navbar" />
     </nav>
   );
 };

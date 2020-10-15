@@ -1,8 +1,10 @@
 import React from "react";
-
-import { contactMenu } from "../../utils/contactMenu";
+import PropTypes from "prop-types";
+import { config } from "../../utils/config";
 
 const ContactMenu = ({ className }) => {
+  const { contactMenu } = config;
+
   return (
     <ul className={`${className}__contact-menu`}>
       {contactMenu.map(menu => (
@@ -20,5 +22,9 @@ const ContactMenu = ({ className }) => {
     </ul>
   );
 };
+
+ContactMenu.propTypes = {
+  className: PropTypes.string.isRequired,
+}
 
 export default ContactMenu;
