@@ -6,7 +6,7 @@
 
 .navbar__menu {
   list-style: none;
-  @include flexDisplay(space-between);
+  @extend %flex-justify;
 
   .navbar__link {
     color: $primaryColor;

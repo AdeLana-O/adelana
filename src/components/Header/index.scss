@@ -1,5 +1,5 @@
 .header__container {
-  @include flexDisplay(space-between);
+  @extend %flex-justify;
   padding: 30px $mobilePadding;
   height: 125px;
 }
