@@ -10,6 +10,7 @@ function SEO({ canonical, pageDescription, pageTitle }) {
   } = useStaticQuery(query);
   const { pathname } = useLocation();
   const { title, description, siteUrl, imageUrl, twitter } = siteMetadata;
+  const urlPath = `${siteUrl}${pathname}`;
 
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
@@ -23,7 +24,7 @@ function SEO({ canonical, pageDescription, pageTitle }) {
       <meta name="description" content={metaDescription} />
       <meta name="og:title" content={metaTitle} />
       <meta name="og:description" content={metaDescription} />
-      <meta name="og:url" content={siteUrl} />
+      <meta name="og:url" content={urlPath} />
       <meta name="og:type" content="website" />
       <meta name="og:image" content={imageUrl} />
       <meta name="twitter:title" content={metaTitle} />
@@ -34,7 +35,7 @@ function SEO({ canonical, pageDescription, pageTitle }) {
       <meta itemprop="name" content={metaTitle} />
       <meta itemprop="description" content={metaDescription} />
       <meta itemprop="image" content={imageUrl} />
-      {canonical && <link rel="canonical" href={`${siteUrl}${pathname}`} />}
+      {canonical && <link rel="canonical" href={urlPath} />}
     </Helmet>
   );
 }

@@ -1,16 +1,16 @@
 export const config = {
   pageMeta: {
-    "error": {
+    "not found": {
       title: "Page Not Found",
-      description: "",
+      description: "This page you have requested was not found",
     },
     "work": {
       title: "Projects",
-      description: "",
+      description: "Recent projects and open source projects",
     },
     "contact": {
       title: "Contact",
-      description: "",
+      description: "Get in touch",
     }
   },
   navLinks: [

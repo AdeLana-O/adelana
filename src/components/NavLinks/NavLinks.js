@@ -14,27 +14,27 @@ const NavLinks = ({ className }) => {
     <>
       {isNavbar ? (
         <ol className={`${className}__menu`}>
-          {navLinks.map(navLink => (
-            <li key={navLink.name} className={`${className}__item`}>
+          {navLinks.map(({ name, link }) => (
+            <li key={name} className={`${className}__item`}>
               <Link
-                to={navLink.link}
+                to={link}
                 className={
-                  pathname === navLink.link
+                  pathname === link
                     ? `${className}__link ${className}__link--active`
                     : `${className}__link`
                 }
               >
-                {navLink.name}
+                {name}
               </Link>
             </li>
           ))}
         </ol>
       ) : (
         <ul className={`${className}__quick-links-menu`}>
-          {navLinks.map(navLink => (
-            <li key={navLink.name} className={`${className}__quick-link-item`}>
-              <Link to={navLink.link} className={`${className}__quick-link`}>
-                {navLink.name}
+          {navLinks.map(({ name, link }) => (
+            <li key={name} className={`${className}__quick-link-item`}>
+              <Link to={link} className={`${className}__quick-link`}>
+                {name}
               </Link>
             </li>
           ))}
@@ -46,6 +46,6 @@ const NavLinks = ({ className }) => {
 
 NavLinks.propTypes = {
   className: PropTypes.string.isRequired,
-}
+};
 
 export default NavLinks;

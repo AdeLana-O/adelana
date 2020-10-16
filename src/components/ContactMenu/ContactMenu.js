@@ -7,15 +7,15 @@ const ContactMenu = ({ className }) => {
 
   return (
     <ul className={`${className}__contact-menu`}>
-      {contactMenu.map(menu => (
-        <li key={menu.name} className={`${className}__contact-item`}>
+      {contactMenu.map(({ name, link }) => (
+        <li key={name} className={`${className}__contact-item`}>
           <a
-            href={menu.link}
+            href={link}
             target="_blank"
             rel="noreferrer noopener"
             className={`${className}__contact-link`}
           >
-            {menu.name}
+            {name}
           </a>
         </li>
       ))}
