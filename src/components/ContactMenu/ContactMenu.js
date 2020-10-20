@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { config } from "../../utils/config";
 
 const ContactMenu = ({ className }) => {
@@ -7,7 +8,7 @@ const ContactMenu = ({ className }) => {
 
   return (
     <ul className={`${className}__contact-menu`}>
-      {contactMenu.map(({ name, link }) => (
+      {contactMenu.map(({ name, icon, link }) => (
         <li key={name} className={`${className}__contact-item`}>
           <a
             href={link}
@@ -15,7 +16,7 @@ const ContactMenu = ({ className }) => {
             rel="noreferrer noopener"
             className={`${className}__contact-link`}
           >
-            {name}
+            {icon}
           </a>
         </li>
       ))}

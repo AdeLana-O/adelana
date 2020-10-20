@@ -9,7 +9,7 @@
 }
 
 %footer-links-display {
-  @include flexDisplay(center, true, flex-start);
+  @include flexDisplay(center, true);
   flex-direction: column;
 }
 

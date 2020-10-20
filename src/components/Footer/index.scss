@@ -3,7 +3,7 @@
 }
 
 .footer__menu {
-  @extend %footer-links-display;
+  @include flexDisplay(center, true, flex-start);
 
   .footer__links {
     padding-top: 5rem;
