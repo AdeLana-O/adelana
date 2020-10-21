@@ -3,7 +3,7 @@
 }
 
 .footer__menu {
-  @include flexDisplay(center, true, flex-start);
+  @extend %footer-links-display;
 
   .footer__links {
     padding-top: 5rem;
@@ -15,7 +15,6 @@
   }
 
   .footer__quick-links-menu {
-    @extend %list-display;
     @extend %footer-links-display;
 
     .footer__quick-link-item {
@@ -28,7 +27,6 @@
   }
 
   .footer__contact-menu {
-    @extend %list-display;
     @extend %footer-links-display;
 
     .footer__contact-item {
@@ -53,13 +51,13 @@
 
     .footer__links {
       @include flexDisplay(space-between, true, flex-start);
-      flex: 0 0 53%;
+      flex: 0 0 54%;
       padding-top: 0;
 
       .footer__quick-links,
       .footer__contact-links {
         margin-bottom: 0;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
       }
     }
   }
@@ -68,5 +66,10 @@
 @include mediaQuery($desktop) {
   .footer__container {
     padding: $desktopLayoutPadding;
+  }
+
+  .footer__menu .footer__quick-links-menu,
+  .footer__menu .footer__contact-menu {
+    @include flexDisplay(center, true);
   }
 }

@@ -54,10 +54,15 @@ body {
   p {
     line-height: 2rem;
   }
-}
 
-#main {
-  flex-grow: 1;
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  #main {
+    flex-grow: 1;
+  }
 }
 
 @include mediaQuery($desktop) {

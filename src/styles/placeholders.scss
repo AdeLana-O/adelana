@@ -4,12 +4,8 @@
   margin-bottom: 1.1rem;
 }
 
-%list-display {
-  list-style: none;
-}
-
 %footer-links-display {
-  @include flexDisplay(center, true);
+  @include flexDisplay;
   flex-direction: column;
 }
 

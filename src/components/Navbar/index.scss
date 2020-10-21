@@ -4,7 +4,6 @@
 }
 
 .navbar__menu {
-  @extend %list-display;
   @include flexDisplay(flex-start);
 
   .navbar__item {

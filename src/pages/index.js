@@ -2,11 +2,12 @@ import React from "react";
 
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
+import Hero from "../components/Hero/Hero";
 
 const Home = () => (
   <Layout>
     <SEO canonical />
-    <h1>Hello World</h1>
+    <Hero />
   </Layout>
 );
 
