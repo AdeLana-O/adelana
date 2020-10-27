@@ -1,5 +1,13 @@
 .hero__container {
+  padding: $mobilePagePadding;
+
   h1 {
     display: inline;
+  }
+}
+
+@include mediaQuery($desktop) {
+  .hero__container {
+    padding: $desktopPagePadding;
   }
 }

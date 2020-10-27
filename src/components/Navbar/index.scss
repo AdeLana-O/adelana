@@ -18,16 +18,18 @@
     }
 
     .navbar__link {
+      font-weight: bold;
       color: $primaryColor;
+      transition: 0.25s linear;
       &:hover {
         color: $primaryColorDark;
       }
     }
 
     .navbar__link--active {
-      color: $primaryColorLight;
+      color: $secondaryColorLight;
       &:hover {
-        color: $primaryColorLight;
+        color: $secondaryColorDark;
       }
     }
   }

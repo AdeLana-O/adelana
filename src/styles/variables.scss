@@ -20,9 +20,8 @@ $h3: 1.8rem;
 
 $mobilePadding: 6.5vw;
 $desktopPadding: 2rem;
-$mobilePagePadding: 100px $mobilePadding;
-$desktopPagePadding: 100px $desktopPadding;
-$desktopLayoutPadding: 3rem $desktopPadding;
+$mobilePagePadding: 100px $mobilePadding 50px;
+$desktopPagePadding: 100px $desktopPadding 50px;
 
 $mobile: 576px;
 $tablet: 768px;

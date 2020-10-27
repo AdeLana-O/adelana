@@ -30,7 +30,6 @@ body {
   .container {
     max-width: 100rem;
     margin: 0 auto;
-    padding: 3rem $mobilePadding;
   }
 
   a {
@@ -69,9 +68,5 @@ body {
 @include mediaQuery($desktop) {
   body {
     font-size: $desktopFontSize;
-  }
-
-  #site__wrapper .container {
-    padding: $desktopLayoutPadding;
   }
 }

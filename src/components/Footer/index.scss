@@ -1,3 +1,7 @@
+.footer__container {
+  padding: $mobilePagePadding;
+}
+
 .footer__menu {
   @extend %footer-links-display;
 
@@ -60,6 +64,10 @@
 }
 
 @include mediaQuery($desktop) {
+  .footer__container {
+    padding: $desktopPagePadding;
+  }
+
   .footer__menu .footer__quick-links-menu,
   .footer__menu .footer__contact-menu {
     @include flexDisplay(center, true);

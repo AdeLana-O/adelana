@@ -1,0 +1,9 @@
+.work__container {
+  padding: $mobilePagePadding;
+}
+
+@include mediaQuery($desktop) {
+  .work__container {
+    padding: $desktopPagePadding;
+  }
+}
