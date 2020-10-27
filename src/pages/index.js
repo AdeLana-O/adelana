@@ -6,7 +6,7 @@ import Hero from "../components/Hero/Hero";
 
 const Home = () => (
   <Layout>
-    <SEO canonical />
+    <SEO seo />
     <Hero />
   </Layout>
 );

@@ -4,13 +4,14 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { useLocation } from "@reach/router";
 
-function SEO({ canonical, pageDescription, pageTitle }) {
+function SEO({ seo, pageDescription, pageTitle }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(query);
   const { pathname } = useLocation();
+
   const { title, description, siteUrl, imageUrl, twitter } = siteMetadata;
-  const urlPath = `${siteUrl}${pathname}`;
+  const urlPath = siteUrl + pathname;
 
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
@@ -19,23 +20,24 @@ function SEO({ canonical, pageDescription, pageTitle }) {
     <Helmet>
       <html lang="en" />
       <title>{metaTitle}</title>
-      <meta name="robots" content="index,follow" />
+      <meta name="robots" content={seo ? "index,follow" : "noindex,nofollow"} />
       <meta name="author" content={title} />
       <meta name="description" content={metaDescription} />
-      <meta name="og:title" content={metaTitle} />
-      <meta name="og:description" content={metaDescription} />
-      <meta name="og:url" content={urlPath} />
-      <meta name="og:type" content="website" />
-      <meta name="og:image" content={imageUrl} />
-      <meta name="twitter:title" content={metaTitle} />
-      <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:creator" content={twitter} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={imageUrl} />
-      <meta itemprop="name" content={metaTitle} />
-      <meta itemprop="description" content={metaDescription} />
-      <meta itemprop="image" content={imageUrl} />
-      {canonical && <link rel="canonical" href={urlPath} />}
+      {seo && <meta name="og:title" content={metaTitle} />}
+      {seo && <meta name="og:description" content={metaDescription} />}
+      {seo && <meta name="og:url" content={urlPath} />}
+      {seo && <meta name="og:type" content="website" />}
+      {seo && <meta name="og:image" content={imageUrl} />}
+      {seo && <meta name="twitter:title" content={metaTitle} />}
+      {seo && <meta name="twitter:description" content={metaDescription} />}
+      {seo && <meta name="twitter:site" content={twitter} />}
+      {seo && <meta name="twitter:creator" content={twitter} />}
+      {seo && <meta name="twitter:card" content="summary_large_image" />}
+      {seo && <meta name="twitter:image" content={imageUrl} />}
+      {seo && <meta itemprop="name" content={metaTitle} />}
+      {seo && <meta itemprop="description" content={metaDescription} />}
+      {seo && <meta itemprop="image" content={imageUrl} />}
+      {seo && <link rel="canonical" href={urlPath} />}
     </Helmet>
   );
 }
@@ -55,7 +57,7 @@ const query = graphql`
 `;
 
 SEO.propTypes = {
-  canonical: PropTypes.bool,
+  seo: PropTypes.bool,
   description: PropTypes.string,
   title: PropTypes.string,
 };
