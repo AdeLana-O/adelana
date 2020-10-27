@@ -51,9 +51,8 @@ body {
     @extend %headings;
   }
 
-  p {
-    line-height: 2rem;
-  }
+  // p {
+  // }
 
   ul,
   ol {
@@ -62,6 +61,10 @@ body {
 
   #main {
     flex-grow: 1;
+
+    p {
+      line-height: 3rem;
+    }
   }
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 
-import {FaTwitter} from "react-icons/fa";
-import {FaGithub} from "react-icons/fa";
-import {FaLinkedin} from "react-icons/fa";
-import {FaEnvelope} from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 export const config = {
   pageMeta: {
@@ -11,14 +11,14 @@ export const config = {
       title: "Page Not Found",
       description: "This page you have requested was not found",
     },
-    "work": {
+    work: {
       title: "Projects",
       description: "Recent projects and open source projects",
     },
-    "contact": {
+    contact: {
       title: "Contact",
       description: "Get in touch",
-    }
+    },
   },
   navLinks: [
     {
@@ -55,5 +55,32 @@ export const config = {
       icon: <FaEnvelope />,
       link: "mailto:contact@adelana.dev",
     },
-  ]
-}
+  ],
+  projects: [
+    {
+      title: "D'Sparkplug",
+      imgSrc: "../images/projects/dsparkplug.jpg",
+      altText: "D'Sparkplug website",
+    },
+    {
+      title: "React Todo App",
+      imgSrc: "../images/projects/todo-app.png",
+      altText: "React todo app",
+    },
+    {
+      title: "JavaScript Playground",
+      imgSrc: "../images/projects/playground.png",
+      altText: "A catalogue of frontend vanilla JavaScript apps",
+    },
+    {
+      title: "React CRUD App",
+      imgSrc: "../images/projects/crud-app.png",
+      altText: "React CRUD App",
+    },
+    {
+      title: "Github Profile",
+      imgSrc: "../images/projects/github-profile.png",
+      altText: "Github user profile search app",
+    },
+  ],
+};
