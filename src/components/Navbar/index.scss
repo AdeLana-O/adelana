@@ -1,10 +1,12 @@
 #navbar {
-  overflow: auto;
   margin-left: 0.8rem;
 }
 
 .navbar__menu {
-  @include flexDisplay(flex-start);
+  @include flexDisplay(flex-start, true);
+  padding: 0.8rem 0;
+  height: 3.9rem;
+  overflow: hidden;
 
   .navbar__item {
     padding: 0 0.8rem;
@@ -18,18 +20,28 @@
     }
 
     .navbar__link {
+      display: inline-block;
       font-weight: bold;
       color: $primaryColor;
-      transition: 0.25s linear;
+      transition: 0.15s linear;
+      position: relative;
+      @include navLink($primaryColorDark);
+
       &:hover {
         color: $primaryColorDark;
+
+        &::after {
+          bottom: -0.8rem;
+        }
       }
     }
 
     .navbar__link--active {
-      color: $secondaryColorLight;
+      color: $secondaryColor;
+      @include navLink($secondaryColor, true);
+
       &:hover {
-        color: $secondaryColorDark;
+        color: $secondaryColor;
       }
     }
   }

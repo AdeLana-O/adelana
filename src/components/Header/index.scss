@@ -1,14 +1,10 @@
-#header {
-  background-color: $primaryColorLight;
-}
-
 .header__container {
   @include flexDisplay(space-between, true);
-  padding: 1.5rem $mobilePadding;
+  padding: 2rem $mobilePadding;
 }
 
 @include mediaQuery($desktop) {
   .header__container {
-    padding: 1.5rem $desktopPadding;
+    padding: 2rem $desktopPadding;
   }
 }

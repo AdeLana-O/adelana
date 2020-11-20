@@ -11,3 +11,20 @@
     @content;
   }
 }
+
+@mixin navLink($color, $active: false) {
+  &::after {
+    content: "";
+    background-color: $color;
+    height: 0.8rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    @if ($active) {
+      bottom: -0.8rem;
+    } @else {
+      bottom: -2rem;
+      transition: 0.1s ease-in;
+    }
+  }
+}

@@ -1,8 +1,22 @@
 .hero__container {
   padding: $mobilePagePadding;
 
-  h1 {
-    display: inline;
+  .hero__info {
+    text-align: center;
+
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  .hero__image {
+    background-image: url("../images/profile.jpg");
+    height: 500px;
+    width: 100%;
+  }
+
+  .hero__contact-menu {
+    @include flexDisplay(space-around);
   }
 }
 
