@@ -1,9 +1,6 @@
 import React from "react";
 
-import { FaTwitter } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export const config = {
   pageMeta: {
