@@ -26,7 +26,7 @@
 
       &::after {
         content: "";
-        background-color: rgba($primaryColorDark, 0.2);
+        background-color: rgba($primaryColor, 0.2);
         height: 0;
         position: absolute;
         left: -0.4rem;
@@ -36,8 +36,6 @@
       }
 
       &:hover {
-        color: $primaryColorDark;
-
         &::after {
           height: 0.9rem;
         }
@@ -45,15 +43,15 @@
     }
 
     .navbar__link--active {
-      color: $secondaryColor;
+      color: $accentColor;
 
       &::after {
-        background-color: rgba($secondaryColor, 0.2);
+        background-color: rgba($accentColor, 0.2);
         height: 0.9rem;
       }
 
       &:hover {
-        color: $secondaryColor;
+        color: $accentColor;
       }
     }
   }

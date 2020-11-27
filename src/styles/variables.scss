@@ -1,12 +1,9 @@
-$primaryColor: #0b25a8;
-$primaryColorLight: #6f86f6;
-$primaryColorDark: #030b30;
-$secondaryColor: #b07603;
-$secondaryColorLight: #fdcb68;
-$secondaryColorDark: #4b3301;
-$black: #000;
-$dark: #333;
-$white: #fff;
+$primaryColor: #315fa8;
+$primaryColorLight: #c6d8f5;
+$primaryColorDark: #14305C;
+$accentColor: #eba314;
+$accentColorLight: #fdf6e8;
+$dark: #404040;
 $light: #e6e6e6;
 
 $OswaldFont: "Oswald", sans-serif;
@@ -20,8 +17,8 @@ $h3: 1.8rem;
 
 $mobilePadding: 6.5vw;
 $desktopPadding: 2rem;
-$mobilePagePadding: 80px $mobilePadding 50px;
-$desktopPagePadding: 80px $desktopPadding 50px;
+$mobilePagePadding: 8rem $mobilePadding 5rem;
+$desktopPagePadding: 8rem $desktopPadding 5rem;
 
 $mobile: 576px;
 $tablet: 768px;

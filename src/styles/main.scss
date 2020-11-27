@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: $white;
+  background-color: $light;
   font-family: $ComfortaaFont;
   font-size: $mobileFontSize;
   -webkit-font-smoothing: antialiased;
@@ -37,18 +37,15 @@ body {
   }
 
   h1 {
-    font-size: $h1;
-    @extend %headings;
+    @include setHeadings($primaryColor, $h1);
   }
 
   h2 {
-    font-size: $h2;
-    @extend %headings;
+    @include setHeadings($primaryColorLight, $h2);
   }
 
   h3 {
-    font-size: $h3;
-    @extend %headings;
+    @include setHeadings($primaryColorLight, $h3, true);
   }
 
   ul,
@@ -61,6 +58,12 @@ body {
 
     p {
       line-height: 2.5;
+      color: $primaryColorDark;
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
