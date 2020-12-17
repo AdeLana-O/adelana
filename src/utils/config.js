@@ -1,7 +1,3 @@
-import React from "react";
-
-import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
 export const config = {
   pageMeta: {
     "not found": {
@@ -29,28 +25,6 @@ export const config = {
     {
       name: "Contact",
       link: "/contact",
-    },
-  ],
-  contactMenu: [
-    {
-      name: "Twitter",
-      icon: <FaTwitter />,
-      link: "https://twitter.com/Ade_LaNa",
-    },
-    {
-      name: "github",
-      icon: <FaGithub />,
-      link: "https://github.com/devLana",
-    },
-    {
-      name: "LinkedIn",
-      icon: <FaLinkedin />,
-      link: "https://linkedin.com/in/adelana-onafuwa",
-    },
-    {
-      name: "Mail",
-      icon: <FaEnvelope />,
-      link: "mailto:contact@adelana.dev",
     },
   ],
   projects: [

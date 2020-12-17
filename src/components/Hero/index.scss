@@ -1,23 +1,23 @@
 .hero__container {
   padding: $mobilePagePadding;
 
-  .hero__info {
+  .hero__info h1 {
     text-align: center;
-
-    h1 {
-      font-size: 3.5rem;
-    }
-  }
-
-  .hero__image {
-    background-image: url("../images/profile.jpg");
-    height: 500px;
-    width: 100%;
   }
 
   .hero__contact-menu {
     @include flexDisplay(space-around);
+    margin-top: 5rem;
+
+    .hero__contact-link {
+      font-size: 2.5rem;
+      color: $primaryColorDark;
+    }
   }
+}
+
+@include mediaQuery($tablet) {
+  
 }
 
 @include mediaQuery($desktop) {
