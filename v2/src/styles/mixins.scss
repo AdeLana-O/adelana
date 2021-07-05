@@ -1,0 +1,26 @@
+@mixin flexDisplay($justify: center, $setAlign: false, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  @if ($setAlign) {
+    align-items: $align;
+  }
+}
+
+@mixin mediaQuery($breakPoint) {
+  @media screen and (min-width: $breakPoint) {
+    @content;
+  }
+}
+
+@mixin setHeadings($color, $size, $h3: false) {
+  color: $color;
+  font-size: $size;
+  font-family: $OswaldFont;
+  line-height: 1.5;
+
+  @if ($h3 == true) {
+    margin-bottom: 1.1rem;
+  } @else {
+    margin-bottom: 3rem;
+  }
+}
