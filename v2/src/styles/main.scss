@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Oswald&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $light;
+  font-family: $ComfortaaFont;
+  font-size: $mobileFontSize;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#site__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    @include setHeadings($primaryColor, $h1);
+  }
+
+  h2 {
+    @include setHeadings($primaryColorLight, $h2);
+  }
+
+  h3 {
+    @include setHeadings($primaryColorLight, $h3, true);
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  #main {
+    flex-grow: 1;
+
+    p {
+      line-height: 2.5;
+      color: $primaryColorDark;
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include mediaQuery($desktop) {
+  body {
+    font-size: $desktopFontSize;
+  }
+}
