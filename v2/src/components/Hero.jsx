@@ -3,7 +3,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import ContactMenu from "../ContactMenu";
+import ContactMenu from "./ContactMenu";
 
 const Hero = () => {
   const data = useStaticQuery(query);

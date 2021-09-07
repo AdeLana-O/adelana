@@ -1,7 +1,7 @@
 import React from "react";
 
-import Navbar from "../Navbar";
-import SiteLogo from "../SiteLogo";
+import Navbar from "./Navbar";
+import SiteLogo from "./SiteLogo";
 
 const Header = () => {
   return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 
-import { config } from "../../utils/config";
+import { config } from "../utils/config";
 
 const NavLinks = ({ className }) => {
   const { pathname } = useLocation();

@@ -1,8 +1,8 @@
 import React from "react";
 
-import SiteLogo from "../SiteLogo";
-import NavLinks from "../NavLinks";
-import ContactMenu from "../ContactMenu";
+import SiteLogo from "./SiteLogo";
+import NavLinks from "./NavLinks";
+import ContactMenu from "./ContactMenu";
 
 const Footer = () => {
   return (
