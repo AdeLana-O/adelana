@@ -20,7 +20,9 @@ const Hero = () => {
               and also projects I've worked on.
             </p>
           </div>
-          <ContactMenu className="hero" />
+          <div className="hero__links">
+            <ContactMenu />
+          </div>
         </div>
         <Img
           fluid={data.file.childImageSharp.fluid}

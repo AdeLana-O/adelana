@@ -53,18 +53,23 @@ body {
     list-style-type: none;
   }
 
-  #main {
-    flex-grow: 1;
+  header,
+  footer,
+  main,
+  section,
+  article,
+  aside {
+    display: block;
+  }
+}
 
-    p {
-      line-height: 2.5;
-      color: $primaryColorDark;
-      margin-bottom: 2rem;
+#main {
+  flex-grow: 1;
 
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
+  p:not(:last-of-type) {
+    line-height: 2.5;
+    color: $primaryColorDark;
+    margin-bottom: 2rem;
   }
 }
 

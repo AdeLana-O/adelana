@@ -26,13 +26,13 @@
     }
   }
 
-  .footer__contact-menu {
+  .footer__contact-links .contact__menu {
     @extend %footer-links-display;
 
-    .footer__contact-item {
+    .contact__item {
       padding: 0.8rem 0;
 
-      .footer__contact-link {
+      .contact__link {
         color: $primaryColorLight;
       }
     }

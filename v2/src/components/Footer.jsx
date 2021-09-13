@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import SiteLogo from "./SiteLogo";
-import NavLinks from "./NavLinks";
 import ContactMenu from "./ContactMenu";
+
+import { config } from "../utils/config";
+
+const { navLinks } = config;
 
 const Footer = () => {
   return (
@@ -13,12 +17,28 @@ const Footer = () => {
             <SiteLogo />
             <div className="footer__links">
               <div className="footer__quick-links">
-                <h3>Quick Links</h3>
-                <NavLinks className="footer" />
+                <div>
+                  <h3>Quick Links</h3>
+                </div>
+                <div>
+                  <ul className="footer__quick-links-menu">
+                    {navLinks.map(({ name, link }) => (
+                      <li key={name} className="footer__quick-link-item">
+                        <Link to={link} className="footer__quick-link">
+                          {name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
               <div className="footer__contact-links">
-                <h3>Contact</h3>
-                <ContactMenu className="footer" />
+                <div>
+                  <h3>Contact</h3>
+                </div>
+                <div>
+                  <ContactMenu />
+                </div>
               </div>
             </div>
           </div>

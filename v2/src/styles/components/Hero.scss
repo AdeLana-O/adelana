@@ -5,11 +5,11 @@
     text-align: center;
   }
 
-  .hero__contact-menu {
+  .hero__links .contact__menu {
     @include flexDisplay(space-around);
     margin-top: 5rem;
 
-    .hero__contact-link {
+    .contact__link {
       font-size: 2.5rem;
       color: $primaryColorDark;
     }
@@ -17,7 +17,6 @@
 }
 
 @include mediaQuery($tablet) {
-  
 }
 
 @include mediaQuery($desktop) {
