@@ -2,31 +2,31 @@
   padding: $mobilePagePadding;
 }
 
-.footer__menu {
+.footer__menus {
   @extend %footer-links-display;
 
   .footer__links {
     padding-top: 5rem;
 
-    .footer__quick-links,
-    .footer__contact-links {
+    .quick-links,
+    .contact-links {
       margin-bottom: 5rem;
     }
   }
 
-  .footer__quick-links-menu {
+  .quick-links__menu {
     @extend %footer-links-display;
 
-    .footer__quick-link-item {
+    .quick-links__item {
       padding: 0.8rem 0;
 
-      .footer__quick-link {
+      .quick-link {
         color: $primaryColorLight;
       }
     }
   }
 
-  .footer__contact-links .contact__menu {
+  .contact-links .contact__menu {
     @extend %footer-links-display;
 
     .contact__item {
@@ -39,12 +39,12 @@
   }
 }
 
-.footer__copyright {
+.copyright {
   text-align: center;
 }
 
 @include mediaQuery($tablet) {
-  .footer__menu {
+  .footer__menus {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10rem;
@@ -54,8 +54,8 @@
       flex: 0 0 54%;
       padding-top: 0;
 
-      .footer__quick-links,
-      .footer__contact-links {
+      .quick-links,
+      .contact-links {
         margin-bottom: 0;
         padding: 0 0.5rem;
       }
@@ -68,8 +68,8 @@
     padding: $desktopPagePadding;
   }
 
-  .footer__menu .footer__quick-links-menu,
-  .footer__menu .footer__contact-menu {
+  .footer__menus .quick-links__menu,
+  .footer__menus .contact__menu {
     @include flexDisplay(center, true);
   }
 }

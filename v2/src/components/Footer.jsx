@@ -13,18 +13,18 @@ const Footer = () => {
     <footer id="footer">
       <div className="container">
         <div className="footer__container">
-          <div className="footer__menu">
+          <div className="footer__menus">
             <SiteLogo />
             <div className="footer__links">
-              <div className="footer__quick-links">
+              <div className="quick-links">
                 <div>
                   <h3>Quick Links</h3>
                 </div>
                 <div>
-                  <ul className="footer__quick-links-menu">
+                  <ul className="quick-links__menu">
                     {navLinks.map(({ name, link }) => (
-                      <li key={name} className="footer__quick-link-item">
-                        <Link to={link} className="footer__quick-link">
+                      <li key={name} className="quick-links__item">
+                        <Link to={link} className="quick-link">
                           {name}
                         </Link>
                       </li>
@@ -32,7 +32,7 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="footer__contact-links">
+              <div className="contact-links">
                 <div>
                   <h3>Contact</h3>
                 </div>
@@ -42,7 +42,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="footer__copyright">
+          <div className="copyright">
             <p>
               &copy;{" "}
               <time dateTime={new Date().getFullYear()}>

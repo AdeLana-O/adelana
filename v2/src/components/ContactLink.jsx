@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ContactLinks = ({ link, component: Component }) => (
+const ContactLink = ({ link, component: Component }) => (
   <li className="contact__item">
     <a
       href={link}
@@ -14,9 +14,9 @@ const ContactLinks = ({ link, component: Component }) => (
   </li>
 );
 
-ContactLinks.propTypes = {
+ContactLink.propTypes = {
   link: PropTypes.string.isRequired,
   component: PropTypes.elementType.isRequired,
 };
 
-export default ContactLinks;
+export default ContactLink;
