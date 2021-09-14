@@ -12,8 +12,8 @@
   }
 }
 
-@mixin setHeadings($color, $size, $h3: false) {
-  color: $color;
+@mixin setHeadings($size, $h3: false) {
+  color: $primaryColor;
   font-size: $size;
   font-family: $OswaldFont;
   line-height: 1.5;

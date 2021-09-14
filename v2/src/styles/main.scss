@@ -37,15 +37,15 @@ body {
   }
 
   h1 {
-    @include setHeadings($primaryColor, $h1);
+    @include setHeadings($h1);
   }
 
   h2 {
-    @include setHeadings($primaryColorLight, $h2);
+    @include setHeadings($h2);
   }
 
   h3 {
-    @include setHeadings($primaryColorLight, $h3, true);
+    @include setHeadings($h3, true);
   }
 
   ul,
@@ -65,6 +65,7 @@ body {
 
 #main {
   flex-grow: 1;
+  color: $primaryColorDark;
 
   p:not(:last-of-type) {
     line-height: 2.5;
