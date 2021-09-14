@@ -9,7 +9,7 @@ const SiteLogo = () => {
           <img
             src="logo.svg"
             alt="Adelana Onafuwa website logo"
-            className="site-logo__image"
+            className="site-logo__img"
             loading="lazy"
           />
         </picture>
