@@ -67,10 +67,13 @@ body {
   flex-grow: 1;
   color: $primaryColorDark;
 
-  p:not(:last-of-type) {
+  p {
     line-height: 2.5;
     color: $primaryColorDark;
-    margin-bottom: 2rem;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
   }
 }
 
