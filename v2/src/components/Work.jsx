@@ -66,7 +66,9 @@ const Work = () => {
               <div className="mobile__device">
                 <div className="slide__image__container">{renderImages}</div>
               </div>
-              <div className="slide__image__title">{imgTitle}</div>
+              <div className="slide__image__title">
+                <span>{imgTitle}</span>
+              </div>
             </div>
           </div>
         </div>
