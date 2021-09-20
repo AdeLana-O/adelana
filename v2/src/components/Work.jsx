@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+
+const timer = 4800;
 
 const Work = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -14,25 +16,35 @@ const Work = () => {
   const imgIndexes = mobileImgs.length - 1;
 
   const imgTitle = mobileImgs[currentImage].node.name
-    .replace(/\-mobile/, "")
+    .replace(/-mobile/, "")
     .replace("-", " ");
 
   const prevImage = useRef();
   const intervalId = useRef();
 
+  const change = useCallback(() => {
+    setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
+  }, [imgIndexes]);
+
   useEffect(() => {
-    intervalId.current = setInterval(() => {
-      setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
-    }, 2000);
+    intervalId.current = setInterval(change, timer);
 
     return () => {
       clearInterval(intervalId.current);
     };
-  }, [imgIndexes]);
+  }, [change]);
 
   useEffect(() => {
     prevImage.current = currentImage;
   }, [currentImage]);
+
+  const changeImage = index => {
+    clearInterval(intervalId.current);
+
+    setCurrentImage(index);
+
+    intervalId.current = setInterval(change, timer);
+  };
 
   const renderImages = mobileImgs.map((img, index) => {
     const { id, name, childImageSharp } = img.node;
@@ -53,6 +65,28 @@ const Work = () => {
     );
   });
 
+  const renderBtns = mobileImgs.map((img, index) => {
+    const { id, name } = img.node;
+    const label = name.replace(/-mobile/, "").replace("-", " ");
+    let className;
+
+    if (currentImage === index) {
+      className = "slide__btn slide__btn--active";
+    } else {
+      className = "slide__btn";
+    }
+
+    return (
+      <li className="slide__btn__item" key={id}>
+        <button
+          aria-label={`Select ${label}`}
+          className={className}
+          onClick={() => changeImage(index)}
+        />
+      </li>
+    );
+  });
+
   return (
     <section id="work">
       <div className="container">
@@ -62,13 +96,14 @@ const Work = () => {
             <p>Some of my featured projects and open source projects...</p>
           </div>
           <div className="work__slides">
-            <div className="work__imgs__container">
-              <div className="mobile__device">
-                <div className="slide__image__container">{renderImages}</div>
-              </div>
-              <div className="slide__image__title">
-                <span>{imgTitle}</span>
-              </div>
+            <div className="mobile__device">
+              <div className="slide__image__container">{renderImages}</div>
+            </div>
+            <div className="slide__image__title">
+              <span>{imgTitle}</span>
+            </div>
+            <div className="slide__btns">
+              <ul className="slide__btns__container">{renderBtns}</ul>
             </div>
           </div>
         </div>
@@ -86,7 +121,6 @@ const query = graphql`
       edges {
         node {
           id
-          publicURL
           name
           childImageSharp {
             fluid {
