@@ -45,7 +45,7 @@ body {
   }
 
   h3 {
-    @include setHeadings($h3, true);
+    @include setHeadings($h3);
   }
 
   ul,
@@ -68,11 +68,11 @@ body {
   color: $primaryColorDark;
 
   p {
-    line-height: 2.5;
+    line-height: 1.8;
     color: $primaryColorDark;
 
     &:not(:last-of-type) {
-      margin-bottom: 2rem;
+      margin-bottom: $marginBottom;
     }
   }
 }
