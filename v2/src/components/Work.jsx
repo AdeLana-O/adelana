@@ -21,8 +21,10 @@ const Work = () => {
 
   const prevImage = useRef();
   const intervalId = useRef();
+  const direction = useRef();
 
   const change = useCallback(() => {
+    direction.current = null;
     setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
   }, [imgIndexes]);
 
@@ -38,7 +40,32 @@ const Work = () => {
     prevImage.current = currentImage;
   }, [currentImage]);
 
-  const changeImage = index => {
+  useEffect(() => {
+    if (direction.current) {
+      const imageElement = document.querySelectorAll(
+        ".slide__image__container .slide__image"
+      );
+
+      imageElement.forEach(elem => {
+        if (
+          elem.classList.contains("slide__left") ||
+          elem.classList.contains("slide__right")
+        ) {
+          elem.className = "slide__image slide__active";
+        }
+      });
+    }
+  });
+
+  const changeImage = (e, index) => {
+    e.preventDefault();
+
+    if (currentImage < index) {
+      direction.current = "right";
+    } else {
+      direction.current = "left";
+    }
+
     clearInterval(intervalId.current);
 
     setCurrentImage(index);
@@ -50,8 +77,16 @@ const Work = () => {
     const { id, name, childImageSharp } = img.node;
     let className;
 
-    if (index === currentImage) {
+    if (direction.current === "left" && currentImage === index) {
+      className = "slide__image slide__left";
+    } else if (direction.current === "right" && currentImage === index) {
+      className = "slide__image slide__right";
+    } else if (currentImage === index) {
       className = "slide__image slide__active";
+    } else if (direction.current === "left" && prevImage.current === index) {
+      className = "slide__image slide__prev__left";
+    } else if (direction.current === "right" && prevImage.current === index) {
+      className = "slide__image slide__prev__right";
     } else if (prevImage.current === index) {
       className = "slide__image slide__prev";
     } else {
@@ -81,7 +116,7 @@ const Work = () => {
         <button
           aria-label={`Select ${label}`}
           className={className}
-          onClick={() => changeImage(index)}
+          onClick={e => changeImage(e, index)}
         />
       </li>
     );
