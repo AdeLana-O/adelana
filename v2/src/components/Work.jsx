@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 const timer = 4800;
@@ -140,6 +140,9 @@ const Work = () => {
             <div className="slide__btns">
               <ul className="slide__btns__container">{renderBtns}</ul>
             </div>
+          </div>
+          <div className="work__footer">
+            <Link to="/work">View More</Link>
           </div>
         </div>
       </div>
