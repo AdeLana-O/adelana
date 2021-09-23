@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 
 const About = () => {
   const data = useStaticQuery(query);
+
   return (
     <section id="about">
       <div className="container">

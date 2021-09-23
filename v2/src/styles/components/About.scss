@@ -1,0 +1,21 @@
+.about__container {
+  padding: $mobilePagePadding;
+}
+
+.about__details {
+  margin-bottom: $marginBottom;
+}
+
+.about__image {
+  max-width: 20rem;
+  margin: 0 auto;
+  background-color: $primaryColorLight;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@include mediaQuery($desktop) {
+  .about__container {
+    padding: $desktopPagePadding;
+  }
+}
