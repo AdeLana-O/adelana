@@ -63,12 +63,12 @@
     position: relative;
     z-index: 3;
     left: 0;
-    transition: left 0.6s ease-in;
+    transition: left 0.3s ease;
   }
 
   &.slide__prev {
     left: 100%;
-    transition: left 0.6s ease-in;
+    transition: left 0.3s ease;
     z-index: 3;
   }
 
@@ -80,14 +80,19 @@
     left: -100%;
   }
 
-  &.slide__prev__left {
-    left: -100%;
-    transition: left 0.6s ease-in 25ms;
+  &.slide__prev__left,
+  &.slide__prev__right {
+    left: 0;
   }
 
-  &.slide__prev__right {
+  &.prev__left {
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  &.prev__right {
     left: 100%;
-    transition: left 0.6s ease-in 25ms;
+    transition: left 0.3s ease;
   }
 }
 
@@ -117,8 +122,8 @@
   cursor: pointer;
   display: block;
   margin: 0 auto;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   border: 0.15rem solid $primaryColor;
   background-color: $primaryColorDark;
@@ -127,7 +132,7 @@
   &.slide__btn--active {
     border-color: transparent;
     border-radius: 1rem;
-    width: 2.8rem;
+    width: 2.2rem;
     transition: width 0.1s linear;
   }
 }

@@ -53,6 +53,14 @@ const Work = () => {
         ) {
           elem.className = "slide__image slide__active";
         }
+
+        if (elem.classList.contains("slide__prev__left")) {
+          elem.className = "slide__image prev__left";
+        }
+
+        if (elem.classList.contains("slide__prev__right")) {
+          elem.className = "slide__image prev__right";
+        }
       });
     }
   });
