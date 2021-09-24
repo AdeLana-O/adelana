@@ -74,10 +74,14 @@
 
   &.slide__left {
     left: 100%;
+    position: relative;
+    z-index: 3;
   }
 
-  &.slide_-right {
+  &.slide__right {
     left: -100%;
+    position: relative;
+    z-index: 3;
   }
 
   &.slide__prev__left,
