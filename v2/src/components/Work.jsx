@@ -22,6 +22,7 @@ const Work = () => {
   const prevImage = useRef();
   const intervalId = useRef();
   const direction = useRef();
+  const imageElements = useRef([]);
 
   const change = useCallback(() => {
     direction.current = null;
@@ -41,25 +42,21 @@ const Work = () => {
   }, [currentImage]);
 
   useEffect(() => {
-    if (direction.current) {
-      const imageElement = document.querySelectorAll(
-        ".slide__image__container .slide__image"
-      );
-
-      imageElement.forEach(elem => {
+    if (direction.current && Array.isArray(imageElements.current)) {
+      imageElements.current.forEach(element => {
         if (
-          elem.classList.contains("slide__left") ||
-          elem.classList.contains("slide__right")
+          element.classList.contains("slide__left") ||
+          element.classList.contains("slide__right")
         ) {
-          elem.className = "slide__image slide__active";
+          element.className = "slide__image slide__active";
         }
 
-        if (elem.classList.contains("slide__prev__left")) {
-          elem.className = "slide__image prev__left";
+        if (element.classList.contains("slide__prev__left")) {
+          element.className = "slide__image prev__left";
         }
 
-        if (elem.classList.contains("slide__prev__right")) {
-          elem.className = "slide__image prev__right";
+        if (element.classList.contains("slide__prev__right")) {
+          element.className = "slide__image prev__right";
         }
       });
     }
@@ -101,8 +98,16 @@ const Work = () => {
       className = "slide__image";
     }
 
+    const cbRef = element => {
+      if (imageElements.current && Array.isArray(imageElements.current)) {
+        if (element && !imageElements.current.includes(element)) {
+          imageElements.current.push(element);
+        }
+      }
+    };
+
     return (
-      <div className={className} key={id}>
+      <div className={className} key={id} ref={cbRef}>
         <Img fluid={childImageSharp.fluid} alt={name} />
       </div>
     );
