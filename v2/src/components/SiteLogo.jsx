@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const SiteLogo = () => {
   return (
     <div className="site-logo">
-      <Link to="/">
-        <picture>
-          <img
-            src="logo.svg"
+      <div className="site-logo__img">
+        <Link to="/">
+          <StaticImage
+            src="../../static/logo.svg"
             alt="Adelana Onafuwa website logo"
-            className="site-logo__img"
-            loading="lazy"
+            placeholder="tracedSVG"
           />
-        </picture>
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const timer = 4800;
 
@@ -80,6 +80,17 @@ const Work = () => {
 
   const renderImages = mobileImgs.map((img, index) => {
     const { id, name, childImageSharp } = img.node;
+
+    const cbRef = element => {
+      if (imageElements.current && Array.isArray(imageElements.current)) {
+        if (element && !imageElements.current.includes(element)) {
+          imageElements.current.push(element);
+        }
+      }
+    };
+
+    const image = getImage(childImageSharp);
+
     let className;
 
     if (direction.current === "left" && currentImage === index) {
@@ -98,17 +109,9 @@ const Work = () => {
       className = "slide__image";
     }
 
-    const cbRef = element => {
-      if (imageElements.current && Array.isArray(imageElements.current)) {
-        if (element && !imageElements.current.includes(element)) {
-          imageElements.current.push(element);
-        }
-      }
-    };
-
     return (
       <div className={className} key={id} ref={cbRef}>
-        <Img fluid={childImageSharp.fluid} alt={name} />
+        <GatsbyImage image={image} alt={name} />
       </div>
     );
   });
@@ -174,9 +177,7 @@ const query = graphql`
           id
           name
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
         }
       }

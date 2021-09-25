@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 const About = () => {
   const data = useStaticQuery(query);
@@ -37,7 +37,7 @@ const About = () => {
             </p>
           </div>
           <div className="about__image">
-            <Img fluid={data.file.childImageSharp.fluid} alt="Adelana Onafuwa" />
+            <StaticImage src="../images/profile.jpg" alt="Adelana Onafuwa" />
           </div>
         </div>
       </div>
