@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .work__container {
   padding: $mobilePagePadding;
 }
@@ -12,7 +14,7 @@
 
 .mobile__device {
   margin-bottom: $marginBottom;
-  border-width: $mobileDeviceBorder 0.5rem;
+  border-width: $mobileDeviceBorder 0.4rem;
   border-style: solid;
   border-color: $primaryColorDark;
   border-radius: 3.6rem;
@@ -26,7 +28,7 @@
     background-color: $primaryColorLight;
     border-radius: 1rem;
     position: absolute;
-    top: -$mobileDeviceBorder / 2;
+    top: math.div(-$mobileDeviceBorder, 2);
     left: 50%;
     z-index: 5;
     transform: translate(-50%);
@@ -34,12 +36,12 @@
 
   &::after {
     content: "";
-    width: 5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 1.2rem;
     background-color: $primaryColorLight;
     position: absolute;
-    bottom: -$mobileDeviceBorder / 2;
+    bottom: math.div(-$mobileDeviceBorder, 2);
     left: 50%;
     z-index: 5;
     transform: translate(-50%, 50%);
@@ -119,15 +121,15 @@
 
 .slide__btn__item {
   padding: 0.5rem;
-  width: 5rem;
+  width: 5.5rem;
 }
 
 .slide__btn {
   cursor: pointer;
   display: block;
   margin: 0 auto;
-  width: 1rem;
-  height: 1rem;
+  width: 1.35rem;
+  height: 1.35rem;
   border-radius: 50%;
   border: 0.15rem solid $primaryColor;
   background-color: $primaryColorDark;
@@ -136,7 +138,7 @@
   &.slide__btn--active {
     border-color: transparent;
     border-radius: 1rem;
-    width: 2.2rem;
+    width: 3.8rem;
     transition: width 0.1s linear;
   }
 }
