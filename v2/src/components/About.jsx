@@ -33,7 +33,7 @@ const About = () => (
           </p>
         </div>
         <div className="about__image">
-          <StaticImage src="../images/profile.jpg" alt="Adelana Onafuwa" />
+          <StaticImage src="../images/profile.png" alt="Adelana Onafuwa" />
         </div>
       </div>
     </div>
