@@ -21,11 +21,9 @@ const Work = () => {
 
   const prevImage = useRef();
   const intervalId = useRef();
-  const direction = useRef();
   const imageElements = useRef([]);
 
   const change = useCallback(() => {
-    direction.current = null;
     setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
   }, [imgIndexes]);
 
@@ -42,7 +40,7 @@ const Work = () => {
   }, [currentImage]);
 
   useEffect(() => {
-    if (direction.current && Array.isArray(imageElements.current)) {
+    if (Array.isArray(imageElements.current)) {
       imageElements.current.forEach(element => {
         if (
           element.classList.contains("slide__left") ||
@@ -62,15 +60,7 @@ const Work = () => {
     }
   });
 
-  const changeImage = (e, index) => {
-    e.preventDefault();
-
-    if (currentImage < index) {
-      direction.current = "right";
-    } else {
-      direction.current = "left";
-    }
-
+  const changeImage = index => {
     clearInterval(intervalId.current);
 
     setCurrentImage(index);
@@ -93,15 +83,15 @@ const Work = () => {
 
     let className;
 
-    if (direction.current === "left" && currentImage === index) {
+    if (currentImage < prevImage.current && currentImage === index) {
       className = "slide__image slide__left";
-    } else if (direction.current === "right" && currentImage === index) {
+    } else if (currentImage > prevImage.current && currentImage === index) {
       className = "slide__image slide__right";
     } else if (currentImage === index) {
       className = "slide__image slide__active";
-    } else if (direction.current === "left" && prevImage.current === index) {
+    } else if (currentImage < prevImage.current && prevImage.current === index) {
       className = "slide__image slide__prev__left";
-    } else if (direction.current === "right" && prevImage.current === index) {
+    } else if (currentImage > prevImage.current && prevImage.current === index) {
       className = "slide__image slide__prev__right";
     } else if (prevImage.current === index) {
       className = "slide__image slide__prev";
@@ -132,7 +122,7 @@ const Work = () => {
         <button
           aria-label={`Select ${label}`}
           className={className}
-          onClick={e => changeImage(e, index)}
+          onClick={() => changeImage(index)}
         />
       </li>
     );
@@ -177,7 +167,7 @@ const query = graphql`
           id
           name
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

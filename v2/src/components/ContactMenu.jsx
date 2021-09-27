@@ -1,5 +1,6 @@
 import React from "react";
-import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+// import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 import ContactLink from "./ContactLink";
 
