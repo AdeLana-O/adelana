@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const timer = 7000;
+const timer = 4800;
 
 const Work = () => {
   const [currentImage, setCurrentImage] = useState(0);
