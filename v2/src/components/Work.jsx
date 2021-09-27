@@ -2,10 +2,11 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const timer = 4800;
+const timer = 7000;
 
 const Work = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [clicked, setClicked] = useState(false);
 
   const { allFile } = useStaticQuery(query);
 
@@ -24,6 +25,7 @@ const Work = () => {
   const imageElements = useRef([]);
 
   const change = useCallback(() => {
+    setClicked(false);
     setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
   }, [imgIndexes]);
 
@@ -63,6 +65,7 @@ const Work = () => {
   const changeImage = index => {
     clearInterval(intervalId.current);
 
+    setClicked(true);
     setCurrentImage(index);
 
     intervalId.current = setInterval(change, timer);
@@ -83,16 +86,28 @@ const Work = () => {
 
     let className;
 
-    if (currentImage < prevImage.current && currentImage === index) {
+    if (clicked && currentImage < prevImage.current && currentImage === index) {
       className = "slide__image slide__left";
-    } else if (currentImage > prevImage.current && currentImage === index) {
+    } else if (
+      clicked &&
+      currentImage > prevImage.current &&
+      currentImage === index
+    ) {
       className = "slide__image slide__right";
+    } else if (
+      clicked &&
+      currentImage < prevImage.current &&
+      prevImage.current === index
+    ) {
+      className = "slide__image slide__prev__left";
+    } else if (
+      clicked &&
+      currentImage > prevImage.current &&
+      prevImage.current === index
+    ) {
+      className = "slide__image slide__prev__right";
     } else if (currentImage === index) {
       className = "slide__image slide__active";
-    } else if (currentImage < prevImage.current && prevImage.current === index) {
-      className = "slide__image slide__prev__left";
-    } else if (currentImage > prevImage.current && prevImage.current === index) {
-      className = "slide__image slide__prev__right";
     } else if (prevImage.current === index) {
       className = "slide__image slide__prev";
     } else {
