@@ -1,8 +1,7 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import WorkMobile from "./WorkMobile";
-
-const timer = 4800;
+import WorkLarge from "./WorkLarge";
 
 const Work = () => {
   const { allFile } = useStaticQuery(query);
@@ -21,6 +20,7 @@ const Work = () => {
           </div>
           <div className="work__slides">
             <WorkMobile images={mobileImgs} />
+            <WorkLarge images={allFile.edges} />
           </div>
           <div className="work__footer">
             <Link to="/work">View More</Link>
