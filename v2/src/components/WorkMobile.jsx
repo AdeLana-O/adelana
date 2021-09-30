@@ -138,9 +138,11 @@ const WorkMobile = ({ images }) => {
   });
 
   return (
-    <div className="mobile__device__container">
-      <div className="mobile__device">
-        <div className="slide__image__container">{renderImages}</div>
+    <div className="mobile__view__container">
+      <div className="device__container">
+        <div className="mobile__device">
+          <div className="slide__images__container">{renderImages}</div>
+        </div>
       </div>
       <div className="slide__image__title">
         <span>{imgTitle}</span>

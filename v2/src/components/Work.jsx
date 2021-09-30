@@ -18,7 +18,7 @@ const Work = () => {
             <h2>Featured Projects</h2>
             <p>Some of my featured projects and open source projects...</p>
           </div>
-          <div className="work__slides">
+          <div className="work__slide__images">
             <WorkMobile images={mobileImgs} />
             <WorkLarge images={allFile.edges} />
           </div>

@@ -8,12 +8,15 @@
   margin-bottom: $marginBottom;
 }
 
-.work__slides {
+.work__slide__images {
+  margin-bottom: $marginBottom;
+}
+
+.device__container {
   margin-bottom: $marginBottom;
 }
 
 .mobile__device {
-  margin-bottom: $marginBottom;
   border-width: $mobileDeviceBorder 0.4rem;
   border-style: solid;
   border-color: $primaryColorDark;
@@ -48,7 +51,7 @@
   }
 }
 
-.slide__image__container {
+.slide__images__container {
   position: relative;
   overflow: hidden;
 }
