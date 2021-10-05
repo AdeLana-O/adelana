@@ -41,7 +41,7 @@
     content: "";
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     background-color: $primaryColorLight;
     position: absolute;
     bottom: math.div(-$mobileDeviceBorder, 2);
@@ -106,6 +106,7 @@
 
 .slide__image__title {
   text-align: center;
+  margin-top: $marginTop;
   margin-bottom: $marginBottom;
 
   span {
@@ -179,20 +180,31 @@
 
   .desktop__view__container {
     display: block;
-
-    .mobile__device__container {
-      display: none;
-    }
+  }
+  .mobile__device__container {
+    display: none;
   }
 
   .desktop__device {
-    border-width: $desktopDeviceTopBorder 0.9rem $desktopDeviceBottomBorder;
+    border-width: $desktopDeviceTopBorder 0.8rem $desktopDeviceBottomBorder;
     border-style: solid;
     border-color: $primaryColorDark;
-    border-radius: 1rem 1rem 0 0;
-    width: 95%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 87%;
     margin: 0 auto;
     position: relative;
+
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: $primaryColorLight;
+      position: absolute;
+      top: math.div(-$desktopDeviceTopBorder, 2);
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     &::after {
       content: "";
@@ -207,7 +219,7 @@
   }
 
   .slide__image__title {
-    margin-top: $marginTop;
+    margin-top: $marginTop * 2.5;
   }
 }
 
@@ -216,7 +228,36 @@
     padding: $desktopPagePadding;
   }
 
-  // .desktop__view__container .mobile__device__container {
-  //   display: block;
-  // }
+  .device__container {
+    position: relative;
+  }
+
+  .mobile__device__container {
+    display: block;
+    position: absolute;
+    bottom: -10.8rem;
+    right: 2.1rem;
+    z-index: 3;
+    width: 22.5%;
+
+    .slide__images__container {
+      background-color: #e6e6e6;
+    }
+
+    .mobile__device {
+      &::before {
+        width: 3.4rem;
+      }
+
+      &::after {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .desktop__device__container {
+    position: relative;
+    z-index: 2;
+  }
 }
