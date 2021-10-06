@@ -10,8 +10,8 @@ const Home = () => (
   <Layout>
     <SEO seo />
     <Hero />
-    <About />
     <Work />
+    <About />
   </Layout>
 );
 

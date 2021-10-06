@@ -41,7 +41,7 @@
     content: "";
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 1rem;
+    border-radius: 50%;
     background-color: $primaryColorLight;
     position: absolute;
     bottom: math.div(-$mobileDeviceBorder, 2);
@@ -235,7 +235,7 @@
   .mobile__device__container {
     display: block;
     position: absolute;
-    bottom: -10.8rem;
+    bottom: -8rem;
     right: 2.1rem;
     z-index: 3;
     width: 22.5%;
