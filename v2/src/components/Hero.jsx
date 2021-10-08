@@ -11,7 +11,7 @@ const Hero = () => (
             <h1>Hi, I'm Adelana Onafuwa.</h1>
           </div>
           <div>
-            <p>Software developer of all things JavaScript.</p>
+            <p>JavaScript Software developer.</p>
             <p>
               Welcome to my personal website. Here you will find out details about me
               and projects I've worked on.

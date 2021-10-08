@@ -6,6 +6,7 @@
 
 .work__header {
   margin-bottom: $marginBottom;
+  text-align: center;
 }
 
 .work__slide__images {
@@ -19,7 +20,7 @@
 .mobile__device {
   border-width: $mobileDeviceBorder 0.4rem;
   border-style: solid;
-  border-color: $primaryColorDark;
+  border-color: $dark;
   border-radius: 3.6rem;
   width: 100%;
   position: relative;
@@ -28,7 +29,7 @@
     content: "";
     width: 4.5rem;
     height: 0.25rem;
-    background-color: $primaryColorLight;
+    background-color: $light;
     border-radius: 1rem;
     position: absolute;
     top: math.div(-$mobileDeviceBorder, 2);
@@ -42,7 +43,7 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background-color: $primaryColorLight;
+    background-color: $light;
     position: absolute;
     bottom: math.div(-$mobileDeviceBorder, 2);
     left: 50%;
@@ -152,19 +153,19 @@
 
   a {
     display: inline-block;
-    width: 73%;
-    max-width: 20rem;
-    background-color: $primaryColorLight;
+    width: 55%;
+    max-width: 16.5rem;
+    background-color: $primaryColor;
     font-size: 1.6rem;
     font-weight: bold;
-    color: $primaryColor;
-    padding: 1.5rem 1rem;
+    color: $primaryColorLight;
+    padding: 1.3rem 1rem;
     border-radius: 3rem;
-    transition: 0.2s linear;
+    transition: 0.12s linear;
 
     &:hover {
-      background-color: $primaryColorDark;
-      color: $primaryColorLight;
+      background-color: $primaryColorLight;
+      color: $primaryColorDark;
     }
   }
 }
@@ -188,7 +189,7 @@
   .desktop__device {
     border-width: $desktopDeviceTopBorder 0.8rem $desktopDeviceBottomBorder;
     border-style: solid;
-    border-color: $primaryColorDark;
+    border-color: $dark;
     border-radius: 0.5rem 0.5rem 0 0;
     width: 87%;
     margin: 0 auto;
@@ -199,7 +200,7 @@
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
-      background-color: $primaryColorLight;
+      background-color: $light;
       position: absolute;
       top: math.div(-$desktopDeviceTopBorder, 2);
       left: 50%;
@@ -208,7 +209,7 @@
 
     &::after {
       content: "";
-      background-color: $primaryColorDark;
+      background-color: $dark;
       position: absolute;
       bottom: -$desktopDeviceBottomBorder - $desktopDeviceBaseHeight - 0.1rem;
       left: -8.5%;
