@@ -1,5 +1,9 @@
 @use "sass:math";
 
+#work {
+  background-color: $primaryColorLight;
+}
+
 .work__container {
   padding: $mobilePagePadding;
 }
@@ -155,7 +159,7 @@
     display: inline-block;
     width: 55%;
     max-width: 16.5rem;
-    background-color: $primaryColor;
+    background-color: $primaryColorDark;
     font-size: 1.6rem;
     font-weight: bold;
     color: $primaryColorLight;
@@ -164,8 +168,7 @@
     transition: 0.12s linear;
 
     &:hover {
-      background-color: $primaryColorLight;
-      color: $primaryColorDark;
+      background-color: $primaryColor;
     }
   }
 }
