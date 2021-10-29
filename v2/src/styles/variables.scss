@@ -15,10 +15,10 @@ $h1: 4rem;
 $h2: 3rem;
 $h3: 2rem;
 
-$mobilePadding: 6.5vw;
+$mobilePadding: 8.5vw;
 $desktopPadding: 2rem;
-$mobilePagePadding: 13rem $mobilePadding;
-$desktopPagePadding: 13rem $desktopPadding;
+$mobilePagePadding: 10rem $mobilePadding 13rem;
+$desktopPagePadding: 10rem $desktopPadding 13rem;
 
 $mobile: 576px;
 $tablet: 768px;
@@ -30,4 +30,4 @@ $desktopDeviceBottomBorder: 6rem;
 $desktopDeviceBaseHeight: 2rem;
 
 $marginBottom: 3rem;
-$marginTop: $marginBottom * 1.8;
+$marginTop: $marginBottom * 3;

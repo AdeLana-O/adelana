@@ -1,25 +1,30 @@
+#about {
+  background-color: $primaryColorLight;
+}
+
 .about__container {
   padding: $mobilePagePadding;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  gap: 9rem 2rem;
+  align-items: center;
 }
 
 .about__header {
   text-align: center;
 }
 
-.about__details {
-  margin-bottom: $marginBottom;
-}
-
-.about__image {
-  max-width: 20rem;
-  margin: 0 auto;
-  background-color: $primaryColorLight;
-  border-radius: 50%;
-  overflow: hidden;
+@include mediaQuery($tablet) {
+  .about__container {
+    grid-template-columns: 26rem 1fr;
+    column-gap: 3rem;
+  }
 }
 
 @include mediaQuery($desktop) {
   .about__container {
+    grid-template-columns: 30rem 1fr;
+    column-gap: 4.5rem;
     padding: $desktopPagePadding;
   }
 }
