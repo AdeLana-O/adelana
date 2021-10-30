@@ -6,10 +6,6 @@ import WorkLarge from "./WorkLarge";
 const Work = () => {
   const { allFile } = useStaticQuery(query);
 
-  const mobileImgs = allFile.edges.filter(file => {
-    return file.node.name.includes("mobile");
-  });
-
   return (
     <section id="work">
       <div className="container">
@@ -19,7 +15,7 @@ const Work = () => {
             <p>Some of my featured projects and open source projects...</p>
           </div>
           <div className="work__slide__images">
-            <WorkMobile images={mobileImgs} />
+            <WorkMobile images={allFile.edges} />
             <WorkLarge images={allFile.edges} />
           </div>
           <div className="work__footer">

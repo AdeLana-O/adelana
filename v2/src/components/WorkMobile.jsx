@@ -1,71 +1,22 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import withSlides from "../HOC/withSlides";
+import filterImages from "../utils/filterImages";
 
-const timer = 4800;
-
-const WorkMobile = ({ images }) => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [clicked, setClicked] = useState(false);
-
-  const imgIndexes = images.length - 1;
-
-  const imgTitle = images[currentImage].node.name
+const WorkMobile = ({
+  data,
+  currentIndex,
+  clicked,
+  prevIndex,
+  imageElements,
+  changeImage,
+}) => {
+  const imgTitle = data[currentIndex].node.name
     .replace(/-mobile/, "")
     .replace("-", " ");
 
-  const prevImage = useRef();
-  const intervalId = useRef();
-  const imageElements = useRef([]);
-
-  const change = useCallback(() => {
-    setClicked(false);
-    setCurrentImage(state => (state === imgIndexes ? 0 : state + 1));
-  }, [imgIndexes]);
-
-  useEffect(() => {
-    intervalId.current = setInterval(change, timer);
-
-    return () => {
-      clearInterval(intervalId.current);
-    };
-  }, [change]);
-
-  useEffect(() => {
-    prevImage.current = currentImage;
-  }, [currentImage]);
-
-  useEffect(() => {
-    if (Array.isArray(imageElements.current)) {
-      imageElements.current.forEach(element => {
-        if (
-          element.classList.contains("slide__left") ||
-          element.classList.contains("slide__right")
-        ) {
-          element.className = "slide__image slide__active";
-        }
-
-        if (element.classList.contains("slide__prev__left")) {
-          element.className = "slide__image prev__left";
-        }
-
-        if (element.classList.contains("slide__prev__right")) {
-          element.className = "slide__image prev__right";
-        }
-      });
-    }
-  });
-
-  const changeImage = index => {
-    clearInterval(intervalId.current);
-
-    setClicked(true);
-    setCurrentImage(index);
-
-    intervalId.current = setInterval(change, timer);
-  };
-
-  const renderImages = images.map((img, index) => {
+  const renderImages = data.map((img, index) => {
     const { id, name, childImageSharp } = img.node;
 
     const cbRef = element => {
@@ -80,29 +31,29 @@ const WorkMobile = ({ images }) => {
 
     let className;
 
-    if (clicked && currentImage < prevImage.current && currentImage === index) {
+    if (clicked && currentIndex < prevIndex.current && currentIndex === index) {
       className = "slide__image slide__left";
     } else if (
       clicked &&
-      currentImage > prevImage.current &&
-      currentImage === index
+      currentIndex > prevIndex.current &&
+      currentIndex === index
     ) {
       className = "slide__image slide__right";
     } else if (
       clicked &&
-      currentImage < prevImage.current &&
-      prevImage.current === index
+      currentIndex < prevIndex.current &&
+      prevIndex.current === index
     ) {
       className = "slide__image slide__prev__left";
     } else if (
       clicked &&
-      currentImage > prevImage.current &&
-      prevImage.current === index
+      currentIndex > prevIndex.current &&
+      prevIndex.current === index
     ) {
       className = "slide__image slide__prev__right";
-    } else if (currentImage === index) {
+    } else if (currentIndex === index) {
       className = "slide__image slide__active";
-    } else if (prevImage.current === index) {
+    } else if (prevIndex.current === index) {
       className = "slide__image slide__prev";
     } else {
       className = "slide__image";
@@ -115,12 +66,12 @@ const WorkMobile = ({ images }) => {
     );
   });
 
-  const renderBtns = images.map((img, index) => {
+  const renderBtns = data.map((img, index) => {
     const { id, name } = img.node;
     const label = name.replace(/-mobile/, "").replace("-", " ");
     let className;
 
-    if (currentImage === index) {
+    if (currentIndex === index) {
       className = "slide__btn slide__btn--active";
     } else {
       className = "slide__btn";
@@ -154,8 +105,13 @@ const WorkMobile = ({ images }) => {
   );
 };
 
-export default WorkMobile;
+export default withSlides(WorkMobile, filterImages);
 
 WorkMobile.propTypes = {
-  images: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  currentIndex: PropTypes.number.isRequired,
+  clicked: PropTypes.bool.isRequired,
+  prevIndex: PropTypes.object.isRequired,
+  imageElements: PropTypes.object.isRequired,
+  changeImage: PropTypes.func.isRequired,
 };

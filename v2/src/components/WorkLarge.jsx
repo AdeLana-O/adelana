@@ -1,72 +1,20 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import withSlides from "../HOC/withSlides";
 import flattenImages from "../utils/flattenImages";
 
-const timer = 4800;
+const WorkLarge = ({
+  data,
+  currentIndex,
+  clicked,
+  prevIndex,
+  imageElements,
+  changeImage,
+}) => {
+  const imgTitle = data[currentIndex].name;
 
-const WorkLarge = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [clicked, setClicked] = useState(false);
-
-  const slideImages = useMemo(() => flattenImages(images), [images]);
-
-  const imageIndex = slideImages.length - 1;
-
-  const imgTitle = slideImages[currentIndex].name;
-
-  const prevIndex = useRef();
-  const intervalId = useRef();
-  const imageElements = useRef([]);
-
-  const change = useCallback(() => {
-    setClicked(false);
-    setCurrentIndex(state => (state === imageIndex ? 0 : state + 1));
-  }, [imageIndex]);
-
-  useEffect(() => {
-    intervalId.current = setInterval(change, timer);
-
-    return () => {
-      clearInterval(intervalId.current);
-    };
-  }, [change]);
-
-  useEffect(() => {
-    prevIndex.current = currentIndex;
-  }, [currentIndex]);
-
-  useEffect(() => {
-    if (Array.isArray(imageElements.current)) {
-      imageElements.current.forEach(element => {
-        if (
-          element.classList.contains("slide__left") ||
-          element.classList.contains("slide__right")
-        ) {
-          element.className = "slide__image slide__active";
-        }
-
-        if (element.classList.contains("slide__prev__left")) {
-          element.className = "slide__image prev__left";
-        }
-
-        if (element.classList.contains("slide__prev__right")) {
-          element.className = "slide__image prev__right";
-        }
-      });
-    }
-  });
-
-  const changeImage = index => {
-    clearInterval(intervalId.current);
-
-    setClicked(true);
-    setCurrentIndex(index);
-
-    intervalId.current = setInterval(change, timer);
-  };
-
-  const renderMobile = slideImages.map((img, index) => {
+  const renderMobile = data.map((img, index) => {
     const { id, name, childImageSharp } = img.mobile.node;
     const image = getImage(childImageSharp);
     let className;
@@ -114,7 +62,7 @@ const WorkLarge = ({ images }) => {
     );
   });
 
-  const renderDesktop = slideImages.map((img, index) => {
+  const renderDesktop = data.map((img, index) => {
     const { id, name, childImageSharp } = img.desktop.node;
     const image = getImage(childImageSharp);
     let className;
@@ -162,7 +110,7 @@ const WorkLarge = ({ images }) => {
     );
   });
 
-  const renderButtons = slideImages.map(({ name }, index) => {
+  const renderButtons = data.map(({ name }, index) => {
     let className;
 
     if (currentIndex === index) {
@@ -206,8 +154,13 @@ const WorkLarge = ({ images }) => {
   );
 };
 
-export default WorkLarge;
+export default withSlides(WorkLarge, flattenImages);
 
 WorkLarge.propTypes = {
-  images: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  currentIndex: PropTypes.number.isRequired,
+  clicked: PropTypes.bool.isRequired,
+  prevIndex: PropTypes.object.isRequired,
+  imageElements: PropTypes.object.isRequired,
+  changeImage: PropTypes.func.isRequired,
 };
