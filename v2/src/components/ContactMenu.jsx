@@ -1,6 +1,6 @@
 import React from "react";
-import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-// import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
+// import { FaTwitter, FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 import ContactLink from "./ContactLink";
 
@@ -18,7 +18,7 @@ const ContactMenu = () => (
     />
     <ContactLink
       link="https://linkedin.com/in/adelana-onafuwa"
-      component={FaLinkedin}
+      component={FaLinkedinIn}
       label="LinkedIn"
     />
     {/* <ContactLink link="mailto:contact@adelana.dev" component={FaEnvelope} label="EMail" /> */}
