@@ -17,28 +17,20 @@ const Footer = () => {
             <SiteLogo />
             <div className="footer__links">
               <div className="quick-links">
-                <div>
-                  <h3>Quick Links</h3>
-                </div>
-                <div>
-                  <ul className="quick-links__menu">
-                    {navLinks.map(({ name, link }) => (
-                      <li key={name} className="quick-links__item">
-                        <Link to={link} className="quick-link">
-                          {name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <h3>Quick Links</h3>
+                <ul className="quick-links__menu">
+                  {navLinks.map(({ name, link }) => (
+                    <li key={name} className="quick-links__item">
+                      <Link to={link} className="quick-link">
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div className="contact-links">
-                <div>
-                  <h3>Contact</h3>
-                </div>
-                <div>
-                  <ContactMenu />
-                </div>
+                <h3>Contact</h3>
+                <ContactMenu />
               </div>
             </div>
           </div>

@@ -52,9 +52,9 @@
 @include mediaQuery($tablet) {
   .hero__container {
     display: grid;
-    grid-template-columns: 38rem 1fr;
+    grid-template-columns: 25rem 1fr;
     gap: 4.5rem;
-    align-items: start;
+    align-items: center;
   }
 
   .hero__image {
@@ -64,6 +64,7 @@
 
 @include mediaQuery($desktop) {
   .hero__container {
+    grid-template-columns: 38rem 1fr;
     padding: $desktopPagePadding;
   }
 }

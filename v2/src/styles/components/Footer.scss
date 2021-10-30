@@ -1,5 +1,6 @@
 .footer__container {
   padding: $mobilePagePadding;
+  padding-bottom: 5rem;
 }
 
 .footer__menus,
@@ -26,14 +27,19 @@
   padding: 0.8rem 0;
 }
 
-.quick-link,
-.contact__link {
+.quick-links .quick-link,
+.contact-links .contact__link {
   color: $primaryColorDark;
   font-weight: bold;
 }
 
+.contact-links .contact__link {
+  font-size: 1.8rem;
+}
+
 .copyright {
   text-align: center;
+  color: $primaryColorDark;
 }
 
 @include mediaQuery($tablet) {
@@ -63,5 +69,6 @@
 @include mediaQuery($desktop) {
   .footer__container {
     padding: $desktopPagePadding;
+    padding-bottom: 5rem;
   }
 }

@@ -107,7 +107,7 @@
 
 .slide__image__title {
   text-align: center;
-  margin-top: $marginTop;
+  margin-top: math.div($marginTop, 1.5);
   margin-bottom: $marginBottom;
 
   span {
@@ -219,7 +219,7 @@
   }
 
   .slide__image__title {
-    margin-top: $marginTop * 2.5;
+    margin-top: $marginTop * 1.333333333333333;
   }
 }
 
@@ -235,7 +235,7 @@
   .mobile__device__container {
     display: block;
     position: absolute;
-    bottom: -8rem;
+    bottom: -5.7rem;
     right: 2.1rem;
     z-index: 3;
     width: 22.5%;
