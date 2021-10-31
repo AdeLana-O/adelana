@@ -169,18 +169,19 @@
   }
 }
 
-.desktop__view__container {
-  display: none;
-}
+// .desktop__view__container {
+//   display: none;
+// }
 
 @include mediaQuery($tablet) {
-  .mobile__view__container {
-    display: none;
-  }
+  // .mobile__view__container {
+  //   display: none;
+  // }
 
-  .desktop__view__container {
-    display: block;
-  }
+  // .desktop__view__container {
+  //   display: block;
+  // }
+
   .mobile__device__container {
     display: none;
   }

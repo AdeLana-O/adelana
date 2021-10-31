@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import WorkMobile from "./WorkMobile";
 import WorkLarge from "./WorkLarge";
 
 const Work = () => {
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    setWidth(window.screen.width);
+
+    const screenSize = () => {
+      setWidth(window.screen.width);
+    };
+
+    window.addEventListener("resize", screenSize);
+
+    return () => {
+      window.removeEventListener("resize", screenSize);
+    };
+  }, []);
+
   const { allFile } = useStaticQuery(query);
 
   return (
@@ -15,8 +31,11 @@ const Work = () => {
             <p>Some of my featured projects and open source projects...</p>
           </div>
           <div className="work__slide__images">
-            <WorkMobile images={allFile.edges} />
-            <WorkLarge images={allFile.edges} />
+            {width >= 768 ? (
+              <WorkLarge images={allFile.edges} />
+            ) : (
+              <WorkMobile images={allFile.edges} />
+            )}
           </div>
           <div className="work__footer">
             <Link to="/work">View More</Link>
