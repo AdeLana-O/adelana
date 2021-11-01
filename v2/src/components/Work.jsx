@@ -7,11 +7,11 @@ const Work = () => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    setWidth(window.screen.width);
-
     const screenSize = () => {
-      setWidth(window.screen.width);
+      setWidth(window.innerWidth);
     };
+
+    setWidth(window.innerWidth);
 
     window.addEventListener("resize", screenSize);
 
@@ -31,10 +31,10 @@ const Work = () => {
             <p>Some of my featured projects and open source projects...</p>
           </div>
           <div className="work__slide__images">
-            {width >= 768 ? (
-              <WorkLarge images={allFile.edges} />
-            ) : (
+            {width < 768 ? (
               <WorkMobile images={allFile.edges} />
+            ) : (
+              <WorkLarge images={allFile.edges} />
             )}
           </div>
           <div className="work__footer">
