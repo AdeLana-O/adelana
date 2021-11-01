@@ -40,7 +40,7 @@ const Footer = () => {
               <time dateTime={new Date().getFullYear()}>
                 {new Date().getFullYear()}
               </time>{" "}
-              AdeLana. All rights reserved.
+              AdeLana Onafuwa
             </p>
           </div>
         </div>

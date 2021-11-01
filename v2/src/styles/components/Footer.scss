@@ -18,7 +18,7 @@
   margin-bottom: $marginBottom;
 }
 
-.footer__links > .quick-links {
+.footer__links .quick-links {
   margin-bottom: $marginBottom;
 }
 
@@ -38,29 +38,34 @@
 }
 
 .copyright {
-  text-align: center;
+  text-align: left;
   color: $primaryColorDark;
-}
-
-@include mediaQuery($mobile) {
+  font-size: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 0.1rem solid $primaryColorDark;
 }
 
 @include mediaQuery($tablet) {
   .footer__menus {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10rem;
+    margin-bottom: $marginBottom;
+
+    > .site-logo {
+      margin-bottom: 0;
+    }
   }
 
   .footer__links {
     @include flexDisplay(space-between, true, flex-start);
     flex: 0 0 54%;
     padding-top: 0;
-  }
-  .quick-links,
-  .contact-links {
-    margin-bottom: 0;
-    padding: 0 0.5rem;
+
+    .quick-links,
+    .contact-links {
+      margin-bottom: 0;
+      padding: 0 0.5rem;
+    }
   }
 
   .footer__menus .quick-links__menu,
