@@ -4,6 +4,7 @@ import withSlides from "../HOC/withSlides";
 import MobileDevice from "./MobileDevice";
 import SlideButtons from "./SlideButtons";
 import filterImages from "../utils/filterImages";
+import arrayMapper from "../utils/arrayMapper";
 
 const WorkMobile = ({
   data,
@@ -13,15 +14,14 @@ const WorkMobile = ({
   imageElements,
   changeImage,
 }) => {
-  const imgTitle = data[currentIndex].node.name
-    .replace(/-mobile/, "")
-    .replace("-", " ");
+  const { name } = data[currentIndex];
+  const dataRenderer = arrayMapper(data, "mobile");
 
   return (
     <div className="mobile__view__container">
       <div className="device__container">
         <MobileDevice
-          images={data}
+          images={dataRenderer}
           currentIndex={currentIndex}
           prevIndex={prevIndex}
           clicked={clicked}
@@ -29,11 +29,11 @@ const WorkMobile = ({
         />
       </div>
       <div className="slide__image__title">
-        <span>{imgTitle}</span>
+        <span>{name}</span>
       </div>
       <div className="slide__btns">
         <SlideButtons
-          images={data}
+          images={dataRenderer}
           currentIndex={currentIndex}
           changeImage={changeImage}
         />

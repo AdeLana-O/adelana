@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import formatName from "../utils/formatName";
 
 const SlideButtons = ({ images, currentIndex, changeImage }) => {
   const renderButtons = images.map((img, index) => {
     const { id, name } = img.node;
-    const label = name.replace(/-mobile/, "").replace("-", " ");
+    const label = formatName(name);
     let className;
 
     if (currentIndex === index) {

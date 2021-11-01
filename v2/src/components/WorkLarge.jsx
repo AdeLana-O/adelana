@@ -5,6 +5,7 @@ import MobileDevice from "./MobileDevice";
 import SlideButtons from "./SlideButtons";
 import flattenImages from "../utils/flattenImages";
 import renderSlides from "../utils/renderSlides";
+import arrayMapper from "../utils/arrayMapper";
 
 const WorkLarge = ({
   data,
@@ -14,11 +15,9 @@ const WorkLarge = ({
   imageElements,
   changeImage,
 }) => {
-  const imgTitle = data[currentIndex].name;
-
-  const dataRenderer = data.map(item => item.mobile);
-
-  const slides = data.map(item => item.desktop);
+  const { name } = data[currentIndex];
+  const dataRenderer = arrayMapper(data, "mobile");
+  const slides = arrayMapper(data, "desktop");
 
   const renderDesktop = renderSlides({
     data: slides,
@@ -47,7 +46,7 @@ const WorkLarge = ({
         </div>
       </div>
       <div className="slide__image__title">
-        <span>{imgTitle}</span>
+        <span>{name}</span>
       </div>
       <div className="slide__btns">
         <SlideButtons
