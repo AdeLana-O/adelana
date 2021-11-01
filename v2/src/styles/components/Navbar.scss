@@ -33,17 +33,17 @@
       height: 0.9rem;
     }
   }
-}
 
-.nav__link.nav__link--active {
-  color: $accentColor;
-
-  &:hover {
+  &.nav__link--active {
     color: $accentColor;
 
-    &::after {
-      height: 0.9rem;
-      background-color: rgba($accentColor, 0.2);
+    &:hover {
+      color: $accentColor;
+
+      &::after {
+        height: 0.9rem;
+        background-color: rgba($accentColor, 0.2);
+      }
     }
   }
 }
