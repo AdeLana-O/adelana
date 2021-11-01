@@ -1,3 +1,5 @@
+import formatName from "./formatName";
+
 const flattenImages = images => {
   const temp = {
     name: null,
@@ -6,7 +8,7 @@ const flattenImages = images => {
   };
 
   return images.reduce((imageList, image) => {
-    const imageName = image.node.name.replace(/-mobile/, "").replace("-", " ");
+    const imageName = formatName(image.node.name);
     const isMobile = image.node.name.includes("mobile");
 
     const indexedImage = imageList.find(item => item.name === imageName);
