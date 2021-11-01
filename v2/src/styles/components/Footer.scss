@@ -3,6 +3,10 @@
   padding-bottom: 5rem;
 }
 
+.footer__menus {
+  margin-bottom: $marginBottom;
+}
+
 .footer__menus,
 .quick-links__menu,
 .contact-links .contact__menu {
@@ -11,15 +15,11 @@
 
 .footer__menus > .site-logo {
   align-self: flex-start;
+  margin-bottom: $marginBottom;
 }
 
-.footer__links {
-  padding-top: 5rem;
-
-  .quick-links,
-  .contact-links {
-    margin-bottom: 5rem;
-  }
+.footer__links > .quick-links {
+  margin-bottom: $marginBottom;
 }
 
 .quick-links__item,
@@ -40,6 +40,9 @@
 .copyright {
   text-align: center;
   color: $primaryColorDark;
+}
+
+@include mediaQuery($mobile) {
 }
 
 @include mediaQuery($tablet) {

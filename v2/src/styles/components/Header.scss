@@ -5,6 +5,7 @@
 
 @include mediaQuery($desktop) {
   .header__container {
-    padding: 2rem $desktopPadding;
+    padding: $desktopPadding;
+    justify-content: center;
   }
 }

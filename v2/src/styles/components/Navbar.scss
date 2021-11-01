@@ -49,6 +49,9 @@
 }
 
 @include mediaQuery($desktop) {
+  #nav {
+    margin-left: 10rem;
+  }
   .nav__item {
     padding: 0 1.5rem;
   }

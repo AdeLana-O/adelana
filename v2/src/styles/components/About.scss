@@ -23,8 +23,8 @@
 
 @include mediaQuery($desktop) {
   .about__container {
-    grid-template-columns: 30rem 1fr;
-    column-gap: 4.5rem;
+    grid-template-columns: 40rem 1fr;
+    column-gap: 5rem;
     padding: $desktopPagePadding;
   }
 }

@@ -15,6 +15,7 @@
 
 .device__container {
   margin-bottom: $marginBottom;
+  position: relative;
 }
 
 .mobile__device {
@@ -169,54 +170,42 @@
   }
 }
 
-// .desktop__view__container {
-//   display: none;
-// }
+.desktop__device {
+  border-width: $desktopDeviceTopBorder 0.8rem $desktopDeviceBottomBorder;
+  border-style: solid;
+  border-color: $dark;
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 87%;
+  margin: 0 auto;
+  position: relative;
 
-@include mediaQuery($tablet) {
-  // .mobile__view__container {
-  //   display: none;
-  // }
-
-  // .desktop__view__container {
-  //   display: block;
-  // }
-
-  .mobile__device__container {
-    display: none;
+  &::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: $light;
+    position: absolute;
+    top: math.div(-$desktopDeviceTopBorder, 2);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .desktop__device {
-    border-width: $desktopDeviceTopBorder 0.8rem $desktopDeviceBottomBorder;
-    border-style: solid;
-    border-color: $dark;
-    border-radius: 0.5rem 0.5rem 0 0;
-    width: 87%;
-    margin: 0 auto;
-    position: relative;
+  &::after {
+    content: "";
+    background-color: $dark;
+    position: absolute;
+    bottom: -$desktopDeviceBottomBorder - $desktopDeviceBaseHeight - 0.1rem;
+    left: -8.5%;
+    right: -8.5%;
+    height: $desktopDeviceBaseHeight;
+    border-radius: 0.5rem;
+  }
+}
 
-    &::before {
-      content: "";
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      background-color: $light;
-      position: absolute;
-      top: math.div(-$desktopDeviceTopBorder, 2);
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    &::after {
-      content: "";
-      background-color: $dark;
-      position: absolute;
-      bottom: -$desktopDeviceBottomBorder - $desktopDeviceBaseHeight - 0.1rem;
-      left: -8.5%;
-      right: -8.5%;
-      height: $desktopDeviceBaseHeight;
-      border-radius: 0.5rem;
-    }
+@include mediaQuery($tablet) {
+  .mobile__device__container {
+    display: none;
   }
 
   .slide__image__title {
@@ -227,10 +216,6 @@
 @include mediaQuery($desktop) {
   .work__container {
     padding: $desktopPagePadding;
-  }
-
-  .device__container {
-    position: relative;
   }
 
   .mobile__device__container {

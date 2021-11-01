@@ -1,12 +1,12 @@
 #hero {
-  background-color: $primaryColor;
+  background-image: linear-gradient(180deg, $primaryColor, $light);
 
   h1 {
-    color: $primaryColorLight;
+    color: $primaryColorDark;
   }
 
   p {
-    color: $light;
+    color: $primaryColorDark;
   }
 }
 
@@ -33,7 +33,7 @@
 
     .contact__link {
       font-size: 2.5rem;
-      color: $light;
+      color: $primaryColor;
       line-height: 0;
       display: block;
     }
@@ -50,6 +50,10 @@
 }
 
 @include mediaQuery($tablet) {
+  // #hero {
+  //   background-image: linear-gradient(180deg, $primaryColor 70%, $light);
+  // }
+
   .hero__container {
     display: grid;
     grid-template-columns: 25rem 1fr;
