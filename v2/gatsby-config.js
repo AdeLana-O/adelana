@@ -3,8 +3,6 @@ module.exports = {
     title: "Adelana Onafuwa",
     description:
       "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
-    siteUrl: "https://adelana.dev",
-    imageUrl: "https://adelana.dev/logo.svg",
     twitter: "@Ade_LaNa",
   },
   plugins: [

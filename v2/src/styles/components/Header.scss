@@ -1,11 +1,10 @@
 .header__container {
-  @include flexDisplay(space-between, true);
+  @include flexDisplay(center, true);
   padding: 2rem $mobilePadding;
 }
 
 @include mediaQuery($desktop) {
   .header__container {
     padding: $desktopPadding;
-    justify-content: center;
   }
 }

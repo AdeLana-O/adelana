@@ -5,13 +5,13 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useLocation } from "@reach/router";
 
 function SEO({ seo, pageDescription, pageTitle }) {
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(query);
-  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
+  const { title, description, twitter } = site.siteMetadata;
 
-  const { title, description, siteUrl, imageUrl, twitter } = siteMetadata;
-  const urlPath = siteUrl + pathname;
+  const { hostname, origin, href } = useLocation();
+
+  const isDemo = hostname.includes("demo");
+  const imageUrl = `${origin}/logo.svg`;
 
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
@@ -20,12 +20,15 @@ function SEO({ seo, pageDescription, pageTitle }) {
     <Helmet>
       <html lang="en" />
       <title>{metaTitle}</title>
-      <meta name="robots" content={seo ? "index,follow" : "noindex,nofollow"} />
+      <meta
+        name="robots"
+        content={seo && !isDemo ? "index,follow" : "noindex,nofollow"}
+      />
       <meta name="author" content={title} />
       <meta name="description" content={metaDescription} />
       {seo && <meta name="og:title" content={metaTitle} />}
       {seo && <meta name="og:description" content={metaDescription} />}
-      {seo && <meta name="og:url" content={urlPath} />}
+      {seo && <meta name="og:url" content={href} />}
       {seo && <meta name="og:type" content="website" />}
       {seo && <meta name="og:image" content={imageUrl} />}
       {seo && <meta name="twitter:title" content={metaTitle} />}
@@ -37,7 +40,7 @@ function SEO({ seo, pageDescription, pageTitle }) {
       {seo && <meta itemprop="name" content={metaTitle} />}
       {seo && <meta itemprop="description" content={metaDescription} />}
       {seo && <meta itemprop="image" content={imageUrl} />}
-      {seo && <link rel="canonical" href={urlPath} />}
+      {seo && !isDemo && <link rel="canonical" origin={href} />}
     </Helmet>
   );
 }
@@ -48,8 +51,6 @@ const query = graphql`
       siteMetadata {
         title
         description
-        siteUrl
-        imageUrl
         twitter
       }
     }
