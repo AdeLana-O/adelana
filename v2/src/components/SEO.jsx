@@ -10,15 +10,14 @@ function SEO({ seo, pageDescription, pageTitle }) {
 
   const { hostname, origin, href } = useLocation();
 
-  const imageUrl = `${origin}/logo.svg`;
-
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
 
-  let isDemo;
+  let isDemo, imageUrl;
 
   if (typeof window !== "undefined") {
     isDemo = hostname.includes("demo");
+    imageUrl = `${origin}/logo.svg`;
   }
 
   return (
