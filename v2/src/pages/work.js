@@ -1,6 +1,6 @@
 import React from "react";
 
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 
 import { config } from "../utils/config";
@@ -14,7 +14,7 @@ const Work = () => {
 
   return (
     <Layout>
-      <SEO seo pageDescription={description} pageTitle={title} />
+      <Seo seo pageDescription={description} pageTitle={title} />
       <div className="container">
         <h1>Hello World</h1>
       </div>

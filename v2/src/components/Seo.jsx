@@ -16,7 +16,7 @@ const query = graphql`
   }
 `;
 
-function SEO({ seo, pageDescription, pageTitle }) {
+function Seo({ seo, pageDescription, pageTitle }) {
   const [details, setDetails] = useState({
     hostname: "",
     origin: "",
@@ -74,10 +74,10 @@ function SEO({ seo, pageDescription, pageTitle }) {
   );
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   seo: PropTypes.bool,
   description: PropTypes.string,
   title: PropTypes.string,
 };
 
-export default SEO;
+export default Seo;
