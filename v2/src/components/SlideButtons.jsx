@@ -6,19 +6,14 @@ const SlideButtons = ({ images, currentIndex, changeImage }) => {
   const renderButtons = images.map((img, index) => {
     const { id, name } = img.node;
     const label = formatName(name);
-    let className;
-
-    if (currentIndex === index) {
-      className = "slide__btn slide__btn--active";
-    } else {
-      className = "slide__btn";
-    }
 
     return (
       <li className="slide__btn__item" key={id}>
         <button
           aria-label={`Select ${label}`}
-          className={className}
+          className={
+            currentIndex === index ? "slide__btn slide__btn--active" : "slide__btn"
+          }
           onClick={() => changeImage(index)}
         />
       </li>

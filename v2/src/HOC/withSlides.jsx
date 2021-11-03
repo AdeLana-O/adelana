@@ -33,13 +33,17 @@ const withSlides = (Component, cb) => {
     }, [currentIndex]);
 
     useEffect(() => {
-      if (Array.isArray(imageElements.current)) {
+      let timerId;
+
+      if (Array.isArray(imageElements.current) && clicked) {
         imageElements.current.forEach(element => {
           if (
             element.classList.contains("slide__left") ||
             element.classList.contains("slide__right")
           ) {
-            element.className = "slide__image slide__active";
+            timerId = setTimeout(() => {
+              element.className = "slide__image slide__active";
+            }, 0);
           }
 
           if (element.classList.contains("slide__prev__left")) {
@@ -51,15 +55,18 @@ const withSlides = (Component, cb) => {
           }
         });
       }
+
+      return () => {
+        clearTimeout(timerId);
+      };
     });
 
     const changeImage = index => {
       clearInterval(intervalId.current);
+      intervalId.current = setInterval(change, timer);
 
       setClicked(true);
       setCurrentIndex(index);
-
-      intervalId.current = setInterval(change, timer);
     };
 
     return (

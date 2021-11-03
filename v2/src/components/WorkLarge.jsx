@@ -28,7 +28,7 @@ const WorkLarge = ({
   });
 
   return (
-    <div className="desktop__view__container">
+    <>
       <div className="device__container">
         <div className="mobile__device__container">
           <MobileDevice
@@ -55,7 +55,7 @@ const WorkLarge = ({
           changeImage={changeImage}
         />
       </div>
-    </div>
+    </>
   );
 };
 

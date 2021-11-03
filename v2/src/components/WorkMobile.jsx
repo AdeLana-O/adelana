@@ -18,7 +18,7 @@ const WorkMobile = ({
   const dataRenderer = arrayMapper(data, "mobile");
 
   return (
-    <div className="mobile__view__container">
+    <>
       <div className="device__container">
         <MobileDevice
           images={dataRenderer}
@@ -38,7 +38,7 @@ const WorkMobile = ({
           changeImage={changeImage}
         />
       </div>
-    </div>
+    </>
   );
 };
 
