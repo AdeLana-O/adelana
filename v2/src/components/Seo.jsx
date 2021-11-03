@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-// import { useLocation } from "@reach/router";
 
 const query = graphql`
   query siteMetaData {
@@ -22,7 +21,6 @@ function Seo({ seo, pageDescription, pageTitle }) {
     origin: "",
     href: "",
   });
-  // const { hostname, origin, href } = useLocation();
 
   useEffect(() => {
     setDetails({
@@ -38,12 +36,8 @@ function Seo({ seo, pageDescription, pageTitle }) {
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
 
-  // let isDemo, imageUrl;
-
-  // if (typeof window !== "undefined") {
   const isDemo = details.hostname.includes("demo");
   const imageUrl = `${details.origin}/logo.svg`;
-  // }
 
   return (
     <Helmet>
