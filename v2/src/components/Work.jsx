@@ -38,7 +38,7 @@ const Work = () => {
             )}
           </div>
           <div className="work__footer">
-            <Link to="/work">View More</Link>
+            <Link to="/projects">View More</Link>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const config = {
       title: "Page Not Found",
       description: "This page you have requested was not found",
     },
-    work: {
+    projects: {
       title: "Projects",
       description: "Recent projects and open source projects",
     },
@@ -15,8 +15,8 @@ export const config = {
       link: "/",
     },
     {
-      name: "Work",
-      link: "/work",
+      name: "Projects",
+      link: "/projects",
     },
   ],
 };
