@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "D'Sparkplug",
+    "slug": "dsparkplug",
+    "image": "../images/projects/D'Sparkplug.jpg",
+    "live": "https://dsparkplug.com/",
+    "type": "project",
+    "content": ""
+  },
+  {
+    "id": 2,
+    "name": "Respay",
+    "slug": "respay",
+    "image": "../images/projects/Respay.jpg",
+    "live": "https://respay.com/",
+    "type": "project",
+    "content": ""
+  },
+  {
+    "id": 3,
+    "name": "Github Profile",
+    "slug": "github-profile",
+    "image": "../images/projects/Github Profile.jpg",
+    "live": "https://github-user-profiles.netlify.app/",
+    "type": "side-project",
+    "source": "https://github.com/devLana/github-profile",
+    "content": ""
+  },
+  {
+    "id": 4,
+    "name": "WilmerFMCO",
+    "slug": "wilmerfmco",
+    "image": "../images/projects/WilmerFMCO.jpg",
+    "live": "https://wilmerfmco.com/",
+    "type": "project",
+    "content": ""
+  },
+  {
+    "id": 5,
+    "name": "Adelana Onafuwa",
+    "slug": "adelana-onafuwa",
+    "image": "../images/projects/Github Profile.jpg",
+    "live": "https://github-user-profiles.netlify.app/",
+    "type": "project",
+    "source": "https://github.com/devLana/devLana",
+    "content": ""
+  }
+]

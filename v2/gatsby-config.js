@@ -23,6 +23,13 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projectsData",
+        path: `${__dirname}/src/data`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
