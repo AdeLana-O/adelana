@@ -1,0 +1,9 @@
+.projects-header__container {
+  padding: $mobilePagePadding;
+}
+
+@include mediaQuery($desktop) {
+  .projects-header__container {
+    padding: $desktopPagePadding;
+  }
+}
