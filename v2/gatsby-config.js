@@ -1,8 +1,11 @@
+const description =
+  "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.";
+
 module.exports = {
   siteMetadata: {
     title: "Adelana Onafuwa",
-    description:
-      "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
+    description,
+    siteUrl: "https://demo-devlana.netlify.app",
     twitter: "@Ade_LaNa",
   },
   plugins: [
@@ -39,8 +42,7 @@ module.exports = {
         name: "adelana.dev",
         short_name: "adelana",
         start_url: "/",
-        description:
-          "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.",
+        description,
         lang: "en",
         orientation: "portrait",
         background_color: "#fff",
