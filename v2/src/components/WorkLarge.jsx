@@ -4,7 +4,7 @@ import withSlides from "../HOC/withSlides";
 import MobileDevice from "./MobileDevice";
 import SlideButtons from "./SlideButtons";
 import flattenImages from "../utils/flattenImages";
-import renderSlides from "../utils/renderSlides";
+import renderSlides from "./helpers/renderSlides";
 import arrayMapper from "../utils/arrayMapper";
 
 const WorkLarge = ({

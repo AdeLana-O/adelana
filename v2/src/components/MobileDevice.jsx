@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import renderSlides from "../utils/renderSlides";
+import renderSlides from "./helpers/renderSlides";
 
 const MobileDevice = ({
   images,
