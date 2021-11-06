@@ -8,7 +8,7 @@ import ProjectsGrid from "../../components/ProjectsGrid";
 import { siteConfig } from "../../utils/siteConfig";
 
 const Projects = ({ data }) => {
-  const [projectType, setProjectType] = useState("project");
+  const [projectType, setProjectType] = useState("all");
 
   return (
     <Layout>
@@ -18,11 +18,17 @@ const Projects = ({ data }) => {
         pageTitle={siteConfig.pageMeta.projects.title}
       />
       <ProjectsHeader />
-      <ProjectsTab projectType={projectType} setProjectType={setProjectType} />
-      <ProjectsGrid
-        projects={data.allProjectsJson.edges}
-        projectType={projectType}
-      />
+      <section id="projects-body">
+        <div className="container">
+          <div className="projects-body__container">
+            <ProjectsTab projectType={projectType} setProjectType={setProjectType} />
+            <ProjectsGrid
+              projects={data.allProjectsJson.edges}
+              projectType={projectType}
+            />
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
