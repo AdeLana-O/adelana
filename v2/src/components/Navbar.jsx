@@ -14,7 +14,7 @@ const Navbar = () => {
             <Link
               to={link}
               className={
-                pathname.includes(link) ? "nav__link nav__link--active" : "nav__link"
+                pathname === link ? "nav__link nav__link--active" : "nav__link"
               }
             >
               {name}
