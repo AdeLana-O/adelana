@@ -1,8 +1,8 @@
 import React from "react";
 
-const ProjectsTab = ({ type, setProjectType }) => {
+const ProjectsTab = ({ projectType, setProjectType }) => {
   const changeProject = () => {
-    if (type === "project") {
+    if (projectType === "project") {
       setProjectType("side project");
     } else {
       setProjectType("project");

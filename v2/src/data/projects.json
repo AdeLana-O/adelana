@@ -6,7 +6,9 @@
     "image": "../images/projects/D'Sparkplug.jpg",
     "live": "https://dsparkplug.com/",
     "type": "project",
-    "content": ""
+    "content": "",
+    "metaDescription": "D'Sparkplug website by Adelana Onafuwa",
+    "metaTitle": "D'Sparkplug Website"
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "image": "../images/projects/Respay.jpg",
     "live": "https://respay.com/",
     "type": "project",
-    "content": ""
+    "content": "",
+    "metaDescription": "Respay property management app co-developed Adelana Onafuwa",
+    "metaTitle": "Respay"
   },
   {
     "id": 3,
@@ -25,7 +29,9 @@
     "live": "https://github-user-profiles.netlify.app/",
     "type": "side-project",
     "source": "https://github.com/devLana/github-profile",
-    "content": ""
+    "content": "",
+    "metaDescription": "Github user profile search app by Adelana Onafuwa",
+    "metaTitle": "Github User Profile App"
   },
   {
     "id": 4,
@@ -34,7 +40,9 @@
     "image": "../images/projects/WilmerFMCO.jpg",
     "live": "https://wilmerfmco.com/",
     "type": "project",
-    "content": ""
+    "content": "",
+    "metaDescription": "WilmerFMCO website by Adelana Onafuwa",
+    "metaTitle": "WilmerFMCO Website"
   },
   {
     "id": 5,
@@ -44,6 +52,8 @@
     "live": "https://github-user-profiles.netlify.app/",
     "type": "project",
     "source": "https://github.com/devLana/devLana",
-    "content": ""
+    "content": "",
+    "metaDescription": "Adelana Onafuwa website.",
+    "metaTitle": "Adelana Onafuwa Website"
   }
 ]

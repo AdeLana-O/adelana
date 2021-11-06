@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
-import { config } from "../../utils/config";
 import ProjectsHeader from "../../components/ProjectsHeader";
 import ProjectsTab from "../../components/ProjectsTab";
 import ProjectsGrid from "../../components/ProjectsGrid";
-
-const { pageMeta } = config;
+import { siteConfig } from "../../utils/siteConfig";
 
 const Projects = ({ data }) => {
   const [projectType, setProjectType] = useState("project");
@@ -16,16 +14,37 @@ const Projects = ({ data }) => {
     <Layout>
       <Seo
         seo
-        pageDescription={pageMeta.projects.description}
-        pageTitle={pageMeta.projects.title}
+        pageDescription={siteConfig.pageMeta.projects.description}
+        pageTitle={siteConfig.pageMeta.projects.title}
       />
       <ProjectsHeader />
-      <ProjectsTab type={projectType} setProjectType={setProjectType} />
-      <ProjectsGrid projects={data.allProjectsJson.edges} />
+      <ProjectsTab projectType={projectType} setProjectType={setProjectType} />
+      <ProjectsGrid
+        projects={data.allProjectsJson.edges}
+        projectType={projectType}
+      />
     </Layout>
   );
 };
 
-export const ProjectsQuery = graphql``;
+export const ProjectsQuery = graphql`
+  query ProjectsImages {
+    allProjectsJson {
+      edges {
+        node {
+          id
+          name
+          slug
+          type
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Projects;
