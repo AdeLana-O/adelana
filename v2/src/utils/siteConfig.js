@@ -1,4 +1,4 @@
-export const config = {
+export const siteConfig = {
   pageMeta: {
     "not found": {
       title: "Page Not Found",

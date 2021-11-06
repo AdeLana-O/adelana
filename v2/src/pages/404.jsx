@@ -1,20 +1,15 @@
 import React from "react";
-
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
-
-import { config } from "../utils/config";
+import { siteConfig } from "../utils/siteConfig";
 
 const NotFoundPage = () => {
-  const {
-    pageMeta: {
-      "not found": { title, description },
-    },
-  } = config;
-
   return (
     <Layout>
-      <Seo pageDescription={description} pageTitle={title} />
+      <Seo
+        pageDescription={siteConfig.pageMeta["not found"].description}
+        pageTitle={siteConfig.pageMeta["not found"].title}
+      />
       <div className="container">
         <h1>NOT FOUND</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

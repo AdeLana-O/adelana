@@ -4,9 +4,7 @@ import { Link } from "gatsby";
 import SiteLogo from "./SiteLogo";
 import ContactMenu from "./ContactMenu";
 
-import { config } from "../utils/config";
-
-const { navLinks } = config;
+import { siteConfig } from "../utils/siteConfig";
 
 const Footer = () => (
   <footer id="footer">
@@ -18,7 +16,7 @@ const Footer = () => (
             <div className="quick-links">
               <h3>Quick Links</h3>
               <ul className="quick-links__menu">
-                {navLinks.map(({ name, link }) => (
+                {siteConfig.navLinks.map(({ name, link }) => (
                   <li key={name} className="quick-links__item">
                     <Link to={link} className="quick-link">
                       {name}
