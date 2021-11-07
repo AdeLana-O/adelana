@@ -50,7 +50,7 @@ const query = graphql`
   query Slides {
     allFile(
       sort: { fields: name, order: ASC }
-      filter: { dir: { regex: "/projects/" } }
+      filter: { dir: { regex: "/slides/" } }
     ) {
       edges {
         node {
