@@ -23,20 +23,18 @@ const ProjectsGrid = ({ projects, projectType }) => {
 
   return (
     <div className="projects-grid">
-      <div>
-        {filteredProjects.map(project => {
-          const { id, image, name, slug } = project.node;
-          const imageData = getImage(image);
+      {filteredProjects.map(project => {
+        const { id, image, name, slug } = project.node;
+        const imageData = getImage(image);
 
-          return (
-            <div key={id}>
-              <Link to={`/projects/${slug}`}>
-                <GatsbyImage alt={name} image={imageData} />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+        return (
+          <div className="projects-grid__item" key={id}>
+            <Link to={`/projects/${slug}`}>
+              <GatsbyImage alt={name} image={imageData} />
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

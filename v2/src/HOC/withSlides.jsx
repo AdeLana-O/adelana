@@ -36,24 +36,24 @@ const withSlides = (Component, cb) => {
       let timerId;
 
       if (Array.isArray(imageElements.current) && clicked) {
-        imageElements.current.forEach(element => {
-          if (
-            element.classList.contains("slide__left") ||
-            element.classList.contains("slide__right")
-          ) {
-            timerId = setTimeout(() => {
+        timerId = setTimeout(() => {
+          imageElements.current.forEach(element => {
+            if (
+              element.classList.contains("slide__left") ||
+              element.classList.contains("slide__right")
+            ) {
               element.className = "slide__image slide__active";
-            }, 0);
-          }
+            }
 
-          if (element.classList.contains("slide__prev__left")) {
-            element.className = "slide__image prev__left";
-          }
+            if (element.classList.contains("slide__prev__left")) {
+              element.className = "slide__image prev__left";
+            }
 
-          if (element.classList.contains("slide__prev__right")) {
-            element.className = "slide__image prev__right";
-          }
-        });
+            if (element.classList.contains("slide__prev__right")) {
+              element.className = "slide__image prev__right";
+            }
+          });
+        }, 0);
       }
 
       return () => {
