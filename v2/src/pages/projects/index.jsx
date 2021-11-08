@@ -1,14 +1,28 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
-import ProjectsHeader from "../../components/ProjectsHeader";
-import ProjectsTab from "../../components/ProjectsTab";
-import ProjectsGrid from "../../components/ProjectsGrid";
 import { siteConfig } from "../../utils/siteConfig";
 
 const Projects = ({ data }) => {
-  const [projectType, setProjectType] = useState("all");
+  const renderProjects = data.allProjectsJson.edges.map(project => {
+    const { id, image, name, slug } = project.node;
+    const imageData = getImage(image);
+
+    return (
+      <div className="projects-grid__item" key={id}>
+        <Link to={`/projects/${slug}`}>
+          <div className="projects-grid__image">
+            <GatsbyImage alt={name} image={imageData} />
+          </div>
+          <div className="projects-grid__title">
+            <p>{name}</p>
+          </div>
+        </Link>
+      </div>
+    );
+  });
 
   return (
     <Layout>
@@ -17,15 +31,17 @@ const Projects = ({ data }) => {
         pageDescription={siteConfig.pageMeta.projects.description}
         pageTitle={siteConfig.pageMeta.projects.title}
       />
-      <ProjectsHeader />
+      <section id="projects-header">
+        <div className="container">
+          <div className="projects-header__container">
+            <h1>Projects</h1>
+          </div>
+        </div>
+      </section>
       <section id="projects-body">
         <div className="container">
           <div className="projects-body__container">
-            <ProjectsTab projectType={projectType} setProjectType={setProjectType} />
-            <ProjectsGrid
-              projects={data.allProjectsJson.edges}
-              projectType={projectType}
-            />
+            <div className="projects-grid">{renderProjects}</div>
           </div>
         </div>
       </section>
@@ -33,7 +49,7 @@ const Projects = ({ data }) => {
   );
 };
 
-export const ProjectsQuery = graphql`
+export const query = graphql`
   query ProjectsImages {
     allProjectsJson {
       edges {
