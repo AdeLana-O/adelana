@@ -3,6 +3,10 @@
   padding: $mobilePagePadding;
 }
 
+.projects-header__container {
+  text-align: center;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: auto;

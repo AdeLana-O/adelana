@@ -10,10 +10,17 @@ const NotFoundPage = () => {
         pageDescription={siteConfig.pageMeta["not found"].description}
         pageTitle={siteConfig.pageMeta["not found"].title}
       />
-      <div className="container">
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </div>
+      <section id="not-found-page">
+        <div className="container">
+          <div className="not-found-page__container">
+            <h1>
+              <span>404</span>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <span>Page Not Found</span>
+            </h1>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

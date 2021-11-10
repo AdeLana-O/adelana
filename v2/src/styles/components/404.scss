@@ -1,0 +1,14 @@
+#not-found-page h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.not-found-page__container {
+  padding: $mobilePagePadding;
+}
+
+@include mediaQuery($tablet) {
+  .not-found-page__container {
+    padding: $desktopPagePadding;
+  }
+}

@@ -35,6 +35,9 @@ const Projects = ({ data }) => {
         <div className="container">
           <div className="projects-header__container">
             <h1>Projects</h1>
+            <div className="projects-header__details">
+              <p>Below is a catalogue of projects I have worked on</p>
+            </div>
           </div>
         </div>
       </section>
