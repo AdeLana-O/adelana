@@ -57,7 +57,6 @@ export const query = graphql`
           id
           name
           slug
-          type
           image {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)

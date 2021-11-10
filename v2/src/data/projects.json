@@ -5,10 +5,16 @@
     "slug": "dsparkplug",
     "image": "../images/slides/D'Sparkplug.jpg",
     "live": "https://dsparkplug.com/",
-    "type": "project",
-    "content": "",
-    "metaDescription": "D'Sparkplug website by Adelana Onafuwa",
-    "metaTitle": "D'Sparkplug Website"
+    "content": [
+      "D'Sparkplug is a simple one page portfolio website powered by Gatsby.js and SASS."
+    ],
+    "features": [
+      "Lightweight and fast",
+      "Responsive layout",
+      "Typewriter animation"
+    ],
+    "metaDescription": "D'Sparkplug portfolio website built by Adelana Onafuwa",
+    "metaTitle": "D'Sparkplug Portfolio Website"
   },
   {
     "id": 2,
@@ -16,9 +22,19 @@
     "slug": "respay",
     "image": "../images/slides/Respay.jpg",
     "live": "https://respay.com/",
-    "type": "project",
-    "content": "",
-    "metaDescription": "Respay property management app co-developed Adelana Onafuwa",
+    "content": [
+      "Respay is a web app for a property management and payment solution company.",
+      "I worked in a team of astute and adept developers in the development of this product. I was on the frontend team where I contributed to the production of Respay using React, CSS and quite a few popular frontend end libraries.",
+      "Using my knowledge of JavaScript and frontend development, I was able to develop a few of the key features that makes the app tick."
+    ],
+    "features": [
+      "Authentication and authorisation system",
+      "Property management",
+      "Online payment",
+      "Property applications management",
+      "Public and private facility management"
+    ],
+    "metaDescription": "Respay property management web app co-developed by Adelana Onafuwa",
     "metaTitle": "Respay"
   },
   {
@@ -27,10 +43,16 @@
     "slug": "github-profile",
     "image": "../images/slides/Github-Profile.jpg",
     "live": "https://github-user-profiles.netlify.app/",
-    "type": "side project",
     "source": "https://github.com/devLana/github-profile",
-    "content": "",
-    "metaDescription": "Github user profile search app by Adelana Onafuwa",
+    "content": [
+      "Developed using Typescript and React, Github Profile is an app that is powered by the Github API.",
+      "It allows users to search for registered Github users highlighting their profile details and also listing their most popular repositories sorted by a stars."
+    ],
+    "features": [
+      "Responsive layout",
+      "Caching system which prevents duplicate requests to the Github API"
+    ],
+    "metaDescription": "Github user profile search app built by Adelana Onafuwa",
     "metaTitle": "Github User Profile App"
   },
   {
@@ -39,9 +61,12 @@
     "slug": "wilmerfmco",
     "image": "../images/slides/WilmerFMCO.jpg",
     "live": "https://wilmerfmco.com/",
-    "type": "project",
-    "content": "",
-    "metaDescription": "WilmerFMCO website by Adelana Onafuwa",
+    "content": [
+      "A single page portfolio website for The Wilmer Apartments based in Lagos, Nigeria that showcases brochures and video presentations of their apartment suites.",
+      "The website is powered by Gatsby.js and Styled Components."
+    ],
+    "features": ["Custom built carousel and video player"],
+    "metaDescription": "WilmerFMCO website built by Adelana Onafuwa",
     "metaTitle": "WilmerFMCO Website"
   },
   {
@@ -50,10 +75,13 @@
     "slug": "adelana-onafuwa",
     "image": "../images/projects/Adelana-Onafuwa.jpg",
     "live": "https://github-user-profiles.netlify.app/",
-    "type": "project",
     "source": "https://github.com/devLana/devLana",
-    "content": "",
-    "metaDescription": "Adelana Onafuwa website.",
+    "content": [
+      "My portfolio website built with Gatsby.js and SASS.",
+      "This website highlights details about me and showcases projects I have worked on."
+    ],
+    "features": ["Custom built carousel", "PWA", "Responsive layout design"],
+    "metaDescription": "Adelana Onafuwa portfolio website.",
     "metaTitle": "Adelana Onafuwa Website"
   }
 ]
