@@ -74,7 +74,7 @@
     "name": "Adelana Onafuwa",
     "slug": "adelana-onafuwa",
     "image": "../images/projects/Adelana-Onafuwa.jpg",
-    "live": "https://github-user-profiles.netlify.app/",
+    "live": "https:/demo-devlana.netlify.app/",
     "source": "https://github.com/devLana/devLana",
     "content": [
       "My portfolio website built with Gatsby.js and SASS.",

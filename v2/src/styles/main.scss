@@ -15,9 +15,9 @@ html {
 }
 
 body {
-  background-color: $light;
+  background-color: $primaryColorLight;
   font-family: $ComfortaaFont;
-  font-size: $mobileFontSize;
+  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,11 +74,5 @@ body {
     &:not(:last-of-type) {
       margin-bottom: $marginBottom;
     }
-  }
-}
-
-@include mediaQuery($desktop) {
-  body {
-    font-size: $desktopFontSize;
   }
 }

@@ -1,20 +1,20 @@
-.projects-header__container,
-.projects-body__container {
+.projects-page__container {
   padding: $mobilePagePadding;
 }
 
-.projects-header__container {
+.projects-page__details {
   text-align: center;
 }
 
-.projects-grid {
+.projects-page-grid {
+  margin-top: $marginTop;
   display: grid;
   grid-template-columns: auto;
   row-gap: 6rem;
   column-gap: 4.5rem;
 }
 
-.projects-grid__item {
+.projects-page-grid__item {
   transition: transform 0.1s linear;
   box-shadow: 0 0 1.6rem 0.2rem rgba($primaryColorDark, 0.65);
 
@@ -27,7 +27,7 @@
   }
 }
 
-.projects-grid__title {
+.projects-page-grid__title {
   padding: 2.5rem 1rem;
   background-color: $primaryColorLight;
 
@@ -38,12 +38,11 @@
 }
 
 @include mediaQuery($desktop) {
-  .projects-header__container,
-  .projects-body__container {
+  .projects-page__container {
     padding: $desktopPagePadding;
   }
 
-  .projects-grid {
+  .projects-page-grid {
     grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
     row-gap: 9rem;
   }

@@ -5,16 +5,14 @@
 }
 
 .work__header {
-  margin-bottom: $marginBottom;
   text-align: center;
 }
 
 .work__slide__images {
-  margin-bottom: $marginBottom;
+  margin-top: $marginTop;
 }
 
 .device__container {
-  margin-bottom: $marginBottom;
   position: relative;
 }
 
@@ -160,8 +158,8 @@
     font-size: 1.6rem;
     font-weight: bold;
     color: $primaryColorLight;
-    padding: 1.3rem 1rem;
-    border-radius: 3rem;
+    padding: 1.8rem 2rem;
+    border-radius: 0.8rem;
     transition: 0.12s linear;
 
     &:hover {
@@ -209,7 +207,7 @@
   }
 
   .slide__image__title {
-    margin-top: $marginTop * 1.333333333333333;
+    margin-top: $marginTop * 1.3;
   }
 }
 

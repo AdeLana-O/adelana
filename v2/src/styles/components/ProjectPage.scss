@@ -1,3 +1,10 @@
+#project-page {
+  ul {
+    list-style-type: square;
+    margin-left: 1.7rem;
+  }
+}
+
 .project-page__container {
   padding: $mobilePagePadding;
 
@@ -46,11 +53,19 @@
 .project-page__features {
   max-width: 60rem;
   margin: $marginTop auto 0;
+}
 
-  li {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    line-height: 1.5;
+.project-page__features__item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1.5;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
   }
 }
 

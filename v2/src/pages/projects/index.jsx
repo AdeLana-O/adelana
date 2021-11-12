@@ -11,12 +11,10 @@ const Projects = ({ data }) => {
     const imageData = getImage(image);
 
     return (
-      <div className="projects-grid__item" key={id}>
+      <div className="projects-page-grid__item" key={id}>
         <Link to={`/projects/${slug}`}>
-          <div className="projects-grid__image">
-            <GatsbyImage alt={name} image={imageData} />
-          </div>
-          <div className="projects-grid__title">
+          <GatsbyImage alt={name} image={imageData} />
+          <div className="projects-page-grid__title">
             <p>{name}</p>
           </div>
         </Link>
@@ -31,20 +29,14 @@ const Projects = ({ data }) => {
         pageDescription={siteConfig.pageMeta.projects.description}
         pageTitle={siteConfig.pageMeta.projects.title}
       />
-      <section id="projects-header">
+      <section id="projects-page">
         <div className="container">
-          <div className="projects-header__container">
-            <h1>Projects</h1>
-            <div className="projects-header__details">
+          <div className="projects-page__container">
+            <div className="projects-page__details">
+              <h1>Projects</h1>
               <p>Below is a catalogue of projects I have worked on</p>
             </div>
-          </div>
-        </div>
-      </section>
-      <section id="projects-body">
-        <div className="container">
-          <div className="projects-body__container">
-            <div className="projects-grid">{renderProjects}</div>
+            <div className="projects-page-grid">{renderProjects}</div>
           </div>
         </div>
       </section>

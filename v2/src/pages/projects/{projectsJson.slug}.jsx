@@ -56,9 +56,11 @@ const ProjectPage = ({ data }) => {
             </div>
             <div className="project-page__features">
               <h2>Features </h2>
-              <ul>
+              <ul className="project-page__features__menu">
                 {data.projectsJson.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <li className="project-page__features__item" key={index}>
+                    {feature}
+                  </li>
                 ))}
               </ul>
             </div>

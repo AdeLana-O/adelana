@@ -27,7 +27,7 @@ const Footer = () => (
             </div>
             <div className="contact-links">
               <h3>Contact</h3>
-              <ContactMenu />
+              <ContactMenu isFooter />
             </div>
           </div>
         </div>
