@@ -81,7 +81,28 @@
       "This website highlights details about me and showcases projects I have worked on."
     ],
     "features": ["Custom built carousel", "PWA", "Responsive layout design"],
-    "metaDescription": "Adelana Onafuwa portfolio website.",
+    "metaDescription": "Adelana Onafuwa portfolio website",
     "metaTitle": "Adelana Onafuwa Website"
+  },
+  {
+    "id": 6,
+    "name": "Authentication App",
+    "slug": "auth-app",
+    "image": "../images/projects/Authentication-App.jpg",
+    "live": "https://devlana-auth-app.netlify.app/",
+    "source": "https://github.com/devLana/react-auth-app",
+    "content": [
+      "Bootstrapped with Webpack and Babel, and built with JavaScript and React, this authentication app shows how client side authentication works on a frontend app.",
+      "It is also connected to an Express REST API I built for it using axios.",
+      "Users can sign in, sign out and sign up. Any generated tokens from the API response are saved to Local Storage and cleared on sign out."
+    ],
+    "features": [
+      "Client side Routing",
+      "Code Splitting",
+      "Client side authentication",
+      "Token verification"
+    ],
+    "metaDescription": "Client side authentication app integrated with a REST API and bootstrapped with Webpack and Babel, and built with React",
+    "metaTitle": "React Authentication App"
   }
 ]
