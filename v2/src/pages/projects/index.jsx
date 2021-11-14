@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Seo from "../../components/Seo";
 import { siteConfig } from "../../utils/siteConfig";
 
+const { pageMeta, projects } = siteConfig;
+
 const Projects = ({ data }) => {
   const renderProjects = data.allProjectsJson.edges.map(project => {
     const { id, image, name, slug } = project.node;
@@ -25,15 +27,15 @@ const Projects = ({ data }) => {
     <>
       <Seo
         seo
-        pageDescription={siteConfig.pageMeta.projects.description}
-        pageTitle={siteConfig.pageMeta.projects.title}
+        pageDescription={pageMeta.projects.description}
+        pageTitle={pageMeta.projects.title}
       />
       <section id="projects-page">
         <div className="container">
           <div className="projects-page__container">
             <div className="projects-page__details">
-              <h1>Projects</h1>
-              <p>Below is a catalogue of projects I have worked on</p>
+              <h1>{projects.header}</h1>
+              <p>{projects.text}</p>
             </div>
             <div className="projects-page-grid">{renderProjects}</div>
           </div>

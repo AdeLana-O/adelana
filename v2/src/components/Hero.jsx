@@ -1,7 +1,9 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-
 import ContactMenu from "./ContactMenu";
+import { siteConfig } from "../utils/siteConfig";
+
+const { home } = siteConfig;
 
 const Hero = () => (
   <section id="hero">
@@ -9,14 +11,10 @@ const Hero = () => (
       <div className="hero__container">
         <div className="hero__details">
           <div className="hero__info">
-            <h1>Hi, I'm Adelana Onafuwa.</h1>
-            <p>
-              <strong>JavaScript Software developer.</strong>
-            </p>
-            <p>
-              Welcome to my personal website. Here you will find out details about me
-              and projects I've worked on.
-            </p>
+            <h1>{home.hero.header}</h1>
+            {home.hero.text.map((item, index) => (
+              <p key={index}>{index === 0 ? <strong>{item}</strong> : item}</p>
+            ))}
           </div>
           <div className="hero__links">
             <ContactMenu />

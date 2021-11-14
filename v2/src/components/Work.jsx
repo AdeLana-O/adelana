@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import WorkMobile from "./WorkMobile";
 import WorkLarge from "./WorkLarge";
+import { siteConfig } from "../utils/siteConfig";
+
+const { home } = siteConfig;
 
 const Work = () => {
   const [width, setWidth] = useState();
@@ -27,8 +30,8 @@ const Work = () => {
       <div className="container">
         <div className="work__container">
           <div className="work__header">
-            <h2>Featured Projects</h2>
-            <p>Some of my featured projects and open source projects...</p>
+            <h2>{home.work.header}</h2>
+            <p>{home.work.text}</p>
           </div>
           <div className="work__slide__images">
             {width < 768 ? (
