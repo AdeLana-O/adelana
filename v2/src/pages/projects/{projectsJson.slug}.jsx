@@ -2,14 +2,13 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaGithub, FaLink, FaLongArrowAltLeft } from "react-icons/fa";
-import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 
 const ProjectPage = ({ data }) => {
   const image = getImage(data.projectsJson.image);
 
   return (
-    <Layout>
+    <>
       <Seo
         seo
         pageDescription={data.projectsJson.metaDescription}
@@ -73,7 +72,7 @@ const ProjectPage = ({ data }) => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

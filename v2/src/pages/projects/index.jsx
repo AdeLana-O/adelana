@@ -2,7 +2,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Seo from "../../components/Seo";
-import Layout from "../../components/Layout";
 import { siteConfig } from "../../utils/siteConfig";
 
 const Projects = ({ data }) => {
@@ -23,7 +22,7 @@ const Projects = ({ data }) => {
   });
 
   return (
-    <Layout>
+    <>
       <Seo
         seo
         pageDescription={siteConfig.pageMeta.projects.description}
@@ -40,7 +39,7 @@ const Projects = ({ data }) => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 
