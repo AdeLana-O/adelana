@@ -1,13 +1,13 @@
+#about {
+  background-color: $light;
+}
+
 .about__container {
   padding: $mobilePagePadding;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   gap: 9rem 2rem;
   align-items: center;
-}
-
-.about__header {
-  text-align: center;
 }
 
 @include mediaQuery($tablet) {
