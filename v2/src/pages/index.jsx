@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Work from "../components/Work";
+import Tools from "../components/Tools";
 
 const Home = () => (
   <>
@@ -10,6 +11,7 @@ const Home = () => (
     <Hero />
     <Work />
     <About />
+    <Tools />
   </>
 );
 
