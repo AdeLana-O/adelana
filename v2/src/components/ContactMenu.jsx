@@ -1,31 +1,36 @@
 import React from "react";
-import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
-// import { FaTwitter, FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import PropTypes from "prop-types";
+import { siteConfig } from "../utils/siteConfig";
 
-import ContactLink from "./ContactLink";
+const { contactLinks } = siteConfig;
 
 const ContactMenu = ({ isFooter }) => (
   <ul className="contact__menu">
-    <ContactLink
-      link="https://twitter.com/Ade_LaNa"
-      component={FaTwitter}
-      label="Twitter"
-      isFooter={isFooter}
-    />
-    <ContactLink
-      link="https://github.com/devLana"
-      component={FaGithub}
-      label="Github"
-      isFooter={isFooter}
-    />
-    <ContactLink
-      link="https://linkedin.com/in/adelana-onafuwa"
-      component={FaLinkedinIn}
-      label="LinkedIn"
-      isFooter={isFooter}
-    />
-    {/* <ContactLink link="mailto:contact@adelana.dev" component={FaEnvelope} label="EMail" /> isFooter={isFooter} */}
+    {contactLinks.map(({ icon: Icon, link, label }, index) => (
+      <li className="contact__item" key={`${label}-${index}`}>
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="contact__link"
+          aria-label={label}
+        >
+          {isFooter ? (
+            <>
+              <Icon />
+              &nbsp;&nbsp; {label}
+            </>
+          ) : (
+            <Icon />
+          )}
+        </a>
+      </li>
+    ))}
   </ul>
 );
+
+ContactMenu.propTypes = {
+  isFooter: PropTypes.bool,
+};
 
 export default ContactMenu;

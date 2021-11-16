@@ -60,7 +60,7 @@ const query = graphql`
           id
           name
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
         }
       }

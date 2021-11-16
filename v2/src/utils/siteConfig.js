@@ -1,4 +1,4 @@
-import { SiTypescript, SiJavascript } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiWebpack, SiBabel } from "react-icons/si";
 import {
   FaLinkedinIn,
   FaGitAlt,
@@ -69,8 +69,10 @@ export const siteConfig = {
         { name: "CSS", icon: IoLogoCss3 },
         { name: "SASS", icon: IoLogoSass },
         { name: "Node", icon: IoLogoNodejs },
-        { name: "TypeScript", icon: SiTypescript },
         { name: "Git", icon: FaGitAlt },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "Webpack", icon: SiWebpack },
+        { name: "Babel", icon: SiBabel },
       ],
     },
   },
