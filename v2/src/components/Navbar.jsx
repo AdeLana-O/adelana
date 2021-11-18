@@ -18,7 +18,7 @@ const Navbar = () => {
         {siteConfig.navLinks.map(({ name, link }) => {
           let className;
 
-          if (pathname === link || pathStr === link) {
+          if ((!pathname && link === "/") || pathname === link || pathStr === link) {
             className = "nav__link nav__link--active";
           } else {
             className = "nav__link";

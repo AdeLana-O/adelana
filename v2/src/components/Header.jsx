@@ -1,7 +1,7 @@
 import React from "react";
-
-import Navbar from "./Navbar";
 import SiteLogo from "./SiteLogo";
+import Navbar from "./Navbar";
+import ThemeButton from "./ThemeButton";
 
 const Header = () => (
   <header id="header">
@@ -9,6 +9,7 @@ const Header = () => (
       <div className="header__container">
         <SiteLogo />
         <Navbar />
+        <ThemeButton />
       </div>
     </div>
   </header>
