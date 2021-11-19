@@ -2,17 +2,19 @@
 
 @import "./mixins";
 
-@import "./placeholders";
-
 @import "./main";
 
-@import "./dark-theme";
+@import "./placeholders";
 
 @import "./components/Header";
 
 @import "./components/SiteLogo";
 
 @import "./components/Navbar";
+
+@import "./components/ThemeButton";
+
+@import "./components/Footer";
 
 @import "./components/Hero";
 
@@ -28,6 +30,4 @@
 
 @import "./components/404";
 
-@import "./components/Footer";
-
-@import "./components/ThemeButton";
+@import "./dark-theme";
