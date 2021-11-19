@@ -14,7 +14,7 @@
 }
 
 .tool__list {
-  @include flexDisplay(center, true, center);
+  @include flexDisplay(center, true, flex-end);
   padding: 0.8rem;
   border: 0.1rem solid $primaryColor;
   border-radius: 0.4rem;

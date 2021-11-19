@@ -117,31 +117,30 @@
 
 .slide__btns__container {
   @include flexDisplay;
-  width: 85%;
+  width: 95%;
   max-width: 35rem;
   margin: 0 auto;
 }
 
 .slide__btn__item {
   padding: 0.5rem;
-  width: 5.5rem;
+  width: 6.5rem;
 }
 
 .slide__btn {
   cursor: pointer;
   display: block;
   margin: 0 auto;
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.55rem;
+  height: 1.55rem;
   border-radius: 50%;
-  border: 0.15rem solid $primaryColor;
+  border: none;
   background-color: $primaryColorDark;
   transition: width 0.08s linear;
 
-  &.slide__btn--active {
-    border-color: transparent;
+  &--active {
     border-radius: 1rem;
-    width: 3.8rem;
+    width: 4.5rem;
     transition: width 0.1s linear;
   }
 }

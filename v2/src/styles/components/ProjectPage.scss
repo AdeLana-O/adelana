@@ -25,18 +25,20 @@
 
   a {
     color: $primaryColorDark;
-    font-size: 1.55rem;
     padding: 1.2rem 2rem;
     border: 0.2rem solid transparent;
     border-radius: 0.35rem;
     transition: 0.1s linear;
-    display: inline-flex;
-    align-items: center;
+    @extend %link-inline-flex-display;
 
     &:hover {
       color: $primaryColor;
       border-color: $primaryColor;
       transform: translateY(-0.25rem);
+    }
+
+    svg {
+      font-size: 1.8rem;
     }
   }
 }
@@ -76,10 +78,6 @@
     display: inline-flex;
     align-items: center;
     transition: 0.15s ease-in-out;
-
-    &:hover {
-      color: $primaryColor;
-    }
   }
 }
 

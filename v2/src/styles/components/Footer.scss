@@ -43,7 +43,7 @@
 }
 
 .contact-links .contact__link {
-  display: inline-flex;
+  @extend %link-inline-flex-display;
 
   svg {
     font-size: 1.8rem;

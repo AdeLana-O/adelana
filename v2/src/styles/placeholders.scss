@@ -2,3 +2,10 @@
   @include flexDisplay;
   flex-direction: column;
 }
+
+%link-inline-flex-display {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  line-height: 1;
+}
