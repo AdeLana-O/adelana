@@ -5,6 +5,8 @@
 
 .not-found-page__container {
   padding: $mobilePagePadding;
+  min-height: $contentHeight;
+  @include flexDisplay(center, true);
 }
 
 @include mediaQuery($tablet) {

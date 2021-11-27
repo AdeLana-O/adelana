@@ -13,9 +13,9 @@
 }
 
 @mixin setHeadings($size, $h3: false) {
-  color: $primaryColor;
+  color: var(--heading-color);
   font-size: $size;
-  font-family: $OswaldFont;
+  font-family: var(--heading-font-family);
   text-align: center;
   line-height: 1.65;
   margin-bottom: $marginBottom;

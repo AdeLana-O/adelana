@@ -14,13 +14,14 @@
 .nav__link {
   display: inline-block;
   font-weight: bold;
-  color: $primaryColor;
+  color: var(--nav-link-color);
   transition: 0.15s linear;
   position: relative;
 
   &::after {
     content: "";
-    background-color: rgba($primaryColor, 0.2);
+    background-color: var(--nav-link-color);
+    opacity: 0.2;
     height: 0;
     position: absolute;
     left: -0.4rem;
@@ -29,22 +30,15 @@
     transition: 0.2s ease-in;
   }
 
-  &:hover {
-    &::after {
-      height: 0.9rem;
-    }
+  &:hover::after {
+    height: 0.9rem;
   }
 
   &--active {
-    color: $accentColor;
+    color: var(--nav-link-active-color);
 
-    &:hover {
-      color: $accentColor;
-
-      &::after {
-        height: 0.9rem;
-        background-color: rgba($accentColor, 0.2);
-      }
+    &:hover::after {
+      background-color: var(--nav-link-active-color);
     }
   }
 }

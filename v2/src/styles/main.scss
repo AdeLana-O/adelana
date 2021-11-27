@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Oswald&display=swap");
 
 *,
@@ -8,6 +10,36 @@
   box-sizing: inherit;
 }
 
+:root {
+  --bg: #{$primaryColorLight};
+  --font-color: #{$primaryColorDark};
+  --heading-font-family: #{meta.inspect($headingFontFamily)};
+  --body-font-family: #{meta.inspect($bodyFontFamily)};
+  --heading-color: #{$primaryColor};
+  --nav-link-color: #{$primaryColor};
+  --nav-link-active-color: #{$accentColor};
+  --hero-gradient-color: #{$primaryColorLight};
+  --hero-heading-color: #{$primaryColorDark};
+  --hero-link-color: #{$primaryColor};
+  --hero-image-bg: #{$primaryColorLight};
+  --hero-image-shadow-color: #{rgba($primaryColorLight, 0.3)};
+  --slide-btn-bg: #{$primaryColorDark};
+  --slide-link-bg: #{$primaryColorDark};
+  --slide-link-color: #{$primaryColorLight};
+  --slide-link-hover-bg-color: #{$primaryColor};
+  --slide-link-hover-color: #{$primaryColorLight};
+  --tool-list-border-color: #{$primaryColor};
+  --tool-list-bg: #{rgba($primaryColor, 0.15)};
+  --tool-list-color: #{$primaryColor};
+  --projects-grid-item-shadow-color: #{rgba($primaryColorDark, 0.65)};
+  --projects-link-color: #{$primaryColorDark};
+  --projects-grid-title-bg: #{$primaryColorLight};
+  --project-link-color: #{$primaryColorDark};
+  --project-link-hover-color: #{$primaryColor};
+  --project-link-border-color: #{$primaryColor};
+  --footer-bg-color: #{$primaryColorDark};
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -15,8 +47,8 @@ html {
 }
 
 body {
-  background-color: $primaryColorLight;
-  font-family: $ComfortaaFont;
+  background-color: var(--bg);
+  font-family: var(--body-font-family);
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,7 +97,8 @@ body {
 
 #main {
   flex-grow: 1;
-  color: $primaryColorDark;
+  color: var(--font-color);
+  min-height: $contentHeight;
 
   p {
     line-height: 1.5;

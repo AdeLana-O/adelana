@@ -1,8 +1,12 @@
 #hero {
-  background-image: linear-gradient(180deg, $primaryColor, $primaryColorLight);
+  background-image: linear-gradient(
+    180deg,
+    $primaryColor,
+    var(--hero-gradient-color)
+  );
 
   h1 {
-    color: $primaryColorDark;
+    color: var(--hero-heading-color);
   }
 }
 
@@ -28,7 +32,7 @@
 
     .contact__link {
       font-size: 2.5rem;
-      color: $primaryColor;
+      color: var(--hero-link-color);
       line-height: 0;
       display: block;
     }
@@ -39,9 +43,9 @@
   width: 85%;
   max-width: 35rem;
   margin: $marginTop auto 0;
-  background-color: $primaryColorLight;
+  background-color: var(--hero-image-bg);
   border-radius: 10rem 5rem / 1.5rem 20rem 4rem 7rem;
-  box-shadow: 1.5rem 1.5rem 0 0 rgba($primaryColorLight, 0.3);
+  box-shadow: 1.5rem 1.5rem 0 0 var(--hero-image-shadow-color);
   overflow: hidden;
 }
 

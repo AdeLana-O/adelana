@@ -135,7 +135,7 @@
   height: 1.55rem;
   border-radius: 50%;
   border: none;
-  background-color: $primaryColorDark;
+  background-color: var(--slide-btn-bg);
   transition: width 0.08s linear;
 
   &--active {
@@ -153,16 +153,17 @@
     display: inline-block;
     width: 55%;
     max-width: 16.5rem;
-    background-color: $primaryColorDark;
+    background-color: var(--slide-link-bg);
     font-size: 1.6rem;
     font-weight: bold;
-    color: $primaryColorLight;
+    color: var(--slide-link-color);
     padding: 1.8rem 2rem;
     border-radius: 0.8rem;
     transition: 0.12s linear;
 
     &:hover {
-      background-color: $primaryColor;
+      background-color: var(--slide-link-hover-bg-color);
+      color: var(--slide-link-hover-color);
     }
   }
 }

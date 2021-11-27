@@ -1,98 +1,27 @@
 .dark {
-  body {
-    background-color: $primaryColorDark;
-  }
-
-  #site__wrapper h1,
-  #site__wrapper h2 {
-    color: $primaryColorLight;
-  }
-
-  #main {
-    color: $primaryColorLight;
-  }
-
-  .nav__link {
-    color: $primaryColorLight;
-
-    &::after {
-      background-color: rgba($primaryColorLight, 0.2);
-    }
-
-    &--active {
-      color: $accentColorLight;
-
-      &:hover {
-        color: $accentColorLight;
-
-        &::after {
-          height: 0.9rem;
-          background-color: rgba($accentColorLight, 0.2);
-        }
-      }
-    }
-  }
-
-  #hero {
-    background-image: linear-gradient(180deg, $primaryColor, $primaryColorDark);
-  }
-
-  .hero__links > .contact__menu .contact__link {
-    color: $primaryColorLight;
-  }
-
-  .hero__image {
-    background-color: $primaryColorDark;
-    box-shadow: 1.5rem 1.5rem 0 0 rgba($primaryColorDark, 0.3);
-  }
-
-  .slide__btn {
-    background-color: $primaryColorLight;
-  }
-
-  .work__footer a {
-    background-color: $primaryColorLight;
-    color: $primaryColorDark;
-
-    &:hover {
-      background-color: $primaryColor;
-      color: $primaryColorLight;
-    }
-  }
-
-  .tool__list {
-    border-color: $primaryColorLight;
-    color: $primaryColorLight;
-    background-color: rgba($primaryColorLight, 0.2);
-  }
-
-  #footer {
-    background-color: rgba($primaryColor, 0.1);
-  }
-
-  .projects-page-grid__item {
-    box-shadow: 0 -0.2rem 1.6rem 0.2rem rgba($primaryColorLight, 0.25);
-
-    a {
-      color: $primaryColorLight;
-    }
-  }
-
-  .projects-page-grid__title {
-    padding: 2.5rem 1rem;
-    background-color: $primaryColorDark;
-  }
-
-  .project-page__links-wrapper a {
-    color: $primaryColorLight;
-
-    &:hover {
-      color: $primaryColorLight;
-      border-color: $primaryColorLight;
-    }
-  }
-
-  .project-page__footer a {
-    color: $primaryColorLight;
-  }
+  --bg: #{$primaryColorDark};
+  --font-color: #{$primaryColorLight};
+  --heading-color: #{$primaryColorLight};
+  --nav-link-color: #{$primaryColorLight};
+  --nav-link-active-color: #{$accentColorLight};
+  --hero-gradient-color: #{$primaryColorDark};
+  --hero-heading-color: #{$primaryColorLight};
+  --hero-link-color: #{$primaryColorLight};
+  --hero-image-bg: #{$primaryColorDark};
+  --hero-image-shadow-color: #{rgba($primaryColorDark, 0.3)};
+  --slide-btn-bg: #{$primaryColorLight};
+  --slide-link-bg: #{$primaryColorLight};
+  --slide-link-color: #{$primaryColorDark};
+  --slide-link-hover-bg-color: #{$primaryColor};
+  --slide-link-hover-color: #{$primaryColorLight};
+  --tool-list-border-color: #{$primaryColorLight};
+  --tool-list-bg: #{rgba($primaryColorLight, 0.15)};
+  --tool-list-color: #{$primaryColorLight};
+  --projects-grid-item-shadow-color: #{rgba($primaryColorLight, 0.25)};
+  --projects-link-color: #{$primaryColorLight};
+  --projects-grid-title-bg: #{$primaryColorDark};
+  --project-link-color: #{$primaryColorLight};
+  --project-link-hover-color: #{$primaryColorLight};
+  --project-link-border-color: #{$primaryColorLight};
+  --footer-bg-color: #{rgba($primaryColor, 0.1)};
 }

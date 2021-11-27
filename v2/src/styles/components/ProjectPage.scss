@@ -24,7 +24,7 @@
   padding-right: 0.5rem;
 
   a {
-    color: $primaryColorDark;
+    color: var(--project-link-color);
     padding: 1.2rem 2rem;
     border: 0.2rem solid transparent;
     border-radius: 0.35rem;
@@ -32,8 +32,8 @@
     @extend %link-inline-flex-display;
 
     &:hover {
-      color: $primaryColor;
-      border-color: $primaryColor;
+      color: var(--project-link-hover-color);
+      border-color: var(--project-link-border-color);
       transform: translateY(-0.25rem);
     }
 

@@ -7,8 +7,8 @@ $dark: #262626;
 $light: #fff;
 $sun: #ffd700;
 
-$OswaldFont: "Oswald", sans-serif;
-$ComfortaaFont: "Comfortaa", cursive;
+$headingFontFamily: "Oswald", sans-serif;
+$bodyFontFamily: "Comfortaa", cursive;
 
 $h1: 4rem;
 $h2: 2.5rem;
@@ -30,3 +30,6 @@ $desktopDeviceBaseHeight: 2rem;
 
 $marginBottom: 3rem;
 $marginTop: $marginBottom * 3;
+
+$headerHeight: 9.5rem;
+$contentHeight: calc(100vh - $headerHeight);

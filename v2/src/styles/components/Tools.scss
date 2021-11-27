@@ -16,10 +16,10 @@
 .tool__list {
   @include flexDisplay(center, true, flex-end);
   padding: 0.8rem;
-  border: 0.1rem solid $primaryColor;
+  border: 0.1rem solid var(--tool-list-border-color);
   border-radius: 0.4rem;
-  background-color: rgba($primaryColor, 0.15);
-  color: $primaryColor;
+  background-color: var(--tool-list-bg);
+  color: var(--tool-list-color);
   user-select: none;
   cursor: pointer;
   transition: transform 0.15s ease-out;
