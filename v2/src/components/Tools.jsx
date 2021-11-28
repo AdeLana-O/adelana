@@ -1,5 +1,6 @@
 import React from "react";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/Tools.scss";
 
 const { home } = siteConfig;
 

@@ -1,16 +1,19 @@
+@use "../variables.scss";
+@use "../mixins.scss";
+
 #not-found-page h1 {
   text-align: center;
   margin-bottom: 0;
 }
 
 .not-found-page__container {
-  padding: $mobilePagePadding;
-  min-height: $contentHeight;
-  @include flexDisplay(center, true);
+  padding: variables.$mobilePagePadding;
+  min-height: variables.$contentHeight;
+  @include mixins.flexDisplay(center, true);
 }
 
-@include mediaQuery($tablet) {
+@include mixins.mediaQuery(variables.$tablet) {
   .not-found-page__container {
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
   }
 }

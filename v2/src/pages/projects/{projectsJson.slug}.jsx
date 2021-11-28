@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaGithub, FaLink, FaLongArrowAltLeft } from "react-icons/fa";
 import Seo from "../../components/Seo";
+import "../../styles/components/ProjectPage.scss";
 
 const ProjectPage = ({ data }) => {
   const image = getImage(data.projectsJson.image);

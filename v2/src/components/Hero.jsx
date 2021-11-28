@@ -2,6 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import ContactMenu from "./ContactMenu";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/Hero.scss";
 
 const { home } = siteConfig;
 

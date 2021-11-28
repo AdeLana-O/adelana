@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import { ThemeContext } from "../context";
+import "../styles/components/ThemeButton.scss";
 
 const ThemeButton = () => {
   const { theme, themeToggler } = useContext(ThemeContext);

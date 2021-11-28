@@ -1,4 +1,6 @@
 @use "sass:meta";
+@use "variables";
+@use "mixins";
 
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Oswald&display=swap");
 
@@ -11,33 +13,33 @@
 }
 
 :root {
-  --bg: #{$primaryColorLight};
-  --font-color: #{$primaryColorDark};
-  --heading-font-family: #{meta.inspect($headingFontFamily)};
-  --body-font-family: #{meta.inspect($bodyFontFamily)};
-  --heading-color: #{$primaryColor};
-  --nav-link-color: #{$primaryColor};
-  --nav-link-active-color: #{$accentColor};
-  --hero-gradient-color: #{$primaryColorLight};
-  --hero-heading-color: #{$primaryColorDark};
-  --hero-link-color: #{$primaryColor};
-  --hero-image-bg: #{$primaryColorLight};
-  --hero-image-shadow-color: #{rgba($primaryColorLight, 0.3)};
-  --slide-btn-bg: #{$primaryColorDark};
-  --slide-link-bg: #{$primaryColorDark};
-  --slide-link-color: #{$primaryColorLight};
-  --slide-link-hover-bg-color: #{$primaryColor};
-  --slide-link-hover-color: #{$primaryColorLight};
-  --tool-list-border-color: #{$primaryColor};
-  --tool-list-bg: #{rgba($primaryColor, 0.15)};
-  --tool-list-color: #{$primaryColor};
-  --projects-grid-item-shadow-color: #{rgba($primaryColorDark, 0.65)};
-  --projects-link-color: #{$primaryColorDark};
-  --projects-grid-title-bg: #{$primaryColorLight};
-  --project-link-color: #{$primaryColorDark};
-  --project-link-hover-color: #{$primaryColor};
-  --project-link-border-color: #{$primaryColor};
-  --footer-bg-color: #{$primaryColorDark};
+  --bg: #{variables.$primaryColorLight};
+  --font-color: #{variables.$primaryColorDark};
+  --heading-font-family: #{meta.inspect(variables.$headingFontFamily)};
+  --body-font-family: #{meta.inspect(variables.$bodyFontFamily)};
+  --heading-color: #{variables.$primaryColor};
+  --nav-link-color: #{variables.$primaryColor};
+  --nav-link-active-color: #{variables.$accentColor};
+  --hero-gradient-color: #{variables.$primaryColorLight};
+  --hero-heading-color: #{variables.$primaryColorDark};
+  --hero-link-color: #{variables.$primaryColor};
+  --hero-image-bg: #{variables.$primaryColorLight};
+  --hero-image-shadow-color: #{rgba(variables.$primaryColorLight, 0.3)};
+  --slide-btn-bg: #{variables.$primaryColorDark};
+  --slide-link-bg: #{variables.$primaryColorDark};
+  --slide-link-color: #{variables.$primaryColorLight};
+  --slide-link-hover-bg-color: #{variables.$primaryColor};
+  --slide-link-hover-color: #{variables.$primaryColorLight};
+  --tool-list-border-color: #{variables.$primaryColor};
+  --tool-list-bg: #{rgba(variables.$primaryColor, 0.15)};
+  --tool-list-color: #{variables.$primaryColor};
+  --projects-grid-item-shadow-color: #{rgba(variables.$primaryColorDark, 0.65)};
+  --projects-link-color: #{variables.$primaryColorDark};
+  --projects-grid-title-bg: #{variables.$primaryColorLight};
+  --project-link-color: #{variables.$primaryColorDark};
+  --project-link-hover-color: #{variables.$primaryColor};
+  --project-link-border-color: #{variables.$primaryColor};
+  --footer-bg-color: #{variables.$primaryColorDark};
 }
 
 html {
@@ -69,15 +71,15 @@ body {
   }
 
   h1 {
-    @include setHeadings($h1);
+    @include mixins.setHeadings(variables.$h1);
   }
 
   h2 {
-    @include setHeadings($h2);
+    @include mixins.setHeadings(variables.$h2);
   }
 
   h3 {
-    @include setHeadings($h3);
+    @include mixins.setHeadings(variables.$h3);
   }
 
   ul,
@@ -98,13 +100,13 @@ body {
 #main {
   flex-grow: 1;
   color: var(--font-color);
-  min-height: $contentHeight;
+  min-height: variables.$contentHeight;
 
   p {
     line-height: 1.5;
 
     &:not(:last-of-type) {
-      margin-bottom: $marginBottom;
+      margin-bottom: variables.$marginBottom;
     }
   }
 }

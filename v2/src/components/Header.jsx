@@ -2,6 +2,7 @@ import React from "react";
 import SiteLogo from "./SiteLogo";
 import Navbar from "./Navbar";
 import ThemeButton from "./ThemeButton";
+import "../styles/components/Header.scss";
 
 const Header = () => (
   <header id="header">

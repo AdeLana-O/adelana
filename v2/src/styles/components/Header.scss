@@ -1,14 +1,17 @@
+@use "../variables";
+@use "../mixins";
+
 .header__container {
-  @include flexDisplay(space-between, true);
-  padding: 2rem $mobilePadding;
+  @include mixins.flexDisplay(space-between, true);
+  padding: 2rem variables.$mobilePadding;
   margin-left: auto;
   margin-right: auto;
   max-width: 65rem;
-  height: $headerHeight;
+  height: variables.$headerHeight;
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .header__container {
-    padding: $desktopPadding;
+    padding: variables.$desktopPadding;
   }
 }

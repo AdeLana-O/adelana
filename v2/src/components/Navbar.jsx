@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/Navbar.scss";
 
 const Navbar = () => {
   const { pathname } = useLocation();

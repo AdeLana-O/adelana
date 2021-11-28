@@ -1,5 +1,7 @@
+@use "mixins";
+
 %footer-links-display {
-  @include flexDisplay;
+  @include mixins.flexDisplay;
   flex-direction: column;
 }
 

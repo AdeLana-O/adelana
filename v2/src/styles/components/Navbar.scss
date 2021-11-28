@@ -1,10 +1,13 @@
+@use "../variables";
+@use "../mixins";
+
 #nav {
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 .nav__menu {
-  @include flexDisplay(flex-start, true);
+  @include mixins.flexDisplay(flex-start, true);
 }
 
 .nav__item {
@@ -43,7 +46,7 @@
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .nav__item {
     padding: 0 1.5rem;
   }

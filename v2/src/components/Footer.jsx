@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-
 import SiteLogo from "./SiteLogo";
 import ContactMenu from "./ContactMenu";
+import "../styles/components/Footer.scss";
 
 import { siteConfig } from "../utils/siteConfig";
 

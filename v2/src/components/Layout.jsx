@@ -8,7 +8,8 @@ const Layout = ({ children }) => {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
-    document.documentElement.className = theme === "light" ? "light" : "dark";
+    document.documentElement.className =
+      theme === "light" ? "light--mode" : "dark--mode";
   }, [theme]);
 
   return (

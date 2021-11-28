@@ -1,3 +1,5 @@
+@use "../variables";
+
 .theme__btn {
   display: block;
   border: none;
@@ -10,14 +12,14 @@
   transition: 0.3s ease;
 
   &:hover {
-    background-color: rgba($primaryColor, 0.1);
+    background-color: rgba(variables.$primaryColor, 0.1);
   }
 
   &--light {
-    color: $sun;
+    color: variables.$sun;
   }
 
   &--dark {
-    color: $primaryColor;
+    color: variables.$primaryColor;
   }
 }

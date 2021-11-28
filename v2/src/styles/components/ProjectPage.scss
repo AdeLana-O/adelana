@@ -1,3 +1,7 @@
+@use "../variables";
+@use "../mixins";
+@use "../placeholders";
+
 #project-page {
   ul {
     list-style-type: square;
@@ -6,17 +10,17 @@
 }
 
 .project-page__container {
-  padding: $mobilePagePadding;
+  padding: variables.$mobilePagePadding;
 }
 
 .project-page__image {
-  margin: 0 auto $marginBottom;
+  margin: 0 auto variables.$marginBottom;
 }
 
 .project-page__links {
-  @include flexDisplay;
+  @include mixins.flexDisplay;
   flex-wrap: wrap;
-  margin-bottom: $marginBottom;
+  margin-bottom: variables.$marginBottom;
 }
 
 .project-page__links-wrapper {
@@ -50,7 +54,7 @@
 
 .project-page__features {
   max-width: 60rem;
-  margin: $marginTop auto 0;
+  margin: variables.$marginTop auto 0;
 }
 
 .project-page__features__item {
@@ -69,11 +73,11 @@
 
 .project-page__footer {
   max-width: 60rem;
-  margin: $marginTop auto 0;
+  margin: variables.$marginTop auto 0;
 
   a {
     text-align: center;
-    color: $primaryColorDark;
+    color: variables.$primaryColorDark;
     font-size: 1.55rem;
     display: inline-flex;
     align-items: center;
@@ -81,8 +85,8 @@
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .project-page__container {
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
   }
 }

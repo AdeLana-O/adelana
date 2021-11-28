@@ -1,7 +1,10 @@
+@use "../variables";
+@use "../mixins";
+
 #hero {
   background-image: linear-gradient(
     180deg,
-    $primaryColor,
+    variables.$primaryColor,
     var(--hero-gradient-color)
   );
 
@@ -11,11 +14,11 @@
 }
 
 .hero__container {
-  padding: $mobilePagePadding;
+  padding: variables.$mobilePagePadding;
 }
 
 .hero__info {
-  margin-bottom: $marginBottom;
+  margin-bottom: variables.$marginBottom;
 
   p {
     text-align: center;
@@ -28,7 +31,7 @@
   margin: 0 auto;
 
   & > .contact__menu {
-    @include flexDisplay(space-around);
+    @include mixins.flexDisplay(space-around);
 
     .contact__link {
       font-size: 2.5rem;
@@ -42,14 +45,14 @@
 .hero__image {
   width: 85%;
   max-width: 35rem;
-  margin: $marginTop auto 0;
+  margin: variables.$marginTop auto 0;
   background-color: var(--hero-image-bg);
   border-radius: 10rem 5rem / 1.5rem 20rem 4rem 7rem;
   box-shadow: 1.5rem 1.5rem 0 0 var(--hero-image-shadow-color);
   overflow: hidden;
 }
 
-@include mediaQuery($tablet) {
+@include mixins.mediaQuery(variables.$tablet) {
   .hero__container {
     display: grid;
     grid-template-columns: 25rem 1fr;
@@ -62,9 +65,9 @@
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .hero__container {
     grid-template-columns: 38rem 1fr;
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
   }
 }

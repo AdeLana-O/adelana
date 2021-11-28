@@ -1,20 +1,24 @@
+@use "../variables";
+@use "../mixins";
+@use "../placeholders";
+
 #footer {
   background-color: var(--footer-bg-color);
 
   h3 {
-    color: $primaryColorLight;
+    color: variables.$primaryColorLight;
     text-align: left;
   }
 }
 
 .footer__container {
-  padding: $mobilePagePadding;
+  padding: variables.$mobilePagePadding;
   padding-bottom: 5rem;
 }
 
 .footer__menus,
 .footer__links .quick-links {
-  margin-bottom: $marginBottom;
+  margin-bottom: variables.$marginBottom;
 }
 
 .footer__menus > .site-logo {
@@ -22,7 +26,7 @@
 }
 
 .footer__links {
-  margin-top: $marginTop;
+  margin-top: variables.$marginTop;
 }
 
 .footer__menus,
@@ -38,7 +42,7 @@
 
 .quick-links .quick-link,
 .contact-links .contact__link {
-  color: $primaryColorLight;
+  color: variables.$primaryColorLight;
   font-weight: bold;
 }
 
@@ -52,20 +56,20 @@
 
 .copyright {
   text-align: left;
-  color: $primaryColorLight;
+  color: variables.$primaryColorLight;
   font-size: 1.2rem;
   padding-top: 1.5rem;
-  border-top: 0.1rem solid $primaryColorLight;
+  border-top: 0.1rem solid variables.$primaryColorLight;
 }
 
-@include mediaQuery($tablet) {
+@include mixins.mediaQuery(variables.$tablet) {
   .footer__menus {
     flex-direction: row;
     justify-content: space-between;
   }
 
   .footer__links {
-    @include flexDisplay(space-between, true, flex-start);
+    @include mixins.flexDisplay(space-between, true, flex-start);
     flex: 0 0 54%;
     margin-top: 0;
 
@@ -77,9 +81,9 @@
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .footer__container {
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
     padding-bottom: 5rem;
   }
 }

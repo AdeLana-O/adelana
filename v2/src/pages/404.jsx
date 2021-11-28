@@ -1,6 +1,7 @@
 import React from "react";
 import Seo from "../components/Seo";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/404.scss";
 
 const NotFoundPage = () => {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/About.scss";
 
 const { home } = siteConfig;
 

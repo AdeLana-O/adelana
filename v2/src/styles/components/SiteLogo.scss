@@ -1,3 +1,6 @@
+@use "../variables";
+@use "../mixins";
+
 .site-logo a {
   display: block;
 }
@@ -8,7 +11,7 @@
   height: auto;
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .site-logo__image {
     width: 5rem;
   }

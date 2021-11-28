@@ -1,5 +1,8 @@
+@use "../variables";
+@use "../mixins";
+
 .projects-page__container {
-  padding: $mobilePagePadding;
+  padding: variables.$mobilePagePadding;
 }
 
 .projects-page__details > p {
@@ -7,7 +10,7 @@
 }
 
 .projects-page-grid {
-  margin-top: $marginTop;
+  margin-top: variables.$marginTop;
   display: grid;
   grid-template-columns: auto;
   row-gap: 6rem;
@@ -38,9 +41,9 @@
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .projects-page__container {
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
   }
 
   .projects-page-grid {

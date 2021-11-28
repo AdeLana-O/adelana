@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import WorkMobile from "./WorkMobile";
 import WorkLarge from "./WorkLarge";
 import { siteConfig } from "../utils/siteConfig";
+import "../styles/components/Work.scss";
 
 const { home } = siteConfig;
 

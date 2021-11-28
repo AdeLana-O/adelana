@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Seo from "../../components/Seo";
 import { siteConfig } from "../../utils/siteConfig";
+import "../../styles/components/Projects.scss";
 
 const { pageMeta, projects } = siteConfig;
 

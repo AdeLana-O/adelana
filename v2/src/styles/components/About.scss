@@ -1,22 +1,25 @@
+@use "../variables";
+@use "../mixins";
+
 .about__container {
-  padding: $mobilePagePadding;
+  padding: variables.$mobilePagePadding;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   gap: 9rem 2rem;
   align-items: center;
 }
 
-@include mediaQuery($tablet) {
+@include mixins.mediaQuery(variables.$tablet) {
   .about__container {
     grid-template-columns: 26rem 1fr;
     column-gap: 10rem;
   }
 }
 
-@include mediaQuery($desktop) {
+@include mixins.mediaQuery(variables.$desktop) {
   .about__container {
     grid-template-columns: 40rem 1fr;
     column-gap: 20rem;
-    padding: $desktopPagePadding;
+    padding: variables.$desktopPagePadding;
   }
 }
