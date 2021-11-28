@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   }, [theme]);
 
   return (
-    <div id="site__wrapper">
+    <div className="site__wrapper">
       <Header />
       <main id="main">{children}</main>
       <Footer />
