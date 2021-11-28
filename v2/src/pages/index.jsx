@@ -7,6 +7,21 @@ import { siteConfig } from "../utils/siteConfig";
 import "../styles/components/HomePage.scss";
 
 const { home } = siteConfig;
+const { tools } = home;
+
+const toolsMapper = items => (
+  <ul className="tools__list">
+    {items.map(({ icon: Icon, name }, index) => (
+      <li className="tools__list__item" aria-label={name} key={`${name}-${index}`}>
+        <div className="tool__list">
+          <Icon />
+          &nbsp;&nbsp;
+          <span className="tool__list__title">{name}</span>
+        </div>
+      </li>
+    ))}
+  </ul>
+);
 
 const Home = () => (
   <>
@@ -55,23 +70,30 @@ const Home = () => (
       <div className="container">
         <div className="tools__container">
           <div className="tools__header">
-            <h2>{home.tools.header}</h2>
+            <h2>{tools.header}</h2>
           </div>
-          <ul className="tools__list">
-            {home.tools.list.map(({ icon: Icon, name }, index) => (
-              <li
-                className="tools__list__item"
-                aria-label={name}
-                key={`${name}-${index}`}
-              >
-                <div className="tool__list">
-                  <Icon />
-                  &nbsp;&nbsp;
-                  <span className="tool__list__title">{name}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="tools__categories">
+            <div className="tools__category">
+              <h3>{tools.categories.languages.title}</h3>
+              {toolsMapper(tools.categories.languages.items)}
+            </div>
+            <div className="tools__category">
+              <h3>{tools.categories.editors.title}</h3>
+              {toolsMapper(tools.categories.editors.items)}
+            </div>
+            <div className="tools__category">
+              <h3>{tools.categories.versionControl.title}</h3>
+              {toolsMapper(tools.categories.versionControl.items)}
+            </div>
+            <div className="tools__category">
+              <h3>{tools.categories.bundlersCompilers.title}</h3>
+              {toolsMapper(tools.categories.bundlersCompilers.items)}
+            </div>
+            <div className="tools__category">
+              <h3>{tools.categories.deployment.title}</h3>
+              {toolsMapper(tools.categories.deployment.items)}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -56,12 +56,24 @@
   padding: variables.$mobilePagePadding;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-  gap: 9rem 2rem;
+  gap: variables.$marginTop 2rem;
   align-items: center;
+}
+
+.about__header {
+  margin-bottom: variables.$marginBottom;
 }
 
 .tools__container {
   padding: variables.$mobilePagePadding;
+}
+
+.tools__header {
+  margin-bottom: variables.$marginBottom;
+}
+
+.tools__category:not(:last-child) {
+  margin-bottom: variables.$marginBottom;
 }
 
 .tools__list {
@@ -114,6 +126,23 @@
   .about__container {
     grid-template-columns: 26rem 1fr;
     column-gap: 10rem;
+  }
+
+  .tools__categories {
+    @include mixins.flexDisplay;
+    flex-wrap: wrap;
+  }
+
+  .tools__category {
+    padding: 2.25rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      flex: 0 0 100%;
+    }
   }
 }
 

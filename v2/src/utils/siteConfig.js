@@ -1,17 +1,29 @@
-import { SiTypescript, SiJavascript, SiWebpack, SiBabel } from "react-icons/si";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiWebpack,
+  SiBabel,
+  SiGatsby,
+  SiReact,
+  SiCss3,
+  SiNodedotjs,
+  SiGit,
+  SiNextdotjs,
+  SiExpress,
+  SiVisualstudiocode,
+  SiSublimetext,
+  SiGithub,
+  SiTwitter,
+  SiVercel,
+  SiNetlify,
+  SiHeroku,
+} from "react-icons/si";
+
 import {
   FaLinkedinIn,
-  FaGitAlt,
+  FaSass,
   // FaEnvelope
 } from "react-icons/fa";
-import {
-  IoLogoReact,
-  IoLogoCss3,
-  IoLogoSass,
-  IoLogoNodejs,
-  IoLogoTwitter,
-  IoLogoGithub,
-} from "react-icons/io5";
 
 export const siteConfig = {
   pageMeta: {
@@ -63,17 +75,55 @@ export const siteConfig = {
 
     tools: {
       header: "Tools I Work With",
-      list: [
-        { name: "JavaScript", icon: SiJavascript },
-        { name: "React", icon: IoLogoReact },
-        { name: "CSS", icon: IoLogoCss3 },
-        { name: "SASS", icon: IoLogoSass },
-        { name: "Node", icon: IoLogoNodejs },
-        { name: "Git", icon: FaGitAlt },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "Webpack", icon: SiWebpack },
-        { name: "Babel", icon: SiBabel },
-      ],
+      categories: {
+        languages: {
+          title: "Programming Languages",
+          items: [
+            { name: "JavaScript", icon: SiJavascript },
+            { name: "React", icon: SiReact },
+            { name: "CSS", icon: SiCss3 },
+            { name: "TypeScript", icon: SiTypescript },
+            { name: "Node", icon: SiNodedotjs },
+            { name: "SASS", icon: FaSass },
+            { name: "Gatsby", icon: SiGatsby },
+            { name: "Express", icon: SiExpress },
+            { name: "Next", icon: SiNextdotjs },
+          ],
+        },
+
+        editors: {
+          title: "Editors",
+          items: [
+            { name: "VSCode", icon: SiVisualstudiocode },
+            { name: "Sublime", icon: SiSublimetext },
+          ],
+        },
+
+        versionControl: {
+          title: "Version Control",
+          items: [
+            { name: "Git", icon: SiGit },
+            { name: "Github", icon: SiGithub },
+          ],
+        },
+
+        bundlersCompilers: {
+          title: "Bundlers & Compilers",
+          items: [
+            { name: "Webpack", icon: SiWebpack },
+            { name: "Babel", icon: SiBabel },
+          ],
+        },
+
+        deployment: {
+          title: "Deployment",
+          items: [
+            { name: "Vercel", icon: SiVercel },
+            { name: "Heroku", icon: SiHeroku },
+            { name: "Netlify", icon: SiNetlify },
+          ],
+        },
+      },
     },
   },
 
@@ -83,8 +133,8 @@ export const siteConfig = {
   },
 
   contactLinks: [
-    { icon: IoLogoTwitter, link: "https://twitter.com/Ade_LaNa", label: "Twitter" },
-    { icon: IoLogoGithub, link: "https://github.com/devLana", label: "Github" },
+    { icon: SiTwitter, link: "https://twitter.com/Ade_LaNa", label: "Twitter" },
+    { icon: SiGithub, link: "https://github.com/devLana", label: "Github" },
     {
       icon: FaLinkedinIn,
       link: "https://linkedin.com/in/adelana-onafuwa",
