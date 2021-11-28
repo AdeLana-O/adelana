@@ -5,12 +5,15 @@
   padding: variables.$mobilePagePadding;
 }
 
-.projects-page__details > p {
-  text-align: center;
+.projects-page__details {
+  margin-bottom: variables.$marginBottom;
+
+  & > p {
+    text-align: center;
+  }
 }
 
 .projects-page-grid {
-  margin-top: variables.$marginTop;
   display: grid;
   grid-template-columns: auto;
   row-gap: 6rem;

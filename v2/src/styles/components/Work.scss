@@ -6,12 +6,12 @@
   padding: variables.$mobilePagePadding;
 }
 
-.work__header > p {
-  text-align: center;
-}
+.work__header {
+  margin-bottom: variables.$marginBottom;
 
-.work__slide__images {
-  margin-top: variables.$marginTop;
+  & > p {
+    text-align: center;
+  }
 }
 
 .device__container {
@@ -23,7 +23,8 @@
   border-style: solid;
   border-color: variables.$dark;
   border-radius: 3.6rem;
-  width: 100%;
+  width: 99.5%;
+  margin: 0 auto;
   position: relative;
 
   &::before {
@@ -176,7 +177,7 @@
   border-style: solid;
   border-color: variables.$dark;
   border-radius: 0.5rem 0.5rem 0 0;
-  width: 87%;
+  width: 92%;
   margin: 0 auto;
   position: relative;
 
@@ -198,8 +199,8 @@
     position: absolute;
     bottom: -(variables.$desktopDeviceBottomBorder) - variables.$desktopDeviceBaseHeight -
       0.1rem;
-    left: -8.5%;
-    right: -8.5%;
+    left: -5%;
+    right: -5%;
     height: variables.$desktopDeviceBaseHeight;
     border-radius: 0.5rem;
   }
@@ -224,12 +225,12 @@
     display: block;
     position: absolute;
     bottom: -5.7rem;
-    right: 2.1rem;
+    right: 2rem;
     z-index: 3;
     width: 22.5%;
 
     .slide__images__container {
-      background-color: #e6e6e6;
+      background-color: var(--bg);
     }
 
     .mobile__device {
