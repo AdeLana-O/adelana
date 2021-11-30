@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     document.documentElement.className =
-      theme === "light" ? "light--mode" : "dark--mode";
+      theme === "light" ? "light-mode" : "dark-mode";
   }, [theme]);
 
   return (
