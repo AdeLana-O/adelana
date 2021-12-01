@@ -1,4 +1,4 @@
-const description = "Web Developer and JavaScript specialist";
+const description = "Web Developer and JavaScript enthusiast";
 
 module.exports = {
   siteMetadata: {
