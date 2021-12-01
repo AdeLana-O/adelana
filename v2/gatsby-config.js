@@ -1,11 +1,10 @@
-const description =
-  "Portfolio and personal website of Adelana Onafuwa. Software Developer and JavaScript fan.";
+const description = "Web Developer and JavaScript specialist.";
 
 module.exports = {
   siteMetadata: {
     title: "Adelana Onafuwa",
     description,
-    siteUrl: "https://demo-devlana.netlify.app",
+    siteUrl: "https://adelana.dev",
     twitter: "@Ade_LaNa",
   },
   plugins: [

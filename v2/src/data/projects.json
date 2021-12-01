@@ -23,8 +23,8 @@
     "image": "../images/slides/Respay.jpg",
     "live": "https://respay.com/",
     "content": [
-      "Respay is a web app for a property management and payment solution company.",
-      "I worked in a team of astute and adept developers in the development of this product. I was on the frontend team where I contributed to the production of Respay using React, CSS and quite a few popular frontend end libraries.",
+      "Respay is a web app for a property management and payment solution firm.",
+      "I worked in a team of astute and adept developers in the development of this product. I was on the frontend team where I contributed to the production of Respay using React, CSS and quite a few other popular frontend end libraries.",
       "Using my knowledge of JavaScript and frontend development, I was able to develop a few of the key features that makes the app tick."
     ],
     "features": [
@@ -32,7 +32,9 @@
       "Property management",
       "Online payment",
       "Property applications management",
-      "Public and private facility management"
+      "Public and private facility management",
+      "Package delivery management",
+      "Visitors log management"
     ],
     "metaDescription": "Respay property management web app co-developed by Adelana Onafuwa",
     "metaTitle": "Respay"
@@ -46,7 +48,7 @@
     "source": "https://github.com/devLana/github-profile",
     "content": [
       "Developed using Typescript and React, Github Profile is an app that is powered by the Github API.",
-      "It allows users to search for registered Github users highlighting their profile details and also listing their most popular repositories sorted by a stars."
+      "It allows users to search for registered Github users highlighting their profile details and also listing their most popular repositories sorted by number of stars."
     ],
     "features": [
       "Responsive layout",
@@ -77,10 +79,10 @@
     "live": "https:/demo-devlana.netlify.app/",
     "source": "https://github.com/devLana/devLana",
     "content": [
-      "My portfolio website built with Gatsby.js and SASS.",
+      "This website. Built with Gatsby.js and SASS.",
       "This website highlights details about me and showcases projects I have worked on."
     ],
-    "features": ["Custom built carousel", "PWA", "Responsive layout design"],
+    "features": ["Carousel", "PWA", "Responsive layout design"],
     "metaDescription": "Adelana Onafuwa portfolio website",
     "metaTitle": "Adelana Onafuwa Website"
   },
@@ -92,9 +94,9 @@
     "live": "https://devlana-auth-app.netlify.app/",
     "source": "https://github.com/devLana/react-auth-app",
     "content": [
-      "Bootstrapped with Webpack and Babel, and built with JavaScript and React, this authentication app shows how client side authentication works on a frontend app.",
-      "It is also connected to an Express REST API I built for it using axios.",
-      "Users can sign in, sign out and sign up. Any generated tokens from the API response are saved to Local Storage and cleared on sign out."
+      "A React app bootstrapped with Webpack and Babel. This authentication app shows how client side authentication works on a frontend app.",
+      "It is also connected to an Express REST API I built using axios for data fetching.",
+      "Users can sign in, sign out and sign up. Any generated token in the API response is saved to Local Storage and used to verify the user until the token is cleared from local storage on sign out."
     ],
     "features": [
       "Client side Routing",
@@ -102,7 +104,7 @@
       "Client side authentication",
       "Token verification"
     ],
-    "metaDescription": "Client side authentication app integrated with a REST API and bootstrapped with Webpack and Babel, and built with React",
+    "metaDescription": "A React client side authentication app bootstrapped with Webpack and Babel and connected to a REST API",
     "metaTitle": "React Authentication App"
   }
 ]

@@ -18,15 +18,15 @@ const query = graphql`
 `;
 
 function Seo({ seo, pageDescription, pageTitle }) {
-  const { site } = useStaticQuery(query);
-  const { pathname } = useLocation();
+  const { pathname, hostname } = useLocation();
 
+  const { site } = useStaticQuery(query);
   const { title, description, siteUrl, twitter } = site.siteMetadata;
 
   const metaTitle = pageTitle ? `${pageTitle} | ${title}` : title;
   const metaDescription = pageDescription || description;
 
-  const isDemo = siteUrl.includes("demo");
+  const isDemo = hostname?.includes("demo") || false;
   const imageUrl = `${siteUrl}/logo.svg`;
   const pageUrl = `${siteUrl}${pathname}`;
 

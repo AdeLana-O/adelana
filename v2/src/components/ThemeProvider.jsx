@@ -6,9 +6,19 @@ const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    }
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const changeTheme = e => {
+      e.matches ? setTheme("dark") : setTheme("light");
+    };
+
+    changeTheme(mediaQuery);
+
+    mediaQuery.addEventListener("change", changeTheme);
+
+    return () => {
+      mediaQuery.removeEventListener("change", changeTheme);
+    };
   }, []);
 
   const themeToggler = () => {

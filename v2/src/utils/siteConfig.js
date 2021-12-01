@@ -17,6 +17,7 @@ import {
   SiVercel,
   SiNetlify,
   SiHeroku,
+  SiStyledcomponents,
 } from "react-icons/si";
 
 import {
@@ -29,7 +30,7 @@ export const siteConfig = {
   pageMeta: {
     "not found": {
       title: "Page Not Found",
-      description: "The page you are looking for does not exist1q!0)",
+      description: "We could not find the page you were looking for.",
     },
     projects: {
       title: "Projects",
@@ -53,7 +54,7 @@ export const siteConfig = {
       header: "Hi, I'm Adelana Onafuwa",
       text: [
         "JavaScript Web Developer",
-        "This is my portfolio where you can find out what I'm all about and what I've been up to.",
+        "Doing my best to improve lives with code, I have dedicated myself to building things with JavaScript and here, you'll find out what I'm all about and what I've been up to.",
       ],
     },
 
@@ -67,8 +68,8 @@ export const siteConfig = {
       text: [
         "Fascinated by technology from a young age, I always knew I would end up with a career in tech.",
         "I started my programming journey with PHP but I soon moved on after I discovered the awesomeness of JavaScript.",
-        "This is why I've made it a mission to achieve mastery of fullstack JavaScript and its rich ecosystem of libraries and frameworks.",
-        "As a result I have since built and contributed to quite a couple of projects using libraries like React and Express.",
+        "This is why I've made it a mission to do what I can to achieve mastery of fullstack JavaScript and its rich ecosystem of libraries and frameworks.",
+        "As a result, I have since built and contributed to quite a couple of projects using libraries like React and Express.",
         "I'm really eager to see what the future has in store for me as I look to get more involved in open source projects while at the same time, stretching my legs into the world of TypeScript, Vue and Angular.",
       ],
     },
@@ -81,10 +82,11 @@ export const siteConfig = {
           items: [
             { name: "JavaScript", icon: SiJavascript },
             { name: "React", icon: SiReact },
-            { name: "CSS", icon: SiCss3 },
-            { name: "TypeScript", icon: SiTypescript },
             { name: "Node", icon: SiNodedotjs },
+            { name: "TypeScript", icon: SiTypescript },
+            { name: "CSS", icon: SiCss3 },
             { name: "SASS", icon: FaSass },
+            { name: "Styled Components", icon: SiStyledcomponents },
             { name: "Gatsby", icon: SiGatsby },
             { name: "Express", icon: SiExpress },
             { name: "Next", icon: SiNextdotjs },
