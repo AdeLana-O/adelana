@@ -9,11 +9,19 @@ const ThemeButton = () => {
   return (
     <div className="theme__btn__wrapper">
       {theme === "light" ? (
-        <button className="theme__btn theme__btn--light" onClick={themeToggler}>
+        <button
+          className="theme__btn theme__btn--light"
+          onClick={themeToggler}
+          aria-label="Toggle Dark Mode"
+        >
           <BsSunFill />
         </button>
       ) : (
-        <button className="theme__btn theme__btn--dark" onClick={themeToggler}>
+        <button
+          className="theme__btn theme__btn--dark"
+          onClick={themeToggler}
+          aria-label="Toggle Dark Mode"
+        >
           <BsMoonFill />
         </button>
       )}
