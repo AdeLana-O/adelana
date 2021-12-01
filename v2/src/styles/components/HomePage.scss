@@ -52,6 +52,10 @@
   overflow: hidden;
 }
 
+#about {
+  background-color: var(--about-bg-color);
+}
+
 .about__container {
   padding: variables.$mobilePagePadding;
   display: grid;

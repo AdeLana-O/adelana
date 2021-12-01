@@ -30,6 +30,7 @@
   --slide-link-color: #{variables.$primaryColorLight};
   --slide-link-hover-bg-color: #{variables.$primaryColor};
   --slide-link-hover-color: #{variables.$primaryColorLight};
+  --about-bg-color: #{rgba(variables.$primaryColor, 0.1)};
   --tool-list-border-color: #{variables.$primaryColor};
   --tool-list-bg: #{rgba(variables.$primaryColor, 0.15)};
   --tool-list-color: #{variables.$primaryColor};
@@ -65,6 +66,7 @@ html.dark-mode {
   --slide-link-color: #{variables.$primaryColorDark};
   --slide-link-hover-bg-color: #{variables.$primaryColor};
   --slide-link-hover-color: #{variables.$primaryColorLight};
+  --about-bg-color: #{rgba(variables.$primaryColorLight, 0.1)};
   --tool-list-border-color: #{variables.$primaryColorLight};
   --tool-list-bg: #{rgba(variables.$primaryColorLight, 0.15)};
   --tool-list-color: #{variables.$primaryColorLight};
