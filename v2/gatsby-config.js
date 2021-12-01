@@ -1,4 +1,4 @@
-const description = "Web Developer and JavaScript enthusiast";
+const description = "Web Developer and lover of JavaScript";
 
 module.exports = {
   siteMetadata: {
@@ -40,7 +40,7 @@ module.exports = {
         background_color: "#ebf1f9",
         theme_color: "#315fa8",
         display: "standalone",
-        icon: "static/logo.svg",
+        icon: "static/logo.png",
         icon_options: {
           purpose: "any",
         },

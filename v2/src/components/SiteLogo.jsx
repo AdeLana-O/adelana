@@ -8,7 +8,7 @@ const SiteLogo = () => (
     <div className="site-logo__img">
       <Link to="/">
         <StaticImage
-          src="../../static/logo.svg"
+          src="../images/logo.png"
           alt="Adelana Onafuwa website logo"
           placeholder="tracedSVG"
         />

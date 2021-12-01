@@ -27,7 +27,7 @@ function Seo({ seo, pageDescription, pageTitle }) {
   const metaDescription = pageDescription || description;
 
   const isDemo = hostname?.includes("demo") || false;
-  const imageUrl = `${siteUrl}/logo.svg`;
+  const imageUrl = `${siteUrl}/logo.png`;
   const pageUrl = `${siteUrl}${pathname}`;
 
   return (
