@@ -56,7 +56,7 @@ function Seo({ seo, pageDescription, pageTitle }) {
       {seo && <meta itemprop="name" content={metaTitle} />}
       {seo && <meta itemprop="description" content={metaDescription} />}
       {seo && <meta itemprop="image" content={imageUrl} />}
-      {seo && <link rel="canonical" origin={pageUrl} />}
+      {seo && <link rel="canonical" href={pageUrl} />}
     </Helmet>
   );
 }
