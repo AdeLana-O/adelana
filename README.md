@@ -11,4 +11,4 @@ I am a software developer working with JavaScript, TypeScript, Node and React. T
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=devLana&theme=vision-friendly-dark)](https://git.io/streak-stats)
 
 ## Contributions
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=devLana&theme=gruvbox&radius=5)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=devLana&theme=gruvbox&radius=5)](https://github.com/ashutosh00710/github-readme-activity-graph)
