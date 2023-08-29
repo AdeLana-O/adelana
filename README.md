@@ -6,7 +6,7 @@ I am a software developer working with JavaScript, TypeScript, Node and React. T
 
 ## Stats
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=devLana&layout=compact&theme=gotham)](https://github.com/anuraghazra/github-readme-stats) | [![devLana's GitHub stats](https://github-readme-stats.vercel.app/api?username=devLana&hide=stars,contribs&count_private=true&show_icons=true&theme=great-gatsby)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=devLana&layout=compact&theme=gotham)](https://github.com/anuraghazra/github-readme-stats) | [![devLana's GitHub stats](https://github-readme-stats.vercel.app/api?username=devLana&hide=stars&count_private=true&show_icons=true&theme=great-gatsby)](https://github.com/anuraghazra/github-readme-stats)
 :-:|-
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=devLana&theme=vision-friendly-dark)](https://git.io/streak-stats)
 
